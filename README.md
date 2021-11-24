@@ -1,4 +1,4 @@
-Site web du lab Ouvroir
+Site web du lab ouvroir
 
 ## Meta
 
