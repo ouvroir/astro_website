@@ -15,16 +15,12 @@ allPosts = allPosts.sort((a, b) => (b.publishDate).valueOf() - (a.publishDate).v
 ---
 
 <BaseLayout title={title} description={description} permalink={permalink}>
-  <section>
     <h1>{title}</h1>
     <p>{description}</p>
-  </section>
-  <section>
+
       {allPosts.map(p => <BlogPostPreview post={p}/>)}
-  </section>
-
-
-
+      <!-- en double pour avoir une page plus longue que la hauteur de l'écran-->
+      {allPosts.map(p => <BlogPostPreview post={p}/>)}
 <!-- 
   à par catégorie selon tag
   ├─ Actualités
