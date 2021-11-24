@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+let title = "Projets"
+let description = "Présentation de projets et de collaborations du laboratoire"
+let permalink = "https://ouvroir.umontreal.ca/projets"
+---
+
+<BaseLayout title={title} description={description} permalink={permalink}>
+    <h1>{title}</h1>
+    <p>{description}</p>
+
+
+  <!--
+
+    ├─ Projets
+      ├─ Projets mis en avant (categorie)
+      ├─ Projets du laboratoire (categorie)
+      └─ Collaborations / Projets en partenariat (categorie)
+
+  -->  
+</BaseLayout>

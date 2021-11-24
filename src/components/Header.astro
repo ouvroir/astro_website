@@ -1,0 +1,62 @@
+<header>
+    <nav id="main-navigation">
+        <a class="nav-item" href="/">
+            <img id="navlogo" src="../../public/ouvroir.png">
+            <span>Ouvroir</span>
+        </a>
+
+        <a class="nav-item" href="/services">
+            <span>Services</span>
+        </a>
+
+        <a class="nav-item" href="/projets">
+            <span>Projets</span>
+        </a>
+
+        <a class="nav-item" href="/actualites">
+            <span>Actualité</span>
+        </a>
+
+        <a class="nav-item" href="/info">
+            <span>i</span>
+        </a>
+    </nav>
+</header>
+
+<style>
+    header {
+        height: 4rem;
+        /*position: fixed; à voir avec du contenu*/
+        padding-top: 1rem;   
+        padding-bottom: 1rem;   
+        border: solid 1px crimson;
+
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+
+    .nav-item {
+        display: flex;
+        flex-grow: 0;
+        gap: 0.5em;
+        align-items: center;
+        justify-content: center;
+        /*à définir color: var(--theme-text-lighter)*/
+        font-size: 1.5rem;
+        padding: 0.5rem;
+    }
+    .nav-item:hover {
+       /*à définir color: var(--theme-accent); */
+       color: red
+    }
+    
+    #navlogo {
+        width: 2rem;
+        height: 2rem;
+    }
+</style>

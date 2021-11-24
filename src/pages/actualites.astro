@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import BlogPostPreview from '../components/BlogPostPreview.astro'
+
+let title = "Actualités"
+let description = "Blogue, annonces, événements et lettre d'information du lab"
+let permalink = "https://ouvroir.umontreal.ca/actualites"
+
+interface MarkdownFrontmatter {
+  publishDate: Date;
+}
+// Get all blog posts
+let allPosts = Astro.fetchContent<MarkdownFrontmatter>('./blog/*.md');
+allPosts = allPosts.sort((a, b) => (b.publishDate).valueOf() - (a.publishDate).valueOf());
+---
+
+<BaseLayout title={title} description={description} permalink={permalink}>
+  <section>
+    <h1>{title}</h1>
+    <p>{description}</p>
+  </section>
+  <section>
+      {allPosts.map(p => <BlogPostPreview post={p}/>)}
+  </section>
+
+
+
+<!-- 
+  à par catégorie selon tag
+  ├─ Actualités
+      ├─ Billets blogue
+      ├─ Annonces / événements
+      └─ Lettre d’information (v2)
+
+-->
+
+
+</BaseLayout>

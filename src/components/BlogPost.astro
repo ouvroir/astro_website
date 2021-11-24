@@ -1,0 +1,26 @@
+---
+export interface Props {
+  title: string;
+  description: string,
+  author: string;
+  publishDate: Date; /*why a string*/
+  tags: Array<string>
+}
+
+const { title, author, description, publishDate, tags } = Astro.props;
+---
+<div class="layout">
+    <article class="content">
+        <header>
+            <p>Actualités de l'Ouvroir</p>
+            <h1>{title}</h1>
+            <p>{description}</p>
+            <p>publié le {publishDate} par {author}</p>
+            <p>{tags}</p>
+            <hr>
+        </header>
+        <main>
+            <slot />
+        </main>
+    </article>
+</div>

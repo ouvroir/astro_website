@@ -1,0 +1,23 @@
+---
+import MetaData from '../components/MetaData.astro'
+import Header from '../components/Header.astro'
+import BlogPost from '../components/BlogPost.astro'
+
+const {content} = Astro.props;
+const {title, description, author, publishDate, tags, permalink} = content;
+/* quoi faire avec les tags qui ne sont pas toujours renseignés?  */
+---
+
+
+<html lang="fr" prefix="og: https://ogp.me/ns# article: https://ogp.me/ns/article#">
+  <head>
+    <MetaData title={title} description={description} permalink={permalink}/>
+    <!-- change for Blog metadata component, type: blog-->
+  </head>
+  <body>
+    <Header/>
+    <BlogPost title={title} author={author} publishDate={publishDate} description={description} tags={tags}>
+        <slot />
+    </BlogPost>
+  </body>
+</html>

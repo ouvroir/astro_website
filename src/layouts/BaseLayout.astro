@@ -1,0 +1,19 @@
+---
+import MetaData from '../components/MetaData.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+
+const {title, description, permalink} = Astro.props;
+---
+
+
+<html lang="fr" prefix="og: https://ogp.me/ns# article: https://ogp.me/ns/article#">
+  <head>
+    <MetaData title={title} description={description} permalink={permalink}/>
+  </head>
+  <body>
+    <Header/>
+        <slot />
+    <Footer />
+  </body>
+</html>
