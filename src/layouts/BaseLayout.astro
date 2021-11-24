@@ -15,14 +15,14 @@ const {title, description, permalink} = Astro.props;
     <div id="app">
       <Header/>
       <main>
-        <section>
-          <slot />
-        </section>
-        <Footer />
+        <slot />
       </main>  
+      <Footer />
     </div>
   </body>
 </html>
+
+<!-- footer fixed at bottom, but when moved into main, does not stay at bottom, to be continued-->
 
 <style>
 
