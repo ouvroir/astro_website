@@ -1,9 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import {Markdown} from 'astro/components';
 
 let title = "Ouvroir"
 let description = "Laboratoire d'histoire de l'art et de muséologie numérique"
-let permalink = ""
+let permalink = "https://ouvroir.umontreal.ca/"
 ---
 
 <BaseLayout title={title} description={description} permalink={permalink}>
@@ -15,8 +16,40 @@ let permalink = ""
         <p><i>Tagline</i></p>
     </div>
   </div>
-  
 
+  <div class="section">
+    <h2></h2>
+  </div>
+
+  <div class="section">
+    <h2>Présentation</h2>
+  </div>
+
+  <div class="section">
+    <h2>Dernières actualités</h2>
+  </div>
+
+  <div class="section">
+    <h2>Projets</h2>
+  </div>
+
+  <div class="section">
+    <h2>Crédits</h2>
+    <Markdown>
+      L’Ouvroir bénéficie du soutien de l’[Université de Montréal](https://www.umontreal.ca/), du [Fonds Canadien pour l’Innovation](https://www.innovation.ca/) et du de la [province du Québec](https://www.economie.gouv.qc.ca/bibliotheques/programmes/aide-financiere/programme-de-soutien-aux-organismes-de-recherche-et-dinnovation-pso/cofinancement-du-gouvernement-du-quebec-aux-programmes-de-la-fondation-canadienne-pour-linnovation-fci/fonds-dinnovation/).   
+    </Markdown>
+
+    <!--
+    <div class="container">
+      <div class="columns">
+        <div class="column col-lg-8">
+          <img src={Astro.resolve('../../public/img/CFI/fr/CFI_RGB-FR.png')}>
+        </div>
+      </div>
+    </div>
+    
+    -->
+  </div>
   <!--
 
   ├─ Page d’accueil

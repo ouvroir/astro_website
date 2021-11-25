@@ -3,7 +3,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 let title = "Projets"
 let description = "Présentation de projets et de collaborations du laboratoire"
-let permalink = "https://ouvroir.umontreal.ca/projets"
+let permalink = "https://ouvroir.umontreal.ca/projets/"
+
+var repos = await fetch('https://api.github.com/repos/ouvroir/expots')
+console.log('hello')
+console.log(repos.json)
 ---
 
 <BaseLayout title={title} description={description} permalink={permalink}>
