@@ -12,40 +12,42 @@ const {title, description, permalink} = Astro.props;
     <MetaData title={title} description={description} permalink={permalink}/>
   </head>
   <body>
-    <div id="app">
+    <div id="app" class="container grid-xl">
       <Header/>
       <main>
         <slot />
+
       </main>  
+
       <Footer />
     </div>
   </body>
 </html>
 
-<!-- footer fixed at bottom, but when moved into main, does not stay at bottom, to be continued-->
-
 <style>
-
 #app {
   height: 100vh;
-
+  
+  /* grid container settings */
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto 1fr auto;
   grid-template-areas: 
-      'header'
-      'main';
+    'header'
+    'main'
+    'footer';
 }
 
 #app > header {
   grid-area: header;
-  padding-bottom: 2rem;
 }
 
 #app > main {
   grid-area: main;
-  overflow: auto;
+  padding: 15px 5px 10px 5px;
+}
 
-} 
-
+#app > footer {
+  grid-area: footer;
+}
 </style>
