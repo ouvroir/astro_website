@@ -5,18 +5,15 @@ export interface Props{
 
 const { post } = Astro.props;
 ---
-<article>
+<article class="section">
     <header>
         <p class="publish-date">{post.publishDate}</p>
-        <a href={post.url}><h1 class="title">{post.title}</h1></a>
+        <a href={post.url}><h3 class="title">{post.title}</h3></a>
     </header>
     <p>{post.description}</p>
     <a href={post.url}>Lire la suite</a>
 </article>
 
 <style>
-article {
-    border: solid 1px green;
-    margin-bottom: 1.5rem
-}
+
 </style>

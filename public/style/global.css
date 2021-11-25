@@ -4,3 +4,7 @@ body {
     
     margin: 0
 }
+.section{
+    border-bottom: solid 1px grey;
+    margin-bottom: 1.5rem
+}
