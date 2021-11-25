@@ -15,12 +15,21 @@ allPosts = allPosts.sort((a, b) => (b.publishDate).valueOf() - (a.publishDate).v
 ---
 
 <BaseLayout title={title} description={description} permalink={permalink}>
-    <h1>{title}</h1>
-    <p>{description}</p>
+  <div class="container grid-xl">
+    <div class="columns">
+      <div class="col-2"><!--nav droite--></div>
+      <div class="col-8">
+        <h1>{title}</h1>
+        <p>{description}</p>
 
-      {allPosts.map(p => <BlogPostPreview post={p}/>)}
-      <!-- en double pour avoir une page plus longue que la hauteur de l'écran-->
-      {allPosts.map(p => <BlogPostPreview post={p}/>)}
+          {allPosts.map(p => <BlogPostPreview post={p}/>)}
+          <!-- en double pour avoir une page plus longue que la hauteur de l'écran-->
+          {allPosts.map(p => <BlogPostPreview post={p}/>)}
+      </div>
+      <div class="col-2"><!-- nav gauche--></div>
+    </div>
+  </div>
+</BaseLayout>
 <!-- 
   à par catégorie selon tag
   ├─ Actualités
@@ -29,6 +38,3 @@ allPosts = allPosts.sort((a, b) => (b.publishDate).valueOf() - (a.publishDate).v
       └─ Lettre d’information (v2)
 
 -->
-
-
-</BaseLayout>
