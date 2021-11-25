@@ -9,18 +9,21 @@ export interface Props {
 
 const { title, author, description, publishDate, tags } = Astro.props;
 ---
-<div class="layout">
+<div class="container">
     <article class="content">
-        <header>
-            <p>Actualités de l'Ouvroir</p>
-            <h1>{title}</h1>
-            <p>{description}</p>
-            <p>publié le {publishDate} par {author}</p>
-            <p>{tags}</p>
-            <hr>
+        <header class="hero bg-gray">
+            <div class="hero-body">
+                <p>Actualités de l'Ouvroir</p>
+                <h1>{title}</h1>
+                <p>{description}</p>
+                <p>publié le {publishDate} par {author}</p>
+                <p>{tags}</p>
+            </div>
         </header>
         <main>
             <slot />
         </main>
     </article>
 </div>
+
+<!-- Pour montrer la nav du texte: https://picturepan2.github.io/spectre/components/nav.html -->
