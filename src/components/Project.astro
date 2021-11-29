@@ -1,0 +1,26 @@
+---
+export interface Props {
+  title: string,
+  description: string,
+  since: Date,
+  tags: Array<string>,
+  url: string
+}
+
+const { title, description, since, tags, url } = Astro.props;
+---
+<div class="container">
+    <article class="content">
+        <header class="hero bg-gray">
+            <div class="hero-body">
+                <h1>{title}</h1>
+                <p>{description}, {since}</p>
+                <p>{tags}</p>
+                <a href={url} target="_blank">Consulter le projet</a>
+            </div>
+        </header>
+        <main>
+            <slot />
+        </main>
+    </article>
+</div>
