@@ -23,8 +23,6 @@ allPosts = allPosts.sort((a, b) => (b.publishDate).valueOf() - (a.publishDate).v
         <p>{description}</p>
 
           {allPosts.map(p => <BlogPostPreview post={p}/>)}
-          <!-- en double pour avoir une page plus longue que la hauteur de l'écran-->
-          {allPosts.map(p => <BlogPostPreview post={p}/>)}
       </div>
       <div class="col-2"><!-- nav gauche--></div>
     </div>

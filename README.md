@@ -20,6 +20,9 @@ première version en français uniquement
 		├─ HeadMeta.astro 
 		└─ Header.astro
 	├─ layouts
+		├─ BaseLayout.astro 
+		├─ BlogLayout.astro
+		└─ ProjectLayout.astro
 	└─ pages
 		├─ index.astro
 		├─ fonctionnement.astro
@@ -88,7 +91,27 @@ layout pour les pages principales du site (celles accessibles directement depuis
 #### BlogLayout
 
 layout pour pages/blog/*.md 
-blogpost yaml front matter: 
+blogpost yaml front matter: à suivre
+
+#### ProjectLayout
+layout pour pages/projets/*.md 
+blogpost yaml front matter:
+- title
+- description
+- layout: '../../layouts/ProjectLayout.astro'
+- tags
+- since
+- url 
+à compléter (author?)
 
 ### Pages
+pages de la nav: 
+- index
+- services
+- projets
+- actualites
+- info
+
+pages de blog en .md
+pages de projets en .md
 

@@ -8,3 +8,8 @@ body {
     border-bottom: solid 1px grey;
     margin-bottom: 1.5rem
 }
+
+h2 {
+    padding-top: 3rem;
+    padding-bottom: 1.5rem;
+}
