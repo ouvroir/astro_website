@@ -91,18 +91,24 @@ layout pour les pages principales du site (celles accessibles directement depuis
 #### BlogLayout
 
 layout pour pages/blog/*.md 
-blogpost yaml front matter: à suivre
+blogpost yaml front matter: 
+
 
 #### ProjectLayout
 layout pour pages/projets/*.md 
-blogpost yaml front matter:
+
+Project yaml front matter:
 - title
 - description
 - layout: '../../layouts/ProjectLayout.astro'
 - tags
 - since
 - url 
-à compléter (author?)
+
+Content: 
+bien mettre de l'avant les auteur·rice·s car il n'est pas dans les métadonnées
+
+
 
 ### Pages
 pages de la nav: 
