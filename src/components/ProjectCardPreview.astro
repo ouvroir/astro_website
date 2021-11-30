@@ -26,5 +26,25 @@ let tags = post.tags
 </div>
 
 <style>
+.card {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+        'header'
+        'main'
+        'footer';
+}
+
+.card-image{
+    grid-area: header;
+}
+
+.card-header{
+    grid-area: main;
+}
+.card-footer{
+    grid-area: footer;
+}
 </style>
 

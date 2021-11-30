@@ -12,14 +12,22 @@ const {title, description, permalink} = Astro.props;
     <MetaData title={title} description={description} permalink={permalink}/>
   </head>
   <body>
-    <div id="app" class="container grid-xl">
-      <Header/>
-      <main>
-        <slot />
+    <div class="container grid-xl">
+      <div class="columns">
+        <div class="col-1"><!--nav gauche--></div>
+        <div class="col-10">
+          <div id="app" class="container grid-xl">
+            <Header/>
+            <main>
+              <slot />
 
-      </main>  
+            </main>  
 
-      <Footer />
+            <Footer />
+          </div>
+        </div>
+        <div class="col-1"><!--nav droite--></div>
+      </div>
     </div>
   </body>
 </html>
