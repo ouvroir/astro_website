@@ -43,10 +43,50 @@ première version en français uniquement
       }
 ```
 
+## Pages
+pages de la nav: 
+- index
+- services
+- projets
+- actualites
+- info
 
-### Components
+pages de blog en .md
+pages de projets en .md
 
-#### HeadMeta
+## Layouts
+
+### BaseLayout
+
+layout pour les pages principales du site (celles accessibles directement depuis la nav)
+
+### BlogLayout
+
+layout pour pages/blog/*.md 
+blogpost yaml front matter: 
+
+
+### ProjectLayout
+layout pour pages/projets/*.md 
+
+Project yaml front matter:
+- title
+- description
+- layout: '../../layouts/ProjectLayout.astro'
+- tags
+	- tag 1
+	- tag 2
+- since: (yyyy-[mm]-[dd])
+- url: lien vers site/code/doc du projet
+
+Content: 
+bien mettre de l'avant les auteur·rice·s car il n'est pas dans les métadonnées
+
+
+
+## Components
+
+### HeadMeta
 
 Contient les métadonnées générales pour la page (charset, favicon, title, description), OpenGraph et Twitter.
 
@@ -59,7 +99,7 @@ Quand on importe HeaderMeta, il faut toujours renseigner title, description et p
 Pour l'instant, les préfixes (namespaces pour [OpenGraph](https://ogp.me/)) sont dans la balise html. Peut aussi être une balise <head> dans HeadMeta pour ne pas répéter
 
 
-#### Header
+### Header
 
 base: contient la navbar
 
@@ -74,50 +114,14 @@ base: contient la navbar
 </header>
 ```
 
-#### Footer
+### Footer
 - make sure links are up to date
 
 
-#### BlogPost
+### BlogPost
 
 Publication de blogue, utilisée dans layout Actualite
 
-### Layouts
-
-#### BaseLayout
-
-layout pour les pages principales du site (celles accessibles directement depuis la nav)
-
-#### BlogLayout
-
-layout pour pages/blog/*.md 
-blogpost yaml front matter: 
 
 
-#### ProjectLayout
-layout pour pages/projets/*.md 
-
-Project yaml front matter:
-- title
-- description
-- layout: '../../layouts/ProjectLayout.astro'
-- tags
-- since
-- url 
-
-Content: 
-bien mettre de l'avant les auteur·rice·s car il n'est pas dans les métadonnées
-
-
-
-### Pages
-pages de la nav: 
-- index
-- services
-- projets
-- actualites
-- info
-
-pages de blog en .md
-pages de projets en .md
 
