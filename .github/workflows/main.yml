@@ -4,7 +4,7 @@
 # Remember to add API_TOKEN_GITHUB in repo Settings > Secrets as well!
 env:
   githubEmail: lena.krause@umontreal.ca
-  deployToRepo: ouvroir.github.io
+  deployToRepo: site-lab.ouvroir.github.io
 
 name: Github Pages Astro CI
 
