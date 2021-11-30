@@ -4,13 +4,14 @@ export interface Props{
 }
 
 const { post } = Astro.props;
+let tags = post.tags
 ---
 <article class="section">
     <header>
         <a href={post.url}><h3 class="title">{post.title}</h3></a>
     </header>
     <p>{post.description}</p>
-    <p>{post.tags}</p>
+    <div>{tags.map(t => <span class="chip">{t}</span>)}</div>
     <a href={post.url}>Lire la suite</a>
 </article>
 

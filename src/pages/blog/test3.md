@@ -3,7 +3,9 @@ title: Billet cieco
 description: Test de contenu, tag partenariat
 author: Ouvroir
 publishDate: 2021-11-22
-tags: blog, partenariat
+tags: 
+    - blog
+    - partenariat
 layout: '../../layouts/BlogLayout.astro'
 ---
 

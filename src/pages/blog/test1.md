@@ -3,7 +3,9 @@ title: Premier billet
 description: Test de contenu d'une actualité
 author: Ouvroir
 publishDate: 2021-11-20
-tags: blog, lab
+tags: 
+    - blog
+    - lab
 layout: '../../layouts/BlogLayout.astro'
 ---
 

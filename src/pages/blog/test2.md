@@ -3,7 +3,9 @@ title: Démo du site
 description: Test de contenu d'un événement
 author: Ouvroir
 publishDate: 2021-11-21
-tags: lab, event
+tags: 
+    - lab
+    - event
 date: 2021-11-29
 place: zoom
 layout: '../../layouts/BlogLayout.astro'

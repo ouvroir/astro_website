@@ -2,7 +2,11 @@
 title: 'Expots'
 description: "Outil pour la documentation des accrochages de collection et de visualisation 3D"
 layout: '../../layouts/ProjectLayout.astro'
-tags: CIECO, documentation, modèle de données, visualisation 3D
+tags: 
+    - CIECO
+    - documentation
+    - modèle de données
+    - visualisation 3D
 since: 2021-11
 url: https://github.com/ouvroir/expots
 ---

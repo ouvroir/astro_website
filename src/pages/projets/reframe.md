@@ -2,7 +2,10 @@
 title: 'Reframe'
 description: "Librairie JavaScript pour la présentation des contenus visuels"
 layout: '../../layouts/ProjectLayout.astro'
-tags: CIECO, JavaScript, web
+tags: 
+    - CIECO
+    - JavaScript
+    - web
 since: 2021-11
 url: https://github.com/ouvroir/reframe
 ---

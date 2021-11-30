@@ -4,13 +4,15 @@ export interface Props{
 }
 
 const { post } = Astro.props;
+let tags = post.tags;
+let date = new Date(post.publishDate)
 ---
 <article class="section">
     <header>
-        <p class="publish-date">{post.publishDate}</p>
         <a href={post.url}><h3 class="title">{post.title}</h3></a>
     </header>
-    <p>{post.description}</p>
+    <p>{post.description}<br>{date.getDate()}.{date.getMonth()}.{date.getFullYear()}</p>
+    <div>{tags.map(t => <span class="chip">{t}</span>)}</div>
     <a href={post.url}>Lire la suite</a>
 </article>
 
