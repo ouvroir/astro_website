@@ -1,7 +1,7 @@
 export default /** @type {import('astro').AstroUserConfig} */ (
     {
         buildOptions: {
-            site: 'ouvroir.github.io',
+            site: 'https://ouvroir.github.io',
             sitemap: true
         }
 
