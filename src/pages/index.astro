@@ -32,7 +32,7 @@ let posts = Astro.fetchContent('./blog/*.md');
 
 
   <h2>Projets</h2>
-  <div class="container grid-xl">
+  <div class="container grid-xl"  id="projectCards">
       <div class="columns">
         {projects.map(p => <ProjectCardPreview post={p}/>)}
       </div>
@@ -66,3 +66,11 @@ let posts = Astro.fetchContent('./blog/*.md');
   -->
 
 </BaseLayout>
+
+<style>
+#projectCards{
+  display: grid;
+  grid-gap: 50px 50px
+  
+  }
+</style>
