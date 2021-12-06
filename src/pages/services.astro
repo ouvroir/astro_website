@@ -9,13 +9,12 @@ let permalink = "https://ouvroir.umontreal.ca/services/"
 //fonctionne mais lit le yaml front matter et ajoute une ligne noire
 //use gray-matter to parse md https://www.npmjs.com/package/gray-matter
 //trouvr une façon que le titre devienne de niveau 2? 
-/*
 var code = await fetch('https://raw.githubusercontent.com/ouvroir/labouvroir/main/web/codeDeConduite.md').then(res => res.text());
 code = code.split("---\n\n")[1]
 
 var equipement = await fetch('https://raw.githubusercontent.com/ouvroir/labouvroir/main/web/equipement.md').then(res => res.text());
 equipement = equipement.split("---\n\n")[1]
-*/
+
 ---
 
 <BaseLayout title={title} description={description} permalink={permalink}>
@@ -49,9 +48,8 @@ equipement = equipement.split("---\n\n")[1]
   </section>
 
 
-  <!--
   <section id="equipement" class="section">
-    Markdown content={equipement}/>
+    <Markdown content={equipement}/>
   </section>
 
   <section id="code" class="section">
@@ -59,7 +57,7 @@ equipement = equipement.split("---\n\n")[1]
   </section>
 
 
-
+<!--
   ├─ Services
     ├─ Services offerts
     ├─ Points de rencontre
