@@ -14,12 +14,13 @@ projects.forEach(p =>{
   p.tags.forEach(t => {
     tagSet.add(t)
   });
-})
-/*
-for (t in tagSet){
+});
+
+for (let t of tagSet){
   allTags.push(t)
 }
-*/
+allTags = allTags.sort();
+
 
 ---
 
@@ -32,11 +33,9 @@ for (t in tagSet){
             <p>{description}</p>
               {projects.map(p => <ProjectPreview post={p}/>)}
           </div>
-          <div class="col-3">
+          <div class="col-3" id="tagColumn">
             <h2>Tags</h2>
-            <ul>
-              <!--{tagSet.map(t => <li class="chip">{t}</li>)}-->
-            </ul>
+            {allTags.map(t => <div class="chip">{t}</div>)} 
           </div>
         </div>
       </div>
@@ -51,3 +50,9 @@ for (t in tagSet){
   -->  
 </BaseLayout>
 
+<style>
+#tagColumn {
+  background-color: lightgray;
+  padding-left: 1rem;
+}
+</style>
