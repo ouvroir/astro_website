@@ -32,7 +32,7 @@ let posts = Astro.fetchContent('./blog/*.md');
 
 
   <h2>Projets</h2>
-  <div class="container grid-xl"  id="projectCards">
+  <div class="container grid-xl">
       <div class="columns">
         {projects.map(p => <ProjectCardPreview post={p}/>)}
       </div>
