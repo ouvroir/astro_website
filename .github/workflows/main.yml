@@ -38,13 +38,7 @@ jobs:
 
       # Push to your pages repo
       - name: Push to pages repo
-        uses: cpina/github-action-push-to-another-repository@main
-        env:
-          API_TOKEN_GITHUB: ${{ secrets.SITE_LAB_GITHUB }}
+        uses: JamesIves/github-pages-deploy-action@4.1.7
         with:
-          source-directory: 'dist'
-          destination-github-username: ${{ github.actor }}
-          destination-repository-name: ${{ env.deployToRepo }}
-          user-email: ${{ env.githubEmail }}
-          commit-message: Deploy ORIGIN_COMMIT
-          target-branch: gh-pages
+          branch: gh-pages
+          folder: dist
