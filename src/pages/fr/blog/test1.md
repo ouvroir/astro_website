@@ -1,5 +1,7 @@
 ---
 title: Premier billet
+slug: premier-billet
+lang: fr
 description: Test de contenu d'une actualité
 author: Ouvroir
 publishDate: 2021-11-20

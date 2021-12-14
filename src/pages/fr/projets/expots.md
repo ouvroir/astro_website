@@ -1,5 +1,7 @@
 ---
 title: 'Expots'
+slug: expots
+lang: fr
 description: "Outil pour la documentation des accrochages de collection et de visualisation 3D"
 layout: '../../../layouts/ProjectLayout.astro'
 tags: 

@@ -1,5 +1,7 @@
 ---
 title: 'Reframe'
+slug: reframe
+lang: fr
 description: "Librairie JavaScript pour la présentation des contenus visuels"
 layout: '../../../layouts/ProjectLayout.astro'
 tags: 

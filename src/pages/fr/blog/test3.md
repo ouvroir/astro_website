@@ -1,5 +1,7 @@
 ---
 title: Billet cieco
+slug: billet-cieco
+lang: fr
 description: Test de contenu, tag partenariat
 author: Ouvroir
 publishDate: 2021-11-22
