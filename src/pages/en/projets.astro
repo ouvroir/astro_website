@@ -4,11 +4,11 @@ import ProjectPreview from '../../components/ProjectPreview.astro'
 
 let title = "Projets"
 let slug = "projects"
-let description = "Présentation de projets et de collaborations du laboratoire"
+let description = "Introducting lab projects and collaborations"
 let permalink = "https://ouvroir.umontreal.ca/en/projets/"
 
 
-let projects = Astro.fetchContent('./projets/*.md');
+let projects = Astro.fetchContent('./projects/*.md');
 let tagSet = new Set();
 let allTags = [];
 projects.forEach(p =>{

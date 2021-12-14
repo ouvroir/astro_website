@@ -1,6 +1,5 @@
 ---
 import {KNOWN_LANGUAGES, getLanguageFromURL, getSlugFromURL } from '../data/languages.ts';
-import Debug from 'astro/debug';
 
 let languages = Object.keys(KNOWN_LANGUAGES)
 
@@ -30,7 +29,7 @@ const slug = currentPath && getSlugFromURL(currentPath)
                 <span>Actualité</span>
             </a>
 
-            <a class="nav-item" href=".s/info">
+            <a class="nav-item" href="./info">
                 <span>i</span>
             </a>
             <div class="nav-item" client:idle>

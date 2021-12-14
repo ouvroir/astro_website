@@ -39,9 +39,6 @@ allTags = allTags.sort();
         <p>{description}</p>
       </div>
       <div class="col-9">
-        <h1>{title}</h1>
-        <p>{description}</p>
-
           {allPosts.map(p => <BlogPostPreview post={p}/>)}
       </div>
       <div class="col-3" id="tagColumn">
