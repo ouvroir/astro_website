@@ -6,7 +6,7 @@ publishDate: 2021-11-22
 tags: 
     - blog
     - partenariat
-layout: '../../layouts/BlogLayout.astro'
+layout: '../../../layouts/BlogLayout.astro'
 ---
 
 # Premier billet

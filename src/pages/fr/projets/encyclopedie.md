@@ -1,7 +1,7 @@
 ---
 title: 'Encyclopédie'
 description: "Modèle éditorial de l’Encylopédie numérique des nouveaux usages des collections d’art"
-layout: '../../layouts/ProjectLayout.astro'
+layout: '../../../layouts/ProjectLayout.astro'
 tags: 
     - CIECO
     - web
