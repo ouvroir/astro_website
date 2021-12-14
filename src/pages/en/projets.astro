@@ -28,10 +28,12 @@ allTags = allTags.sort();
 <BaseLayout title={title} description={description} permalink={permalink} slug={slug}>
 
     <div class="container grid-xl">
-        <div class="columns">
+      <div class="columns">
+        <div class="col-12">
+          <h1>{title}</h1>
+          <p>{description}</p>
+        </div>
           <div class="col-9">
-            <h1>{title}</h1>
-            <p>{description}</p>
               {projects.map(p => <ProjectPreview post={p}/>)}
           </div>
           <div class="col-3" id="tagColumn">
