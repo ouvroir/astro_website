@@ -6,7 +6,7 @@ publishDate: 2021-11-20
 tags: 
     - blog
     - lab
-layout: '../../layouts/BlogLayout.astro'
+layout: '../../../layouts/BlogLayout.astro'
 ---
 
 # Premier billet

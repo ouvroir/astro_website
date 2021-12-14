@@ -1,5 +1,5 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
 import { Markdown } from 'astro/components';
 
 let title = "Services"
@@ -9,6 +9,7 @@ let permalink = "https://ouvroir.umontreal.ca/services/"
 //fonctionne mais lit le yaml front matter et ajoute une ligne noire
 //use gray-matter to parse md https://www.npmjs.com/package/gray-matter
 //trouvr une façon que le titre devienne de niveau 2? 
+//à produire en anglais
 var code = await fetch('https://raw.githubusercontent.com/ouvroir/labouvroir/main/web/codeDeConduite.md').then(res => res.text());
 code = code.split("---\n\n")[1]
 

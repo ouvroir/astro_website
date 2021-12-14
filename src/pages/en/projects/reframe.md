@@ -1,7 +1,7 @@
 ---
 title: 'Reframe'
 description: "Librairie JavaScript pour la présentation des contenus visuels"
-layout: '../../layouts/ProjectLayout.astro'
+layout: '../../../layouts/ProjectLayout.astro'
 tags: 
     - CIECO
     - JavaScript

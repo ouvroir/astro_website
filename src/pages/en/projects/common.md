@@ -1,7 +1,7 @@
 ---
 title: 'Common'
 description: "Base de Données Documentaire du Partenariat CIÉCO"
-layout: '../../layouts/ProjectLayout.astro'
+layout: '../../../layouts/ProjectLayout.astro'
 tags: 
     - CIECO
     - documentation
