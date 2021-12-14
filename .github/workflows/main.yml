@@ -4,7 +4,7 @@
 # Remember to add API_TOKEN_GITHUB in repo Settings > Secrets as well!
 env:
   githubEmail: emchateau@laposte.net
-  deployToRepo: site-lab
+  deployToRepo: ouvroir/site-lab
 
 name: Github Pages Astro CI
 
@@ -38,13 +38,7 @@ jobs:
 
       # Push to your pages repo
       - name: Push to pages repo
-        uses: cpina/github-action-push-to-another-repository@main
-        env:
-          API_TOKEN_GITHUB: ${{ secrets.SITE_LAB_GITHUB }}
+        uses: JamesIves/github-pages-deploy-action@4.1.7
         with:
-          source-directory: 'dist'
-          destination-github-username: ouvroir
-          destination-repository-name: ${{ env.deployToRepo }}
-          user-email: ${{ env.githubEmail }}
-          commit-message: Deploy ORIGIN_COMMIT
-          target-branch: gh-pages
+          branch: gh-pages
+          folder: dist
