@@ -1,5 +1,7 @@
 ---
 title: Démo du site
+slug: site-demo
+lang: en
 description: Test de contenu d'un événement
 author: Ouvroir
 publishDate: 2021-11-21

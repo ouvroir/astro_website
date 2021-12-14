@@ -2,9 +2,10 @@
 import BaseLayout from '../../layouts/BaseLayout.astro'
 import BlogPostPreview from '../../components/BlogPostPreview.astro'
 
-let title = "Actualités"
-let description = "Blogue, annonces, événements et lettre d'information du lab"
-let permalink = "https://ouvroir.umontreal.ca/actualites/"
+let title = "News"
+let slug = "news"
+let description = "Blog, announcements, events and newsletter"
+let permalink = "https://ouvroir.umontreal.ca/en/news/"
 
 interface MarkdownFrontmatter {
   publishDate: Date;
@@ -30,7 +31,7 @@ allTags = allTags.sort();
 
 ---
 
-<BaseLayout title={title} description={description} permalink={permalink}>
+<BaseLayout title={title} description={description} permalink={permalink} slug={slug}>
   <div class="container grid-xl">
     <div class="columns">
       <div class="col-9">

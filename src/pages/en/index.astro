@@ -5,14 +5,15 @@ import BlogPostPreview from '../../components/BlogPostPreview.astro';
 import ProjectCardPreview from '../../components/ProjectCardPreview.astro'
 
 let title = "Ouvroir"
+let slug = "home"
 let description = "Laboratoire d'histoire de l'art et de muséologie numériques"
-let permalink = "https://ouvroir.umontreal.ca/"
+let permalink = "https://ouvroir.umontreal.ca/en/home"
 
 let projects = Astro.fetchContent('./projets/*.md');
 let posts = Astro.fetchContent('./blog/*.md');
 ---
 
-<BaseLayout title={title} description={description} permalink={permalink}>
+<BaseLayout title={title} description={description} permalink={permalink} slug={slug}>
 
   <div class="hero bg-gray">
     <div class="hero-body">

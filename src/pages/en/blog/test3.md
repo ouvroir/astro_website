@@ -1,5 +1,7 @@
 ---
-title: Billet cieco
+title: CIECO Blogpost
+slug: cieco-blogpost
+lang: en
 description: Test de contenu, tag partenariat
 author: Ouvroir
 publishDate: 2021-11-22
@@ -9,9 +11,9 @@ tags:
 layout: '../../../layouts/BlogLayout.astro'
 ---
 
-# Premier billet
+# CIECO Blogpost
 
-Ceci est un test, contenu avec un tag partenariat 
+This is a test, we need to make tags billingal :o  
 
 Voici un lorem ipsum de fromages
 

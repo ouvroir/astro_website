@@ -3,8 +3,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { Markdown } from 'astro/components';
 
 let title = "Services"
+let slug = "services"
 let description = "Services offerts, points de rencontre, équipement commun et code de conduite"
-let permalink = "https://ouvroir.umontreal.ca/services/"
+let permalink = "https://ouvroir.umontreal.ca/en/services/"
 
 //fonctionne mais lit le yaml front matter et ajoute une ligne noire
 //use gray-matter to parse md https://www.npmjs.com/package/gray-matter
@@ -18,7 +19,7 @@ equipement = equipement.split("---\n\n")[1]
 
 ---
 
-<BaseLayout title={title} description={description} permalink={permalink}>
+<BaseLayout title={title} description={description} permalink={permalink} slug={slug}>
   
   
   <h1>{title}</h1>

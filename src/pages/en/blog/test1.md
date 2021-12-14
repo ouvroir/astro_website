@@ -1,6 +1,8 @@
 ---
-title: Premier billet
-description: Test de contenu d'une actualité
+title: First blogpost
+slug: first-blogpost
+lang: en
+description: Test
 author: Ouvroir
 publishDate: 2021-11-20
 tags: 
@@ -9,9 +11,9 @@ tags:
 layout: '../../../layouts/BlogLayout.astro'
 ---
 
-# Premier billet
+# First blog post
 
-Ceci est un test, voici un lorem ipsum de fromages
+This is a test, here is a cheesy lorem ipsum:
 
 Cottage cheese brie cheese and biscuits. Chalk and cheese cheese strings edam ricotta queso cow manchego goat. Halloumi macaroni cheese cheesy grin fromage queso gouda camembert de normandie halloumi. Mozzarella cow edam cut the cheese.
 

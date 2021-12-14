@@ -3,8 +3,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import ProjectPreview from '../../components/ProjectPreview.astro'
 
 let title = "Projets"
+let slug = "projects"
 let description = "Présentation de projets et de collaborations du laboratoire"
-let permalink = "https://ouvroir.umontreal.ca/projets/"
+let permalink = "https://ouvroir.umontreal.ca/en/projets/"
 
 
 let projects = Astro.fetchContent('./projets/*.md');
@@ -24,7 +25,7 @@ allTags = allTags.sort();
 
 ---
 
-<BaseLayout title={title} description={description} permalink={permalink}>
+<BaseLayout title={title} description={description} permalink={permalink} slug={slug}>
 
     <div class="container grid-xl">
         <div class="columns">
