@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectPreview from '../components/ProjectPreview.astro'
+
+let title = "Projets"
+let description = "Présentation de projets et de collaborations du laboratoire"
+let permalink = "https://ouvroir.umontreal.ca/projets/"
+
+
+let projects = Astro.fetchContent('./projets/*.md');
+let tagSet = new Set();
+let allTags = [];
+projects.forEach(p =>{
+  p.tags.forEach(t => {
+    tagSet.add(t)
+  });
+});
+
+for (let t of tagSet){
+  allTags.push(t)
+}
+allTags = allTags.sort();
+
+
+---
+
+<BaseLayout title={title} description={description} permalink={permalink}>
+
+    <div class="container grid-xl">
+        <div class="columns">
+          <div class="col-9">
+            <h1>{title}</h1>
+            <p>{description}</p>
+              {projects.map(p => <ProjectPreview post={p}/>)}
+          </div>
+          <div class="col-3" id="tagColumn">
+            <h2>Tags</h2>
+            {allTags.map(t => <div class="chip">{t}</div>)} 
+          </div>
+        </div>
+      </div>
+
+  <!--
+
+    ├─ Projets
+      ├─ Projets mis en avant (categorie)
+      ├─ Projets du laboratoire (categorie)
+      └─ Collaborations / Projets en partenariat (categorie)
+
+  -->  
+</BaseLayout>
+
+<style>
+#tagColumn {
+  background-color: lightgray;
+  padding-left: 1rem;
+}
+</style>
