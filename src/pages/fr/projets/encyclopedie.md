@@ -1,6 +1,6 @@
 ---
 title: 'Encyclopédie'
-slug: encyclopedie
+slug: projets/encyclopedie
 lang: fr
 description: "Modèle éditorial de l’Encylopédie numérique des nouveaux usages des collections d’art"
 layout: '../../../layouts/ProjectLayout.astro'

@@ -1,6 +1,6 @@
 ---
 title: 'Digital Models Reconstruction project'
-slug: digital-models-reconstruction-project
+slug: projects/digital-models-reconstruction-project
 lang: en
 description: "Projet de reconstitution de modèles numériques est une base de données relationnelle externe, qui relie des modèles de reconstitution en 3D"
 layout: '../../../layouts/ProjectLayout.astro'

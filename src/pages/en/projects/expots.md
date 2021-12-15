@@ -1,6 +1,6 @@
 ---
 title: 'Expots'
-slug: expots
+slug: projects/expots
 lang: en
 description: "Outil pour la documentation des accrochages de collection et de visualisation 3D"
 layout: '../../../layouts/ProjectLayout.astro'

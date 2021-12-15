@@ -1,6 +1,6 @@
 ---
 title: 'Encyclopedia'
-slug: encyclopedia
+slug: projects/encyclopedia
 lang: en
 description: "Modèle éditorial de l’Encylopédie numérique des nouveaux usages des collections d’art"
 layout: '../../../layouts/ProjectLayout.astro'
