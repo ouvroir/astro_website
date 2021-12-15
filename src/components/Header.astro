@@ -6,36 +6,39 @@ let languages = Object.keys(KNOWN_LANGUAGES)
 const currentPath = Astro.request.url.pathname;
 const lang = currentPath && getLanguageFromURL(currentPath);
 const slug = currentPath && getSlugFromURL(currentPath)
+
+
+
 /*Use dictionnary to translate nav items*/
 ---
 <header>
     <nav class="navbar">
         <section class="navbar-section">
-            <a class="nav-item" href="./">
+            <a class="nav-item" href={`/${lang}`}>
                 <img id="navlogo" src="/style/img/ouvroir.png">
                 <span>Ouvroir</span>
             </a>
         </section>
         <section class="navbar-section">
-            <a class="nav-item" href="./services">
+            <a class="nav-item" href={`/${lang}/services`}>
                 <span>Services</span>
             </a>
 
-            <a class="nav-item" href="./projets">
+            <a class="nav-item" href={`/${lang}/projets`}>
                 <span>Projets</span>
             </a>
 
-            <a class="nav-item" href="./actualites">
+            <a class="nav-item" href={`/${lang}/actualites`}>
                 <span>Actualité</span>
             </a>
 
-            <a class="nav-item" href="./info">
+            <a class="nav-item" href={`/${lang}/info`}>
                 <span>i</span>
             </a>
             <div class="nav-item" client:idle>
                 <select id="language-select" value={lang} onChange={e => {
                     const newLang = e.target.value;
-                    window.location.assign(`/${newLang}/${slug}`)
+                    window.location.pathname =`/${newLang}/${slug}`
                 }}>
                     {languages.map(l => <option key={l} value={KNOWN_LANGUAGES[l]}>{l}</option>)}
                 </select>
