@@ -1,6 +1,6 @@
 ---
 title: 'Common'
-slug: 'projets/common'
+slug: 'common'
 lang: fr
 description: "Base de Données Documentaire du Partenariat CIÉCO"
 layout: '../../../layouts/ProjectLayout.astro'

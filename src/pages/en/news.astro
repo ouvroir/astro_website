@@ -12,7 +12,7 @@ interface MarkdownFrontmatter {
   tags: Array<string>
 }
 // Get all blog posts
-let allPosts = Astro.fetchContent<MarkdownFrontmatter>('./blog/*.md');
+let allPosts = Astro.fetchContent<MarkdownFrontmatter>('../../data/en/blog/*.md');
 allPosts = allPosts.sort((a, b) => (b.publishDate).valueOf() - (a.publishDate).valueOf());
 
 let tagSet = new Set();

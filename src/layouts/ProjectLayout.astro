@@ -6,12 +6,6 @@ import Project from '../components/Project.astro'
 const {content} = Astro.props;
 const {title, description, since, tags, permalink, url, slug, lang} = content;
 
-export async function getStaticPaths() {
-  let projects = Astro.fetchContent('./*.md');
-
-  return projects.map(p => ({params: { slug: p.slug } }) )
-
-}
 ---
 <html lang={lang} prefix="og: https://ogp.me/ns# article: https://ogp.me/ns/article#">
   <head>

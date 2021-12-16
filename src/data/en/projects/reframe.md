@@ -1,6 +1,6 @@
 ---
 title: 'Reframe'
-slug: projects/reframe
+slug: reframe
 lang: en
 description: "Librairie JavaScript pour la présentation des contenus visuels"
 layout: '../../../layouts/ProjectLayout.astro'

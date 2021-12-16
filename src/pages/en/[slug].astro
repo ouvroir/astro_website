@@ -4,10 +4,10 @@ import Debug from 'astro/debug';
 
 
 export async function getStaticPaths() {
-    const pages = Object.keys(slugmap);
+    const pages = Object.keys(slugmap.site);
     return pages.map(p => {
 
-      const s = slugmap[p];
+      const s = slugmap.site[p];
       
       return {
         params: { 
