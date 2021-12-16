@@ -1,0 +1,33 @@
+---
+import slugmap from '../../data/slugmap.json';
+import Debug from 'astro/debug';
+
+
+export async function getStaticPaths() {
+    const pages = Object.keys(slugmap);
+    return pages.map(p => {
+
+      const s = slugmap[p];
+      
+      return {
+        params: { 
+          slug: s 
+        },
+        props: {
+          redirect: `/en/${p}/`
+        }
+      }
+    })
+}
+
+const {redirect} = Astro.props;
+---
+<html>
+  <head>
+    <title>Redirection</title>
+    <meta http-equiv="refresh" content={`0; url=${redirect}`}>
+  </head>
+  <body>  
+    <p>Redirection vers la traduction</p>
+  </body>
+</html>
