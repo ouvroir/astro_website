@@ -9,8 +9,8 @@ let slug = "accueil"
 let description = "Laboratoire d'histoire de l'art et de muséologie numériques"
 let permalink = "https://ouvroir.umontreal.ca/"
 
-let projects = Astro.fetchContent('../../data/fr/projets/*.md');
-let posts = Astro.fetchContent('../../data/fr/blog/*.md');
+let projects = Astro.fetchContent('/src/_projets/*-fr.md');
+let posts = Astro.fetchContent('/src/_blog/*-fr.md');
 ---
 
 <BaseLayout title={title} description={description} permalink={permalink} slug={slug}>

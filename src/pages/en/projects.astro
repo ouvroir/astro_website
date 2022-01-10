@@ -8,7 +8,7 @@ let description = "Introducting lab projects and collaborations"
 let permalink = "https://ouvroir.umontreal.ca/en/projets/"
 
 
-let projects = Astro.fetchContent('../../data/en/projects/*.md');
+let projects = Astro.fetchContent('/src/_projets/*-en.md');
 let tagSet = new Set();
 let allTags = [];
 projects.forEach(p =>{
