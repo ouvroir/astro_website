@@ -10,7 +10,7 @@ tags:
     - event
 date: 2021-11-29
 place: zoom
-layout: '../../../layouts/BlogLayout.astro'
+layout: '/src/layouts/BlogLayout.astro'
 ---
 
 # Second billet

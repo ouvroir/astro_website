@@ -3,7 +3,7 @@ title: 'Encyclopédie'
 slug: encyclopedie
 lang: fr
 description: "Modèle éditorial de l’Encylopédie numérique des nouveaux usages des collections d’art"
-layout: '../../../layouts/ProjectLayout.astro'
+layout: '/src/layouts/ProjectLayout.astro'
 tags: 
     - CIECO
     - web

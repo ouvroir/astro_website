@@ -3,7 +3,7 @@ title: 'Inscribed Capitals Index'
 slug: inscribed-capitals-index
 lang: fr
 description: "Exemples de chapiteaux avec des inscriptions lapidaires (ca.1080-1160) disponibles pour la recherche scientifique dans un format électronique consultable"
-layout: '../../../layouts/ProjectLayout.astro'
+layout: '/src/layouts/ProjectLayout.astro'
 tags: 
     - web
     - documentation

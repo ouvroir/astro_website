@@ -3,7 +3,7 @@ title: 'Common'
 slug: common
 lang: en
 description: "CIÉCO Partenership Documentary Database"
-layout: '../../../layouts/ProjectLayout.astro'
+layout: '/src/layouts/ProjectLayout.astro'
 tags: 
     - CIECO
     - documentation

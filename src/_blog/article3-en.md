@@ -8,7 +8,7 @@ publishDate: 2021-11-22
 tags: 
     - blog
     - partenariat
-layout: '../../../layouts/BlogLayout.astro'
+layout: '/src/layouts/BlogLayout.astro'
 ---
 
 # CIECO Blogpost

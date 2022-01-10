@@ -8,7 +8,7 @@ publishDate: 2021-11-20
 tags: 
     - blog
     - lab
-layout: '../../../layouts/BlogLayout.astro'
+layout: '/src/layouts/BlogLayout.astro'
 ---
 
 # First blog post

@@ -3,7 +3,7 @@ title: 'Common'
 slug: 'common'
 lang: fr
 description: "Base de Données Documentaire du Partenariat CIÉCO"
-layout: '../../../layouts/ProjectLayout.astro'
+layout: '/src/layouts/ProjectLayout.astro'
 tags: 
     - CIECO
     - documentation
