@@ -36,6 +36,7 @@ const slug = currentPath && getSlugFromURL(currentPath)
                 <span>i</span>
             </a>
             <div class="nav-item" client:idle>
+                <!-- Button group: https://picturepan2.github.io/spectre/elements/buttons.html-->
                 <select id="language-select" value={lang} onChange={e => {
                     const newLang = e.target.value;
                     window.location.pathname =`/${newLang}/${slug}`
