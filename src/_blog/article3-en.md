@@ -2,7 +2,7 @@
 title: CIECO Blogpost
 slug: cieco-blogpost
 lang: en
-description: Test de contenu, tag partenariat
+description: Testing content with partenariat tag
 author: Ouvroir
 publishDate: 2021-11-22
 tags: 
