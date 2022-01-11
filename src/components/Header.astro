@@ -1,52 +1,15 @@
 ---
 import {KNOWN_LANGUAGES, getLanguageFromURL, getSlugFromURL } from '../data/languages.ts';
 
-let languages = Object.keys(KNOWN_LANGUAGES)
+let languages = Object.keys(KNOWN_LANGUAGES);
 
 const currentPath = Astro.request.url.pathname;
 const lang = currentPath && getLanguageFromURL(currentPath);
-const slug = currentPath && getSlugFromURL(currentPath)
-
-
+const slug = currentPath && getSlugFromURL(currentPath);
 
 /*Use dictionnary to translate nav items*/
 ---
-<header>
-    <nav class="navbar">
-        <section class="navbar-section">
-            <a class="nav-item" href={`/${lang}/`}>
-                <img id="navlogo" src="/style/img/ouvroir.png">
-                <span>Ouvroir</span>
-            </a>
-        </section>
-        <section class="navbar-section">
-            <a class="nav-item" href={`/${lang}/services`}>
-                <span>Services</span>
-            </a>
 
-            <a class="nav-item" href={`/${lang}/projets`}>
-                <span>Projets</span>
-            </a>
-
-            <a class="nav-item" href={`/${lang}/actualites`}>
-                <span>Actualité</span>
-            </a>
-
-            <a class="nav-item" href={`/${lang}/info`}>
-                <span>i</span>
-            </a>
-            <div class="nav-item" client:idle>
-                <!-- Button group: https://picturepan2.github.io/spectre/elements/buttons.html-->
-                <select id="language-select" value={lang} onChange={e => {
-                    const newLang = e.target.value;
-                    window.location.pathname =`/${newLang}/${slug}`
-                }}>
-                    {languages.map(l => <option key={l} value={KNOWN_LANGUAGES[l]}>{l}</option>)}
-                </select>
-            </div>
-        </section>
-    </nav>
-</header>
 
 <style>
     header {
@@ -83,3 +46,39 @@ const slug = currentPath && getSlugFromURL(currentPath)
         height: 2rem;
     }
 </style>
+
+<header>
+    <nav class="navbar">
+        <section class="navbar-section">
+            <a class="nav-item" href={`/${lang}/`}>
+                <img id="navlogo" src="/style/img/ouvroir.png">
+                <span>Ouvroir</span>
+            </a>
+        </section>
+        <section class="navbar-section">
+            <a class="nav-item" href={`/${lang}/services`}>
+                <span>Services</span>
+            </a>
+
+            <a class="nav-item" href={`/${lang}/projets`}>
+                <span>Projets</span>
+            </a>
+
+            <a class="nav-item" href={`/${lang}/actualites`}>
+                <span>Actualité</span>
+            </a>
+
+            <a class="nav-item" href={`/${lang}/info`}>
+                <span>i</span>
+            </a>
+            <div class="nav-item" client:idle>
+                <select id="language-select" value={lang} onChange={e => {
+                    const newLang = e.target.value;
+                    window.location.pathname =`/${newLang}/${slug}`
+                }}>
+                    {languages.map(l => <option key={l} value={KNOWN_LANGUAGES[l]}>{l}</option>)}
+                </select>
+            </div>
+        </section>
+    </nav>
+</header>
