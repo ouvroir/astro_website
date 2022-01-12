@@ -9,10 +9,10 @@ export async function getStaticPaths() {
     });
 }
 
-import ProjectLayout from '/src/layouts/ProjectLayout.astro';
+import BlogLayout from '/src/layouts/BlogLayout.astro';
 
 const {post} = Astro.props;
 
 ---
-<ProjectLayout content={post}>
-</ProjectLayout>
+<BlogLayout content={post}>
+</BlogLayout>
