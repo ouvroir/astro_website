@@ -1,27 +1,31 @@
 ---
-import {KNOWN_LANGUAGES, getLanguageFromURL, getSlugFromURL } from '../data/languages.ts';
-import Debug from 'astro/debug';
+import {
+    KNOWN_LANGUAGES, 
+    getLanguageFromURL,
+    mapGenericToSlug, 
+    mapSlugToGeneric
+} from '../data/languages.ts';
 
 let languages = Object.keys(KNOWN_LANGUAGES);
 
 const currentPath = Astro.request.url.pathname;
 const lang = currentPath && getLanguageFromURL(currentPath);
-const slug = currentPath && getSlugFromURL(currentPath);
 
-/*Use dictionnary to translate nav items*/
+console.log(currentPath)
 
-console.log('tralalala')
+const currentSlug = Astro.props.slug
+console.log('currentSlug:', currentSlug)
 
-const selectOnChange = (e) => {
-    console.log('lalal');
-    const newLang = e.target.value;
-    window.location.pathname =`/en/news/`
-}
-
-const btn = `<button>salut</button>`
+const currentGeneric = mapSlugToGeneric[currentSlug]
 
 
-//`/${newLang}/${slug}/`
+console.log(currentGeneric)
+const SlugFR = mapGenericToSlug[currentGeneric]['fr'];
+
+const SlugEN = mapGenericToSlug[currentGeneric]['en'];
+
+console.log(SlugFR)
+console.log(SlugEN)
 ---
 
 
@@ -39,7 +43,6 @@ const btn = `<button>salut</button>`
         align-items: center;
         justify-content: space-between;
     }
-
 
     .nav-item {
         display: flex;
@@ -63,7 +66,7 @@ const btn = `<button>salut</button>`
 </style>
 
 <header>
-    <nav class="navbar">
+    <nav class="navbar">    
         <section class="navbar-section">
             <a class="nav-item" href={`/${lang}/`}>
                 <img id="navlogo" src="/style/img/ouvroir.png">
@@ -71,41 +74,25 @@ const btn = `<button>salut</button>`
             </a>
         </section>
         <section class="navbar-section">
-            <a class="nav-item" href={`/${lang}/services/`}>
+            <a class="nav-item" href={`/${lang}/${mapGenericToSlug["SERVICES"][lang]}/`}>
                 <span>Services</span>
             </a>
 
-            <a class="nav-item" href={`/${lang}/projets/`}>
+            <a class="nav-item" href={`/${lang}/${mapGenericToSlug["PROJETS"][lang]}/`}>
                 <span>Projets</span>
             </a>
 
-            <a class="nav-item" href={`/${lang}/actualites/`}>
+            <a class="nav-item" href={`/${lang}/${mapGenericToSlug["BLOG"][lang]}/`}>
                 <span>Actualité</span>
             </a>
 
-            <a class="nav-item" href={`/${lang}/info/`}>
+            <a class="nav-item" href={`/${lang}/${mapGenericToSlug["INFO"][lang]}/`}>
                 <span>i</span>
             </a>
-            <div class="nav-item" client:only>
-                <select id="language-select" onChange={selectOnChange}>
-                    {languages.map(l => <option key={l} value={KNOWN_LANGUAGES[l]}>{l}</option>)}
-                </select>  
+            <div class="nav-item">
+                {languages.map(l => <a href={currentSlug ? `/${KNOWN_LANGUAGES[l]}/${mapGenericToSlug[currentGeneric][KNOWN_LANGUAGES[l]]}/` : `/${KNOWN_LANGUAGES[l]}/`}>{KNOWN_LANGUAGES[l]}</a>
+                )}
             </div>
         </section>
     </nav>
-    <!--<div class="btn-group btn-group-block" client:only>
-        <button class="btn">Français</button>
-        <button class="btn">English</button>
-    </div> -->
-                    <!-- <button id="test-btn" onClick={() => console.log('Je suis un boutton')}>Click Me</button>-->
 </header>
-
-<!-- 
-
-    window.location.pathname error: devrait recharger la page mais ne le fait pas
-
-    on Changement de langue: 
-    - get the right slug -> use slugmap to identify the slug
-    - redirection (requiert de le créer dans les deux sens, si on change juste la langue dans l'url)
-
--->

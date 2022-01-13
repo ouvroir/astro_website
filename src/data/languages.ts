@@ -20,11 +20,61 @@ export function getLanguageFromURL(pathname: string) {
     return langCodeMatch ? langCodeMatch[1] : DEFAULT_LOCALE;
 }
 
-export function getSlugFromURL(pathname: string) {
-    const pathnameParts = pathname.split('/');
-    const pathName = pathnameParts[pathnameParts.length - 1];
-    const [slug] = pathName.split('.');
-    return slug;
-}
-/* do we need: getLangFromFilename or getSlugFromFilename? */
+
 /*Inspired by: https://github.com/DefinedNet/nebula-docs/blob/main/src/languages.ts*/
+
+
+
+
+export const mapGenericToSlug = {
+    "": {
+        fr: '',
+        en: ''
+    },
+    "BLOG": {
+        fr: 'actualites',
+        en: 'news'
+
+    },
+    "PROJETS": {
+        fr: 'projets',
+        en: 'projects',
+    },
+    "SERVICES":{
+        fr: 'services',
+        en: 'services',
+    },
+    "INFO":{
+        fr: 'info',
+        en: 'info',
+    }
+}
+
+export const mapSlugToGeneric = Object.keys(mapGenericToSlug).reduce((acc, k) => {
+    Object.keys(mapGenericToSlug[k]).forEach(l => {
+        acc[mapGenericToSlug[k][l]] = k
+    })
+    return acc
+}, {})
+
+
+/* à adapter-changer la hiérarchie comme dans mapGenericToSlug et implémenter
+
+export const mapGenericToText = {
+    "en": {
+        "SERVICES": "Services",
+        "PROJETS": "Projects",
+        "ACTUALITE": "News",
+        
+        "LIRE_SUITE": "Read more"
+    },
+    "fr":{
+        "SERVICES": "Services",
+        "PROJETS": "Projets",
+        "ACTUALITE": "Actualité",
+        
+        "LIRE_SUITE": "Continuer la lecture"
+    }
+}
+
+*/
