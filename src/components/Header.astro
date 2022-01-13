@@ -1,5 +1,6 @@
 ---
 import {KNOWN_LANGUAGES, getLanguageFromURL, getSlugFromURL } from '../data/languages.ts';
+import Debug from 'astro/debug';
 
 let languages = Object.keys(KNOWN_LANGUAGES);
 
@@ -8,7 +9,21 @@ const lang = currentPath && getLanguageFromURL(currentPath);
 const slug = currentPath && getSlugFromURL(currentPath);
 
 /*Use dictionnary to translate nav items*/
+
+console.log('tralalala')
+
+const selectOnChange = (e) => {
+    console.log('lalal');
+    const newLang = e.target.value;
+    window.location.pathname =`/en/news/`
+}
+
+const btn = `<button>salut</button>`
+
+
+//`/${newLang}/${slug}/`
 ---
+
 
 
 <style>
@@ -17,7 +32,7 @@ const slug = currentPath && getSlugFromURL(currentPath);
         padding-top: 1rem;   
         padding-bottom: 1rem;   
 
-    }
+    }   
 
     nav {
         display: flex;
@@ -71,27 +86,26 @@ const slug = currentPath && getSlugFromURL(currentPath);
             <a class="nav-item" href={`/${lang}/info/`}>
                 <span>i</span>
             </a>
-            <div class="nav-item" client:idle>
-                <select id="language-select" value={lang} onChange={e => {
-                    const newLang = e.target.value;
-                    window.location.pathname =`/${newLang}/${slug}/`
-                }}>
+            <div class="nav-item" client:only>
+                <select id="language-select" onChange={selectOnChange}>
                     {languages.map(l => <option key={l} value={KNOWN_LANGUAGES[l]}>{l}</option>)}
-                </select>
+                </select>  
             </div>
         </section>
     </nav>
+    <!--<div class="btn-group btn-group-block" client:only>
+        <button class="btn">Français</button>
+        <button class="btn">English</button>
+    </div> -->
+                    <!-- <button id="test-btn" onClick={() => console.log('Je suis un boutton')}>Click Me</button>-->
 </header>
 
 <!-- 
 
     window.location.pathname error: devrait recharger la page mais ne le fait pas
 
-
     on Changement de langue: 
     - get the right slug -> use slugmap to identify the slug
     - redirection (requiert de le créer dans les deux sens, si on change juste la langue dans l'url)
-
-
 
 -->
