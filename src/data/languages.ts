@@ -25,7 +25,8 @@ export function getLanguageFromURL(pathname: string) {
 
 
 
-
+//slugs
+//ajouter slugs blog et projets
 export const mapGenericToSlug = {
     "": {
         fr: '',
@@ -58,23 +59,22 @@ export const mapSlugToGeneric = Object.keys(mapGenericToSlug).reduce((acc, k) =>
 }, {})
 
 
-/* à adapter-changer la hiérarchie comme dans mapGenericToSlug et implémenter
-
 export const mapGenericToText = {
-    "en": {
-        "SERVICES": "Services",
-        "PROJETS": "Projects",
-        "ACTUALITE": "News",
-        
-        "LIRE_SUITE": "Read more"
+    "SERVICES":{
+        fr: "Services",
+        en: "Services"
     },
-    "fr":{
-        "SERVICES": "Services",
-        "PROJETS": "Projets",
-        "ACTUALITE": "Actualité",
-        
-        "LIRE_SUITE": "Continuer la lecture"
+    "PROJETS":{
+        fr: "Projets",
+        en: "Projects"
+    },    
+    "BLOG":{
+        fr: "Actualité",
+        en: "News"
+    },
+    "LIRE_SUITE":{
+        fr: "Continuer la lecture",
+        en: "Read more"
     }
-}
-
-*/
+    
+}    

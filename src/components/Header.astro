@@ -3,7 +3,8 @@ import {
     KNOWN_LANGUAGES, 
     getLanguageFromURL,
     mapGenericToSlug, 
-    mapSlugToGeneric
+    mapSlugToGeneric,
+    mapGenericToText
 } from '../data/languages.ts';
 
 let languages = Object.keys(KNOWN_LANGUAGES);
@@ -11,21 +12,10 @@ let languages = Object.keys(KNOWN_LANGUAGES);
 const currentPath = Astro.request.url.pathname;
 const lang = currentPath && getLanguageFromURL(currentPath);
 
-console.log(currentPath)
 
 const currentSlug = Astro.props.slug
-console.log('currentSlug:', currentSlug)
 
 const currentGeneric = mapSlugToGeneric[currentSlug]
-
-
-console.log(currentGeneric)
-const SlugFR = mapGenericToSlug[currentGeneric]['fr'];
-
-const SlugEN = mapGenericToSlug[currentGeneric]['en'];
-
-console.log(SlugFR)
-console.log(SlugEN)
 ---
 
 
@@ -75,22 +65,22 @@ console.log(SlugEN)
         </section>
         <section class="navbar-section">
             <a class="nav-item" href={`/${lang}/${mapGenericToSlug["SERVICES"][lang]}/`}>
-                <span>Services</span>
+                <span>{mapGenericToText["SERVICES"][lang]}</span>
             </a>
 
             <a class="nav-item" href={`/${lang}/${mapGenericToSlug["PROJETS"][lang]}/`}>
-                <span>Projets</span>
+                <span>{mapGenericToText["PROJETS"][lang]}</span>
             </a>
 
             <a class="nav-item" href={`/${lang}/${mapGenericToSlug["BLOG"][lang]}/`}>
-                <span>Actualité</span>
+                <span>{mapGenericToText["BLOG"][lang]}</span>
             </a>
 
             <a class="nav-item" href={`/${lang}/${mapGenericToSlug["INFO"][lang]}/`}>
-                <span>i</span>
+                <span><i class="fas fa-info-circle"></i></span>
             </a>
             <div class="nav-item">
-                {languages.map(l => <a href={currentSlug ? `/${KNOWN_LANGUAGES[l]}/${mapGenericToSlug[currentGeneric][KNOWN_LANGUAGES[l]]}/` : `/${KNOWN_LANGUAGES[l]}/`}>{KNOWN_LANGUAGES[l]}</a>
+                {languages.map(l => <a class="langChange" href={currentSlug ? `/${KNOWN_LANGUAGES[l]}/${mapGenericToSlug[currentGeneric][KNOWN_LANGUAGES[l]]}/` : `/${KNOWN_LANGUAGES[l]}/`}>{KNOWN_LANGUAGES[l]}</a>
                 )}
             </div>
         </section>
