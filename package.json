@@ -12,6 +12,6 @@
   "author": "Ouvroir",
   "license": "GNU GPL",
   "dependencies": {
-    "astro": "^0.21.0"
+    "astro": "^0.22.9"
   }
 }

@@ -1,19 +1,19 @@
 ---
-title: Billet cieco
-description: Test de contenu, tag partenariat
+title: Premier billet
+slug: premier-billet
+lang: fr
+description: Test de contenu d'une actualité
 author: Ouvroir
-publishDate: 2021-11-22
+publishDate: 2021-11-20
 tags: 
     - blog
-    - partenariat
-layout: '../../layouts/BlogLayout.astro'
+    - lab
+layout: '/src/layouts/BlogLayout.astro'
 ---
 
 # Premier billet
 
-Ceci est un test, contenu avec un tag partenariat 
-
-Voici un lorem ipsum de fromages
+Ceci est un test, voici un lorem ipsum de fromages
 
 Cottage cheese brie cheese and biscuits. Chalk and cheese cheese strings edam ricotta queso cow manchego goat. Halloumi macaroni cheese cheesy grin fromage queso gouda camembert de normandie halloumi. Mozzarella cow edam cut the cheese.
 

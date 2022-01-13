@@ -1,0 +1,70 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { Markdown } from 'astro/components';
+
+let title = "Services"
+let slug = "services"
+let description = "Services offerts, points de rencontre, équipement commun et code de conduite"
+let permalink = "https://ouvroir.umontreal.ca/fr/services/"
+
+//fonctionne mais lit le yaml front matter et ajoute une ligne noire
+//use gray-matter to parse md https://www.npmjs.com/package/gray-matter
+//trouvr une façon que le titre devienne de niveau 2? 
+var code = await fetch('https://raw.githubusercontent.com/ouvroir/labouvroir/main/web/codeDeConduite.md').then(res => res.text());
+code = code.split("---\n\n")[1]
+
+var equipement = await fetch('https://raw.githubusercontent.com/ouvroir/labouvroir/main/web/equipement.md').then(res => res.text());
+equipement = equipement.split("---\n\n")[1]
+
+---
+
+<BaseLayout title={title} description={description} permalink={permalink} slug={slug}>
+  
+  
+  <h1>{title}</h1>
+  <p>{description}</p>
+
+<!--
+      <a href="#code">Code de conduite</a>
+      <a href='#equipement'>Équipement</a>
+    </nav>
+-->     
+  <section class="section">      
+    <Markdown>
+        ## Services offerts
+
+        Cottage cheese brie cheese and biscuits. Chalk and cheese cheese strings edam ricotta queso cow manchego goat. Halloumi macaroni cheese cheesy grin fromage queso gouda camembert de normandie halloumi. Mozzarella cow edam cut the cheese.
+
+        arlsberg babybel say cheese. Bavarian bergkase port-salut smelly cheese fromage port-salut macaroni cheese monterey jack rubber cheese. Jarlsberg cut the cheese lancashire danish fontina boursin monterey jack lancashire mozzarella. Croque monsieur the big cheese port-salut cheesy feet lancashire edam cheeseburger lancashire. St. agur blue cheese.
+
+        Say cheese cheesy grin everyone loves. Cheese and wine halloumi rubber cheese cheddar boursin smelly cheese cut the cheese croque monsieur. Cheese triangles say cheese cheeseburger swiss babybel cheesy feet jarlsberg cheesecake. Mascarpone monterey jack camembert de normandie stinking bishop when the cheese comes out everybody's happy croque monsieur cheesy grin cheese on toast. Cheese strings mascarpone cheesecake.
+
+
+        ---
+
+        ## Points de rencontre
+
+        En attendant l'accès à nos locaux, vous pouvez prendre rendez-vous par [courriel](mailto:lena.krause@umontreal.ca) ou rejoindre l'équipe de l'Ouvroir en ligne sur [Element](https://matrix.to/#/!AaxspHhzNUgFJpDKTr:matrix.org?via=matrix.org). Cette plateforme de discussion peut être utilisée directement dans le navigateur ou en installant l'application.
+    </Markdown>
+  </section>
+
+
+  <section id="equipement" class="section">
+    <Markdown content={equipement}/>
+  </section>
+
+  <section id="code" class="section">
+      <Markdown content={code} />
+  </section>
+
+
+<!--
+  ├─ Services
+    ├─ Services offerts
+    ├─ Points de rencontre
+    ├─ Équipements
+    └─ Code de conduite
+-->
+
+
+</BaseLayout>

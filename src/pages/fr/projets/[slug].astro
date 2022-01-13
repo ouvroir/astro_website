@@ -1,0 +1,19 @@
+---
+export async function getStaticPaths() {
+  let projects = Astro.fetchContent('/src/_projets/*-fr.md');
+
+  return projects.map((projet) => {
+        return {
+            params: { slug: projet.slug },
+            props: {projet} };
+    });
+}
+
+import ProjectLayout from '/src/layouts/ProjectLayout.astro';
+
+const {projet} = Astro.props;
+
+---
+<ProjectLayout content={projet} slug={projet.slug}>
+  {projet.astro.html}
+</ProjectLayout>

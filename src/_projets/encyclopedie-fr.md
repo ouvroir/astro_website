@@ -1,13 +1,15 @@
 ---
 title: 'Encyclopédie'
+slug: encyclopedie
+lang: fr
 description: "Modèle éditorial de l’Encylopédie numérique des nouveaux usages des collections d’art"
-layout: '../../layouts/ProjectLayout.astro'
+layout: '/src/layouts/ProjectLayout.astro'
 tags: 
     - CIECO
     - web
     - édition numérique
 since: 2021-11
-url: https://github.com/ouvroir/encyclopedie
+link: https://github.com/ouvroir/encyclopedie
 ---
 
 ## Encyclopédie CIECO

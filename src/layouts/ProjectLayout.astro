@@ -2,21 +2,35 @@
 import MetaData from '../components/MetaData.astro'
 import Header from '../components/Header.astro'
 import Project from '../components/Project.astro'
+import Footer from '../components/Footer.astro'
 
 const {content} = Astro.props;
-const {title, description, since, tags, permalink, url} = content;
+const {title, description, since, tags, permalink, link, slug, lang} = content;
+
 ---
-
-
-<html lang="fr" prefix="og: https://ogp.me/ns# article: https://ogp.me/ns/article#">
+<html lang={lang} prefix="og: https://ogp.me/ns# article: https://ogp.me/ns/article#">
   <head>
     <MetaData title={title} description={description} permalink={permalink}/>
     <!-- change for Blog metadata component, type: blog-->
   </head>
   <body>
-    <Header/>
-    <Project title={title} since={since} description={description} tags={tags} url={url}>
-        <slot />
-    </Project>
+    <div class="container grid-xl">
+            <div class="columns">
+              <div class="col-1"><!--nav gauche--></div>
+              <div class="col-10">
+                <div id="app" class="container grid-xl">
+
+                  <Header slug={slug}/>
+
+                  <Project title={title} since={since} description={description} tags={tags} link={link}>
+                      <slot />
+                  </Project>
+
+                  <Footer />
+                </div>
+            </div>
+            <div class="col-1"><!--nav droite--></div>
+          </div>
+        </div>
   </body>
 </html>

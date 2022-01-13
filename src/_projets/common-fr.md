@@ -1,13 +1,15 @@
 ---
 title: 'Common'
+slug: 'common'
+lang: fr
 description: "Base de Données Documentaire du Partenariat CIÉCO"
-layout: '../../layouts/ProjectLayout.astro'
+layout: '/src/layouts/ProjectLayout.astro'
 tags: 
     - CIECO
     - documentation
     - partage
 since: 2021-11
-url: https://github.com/ouvroir/common
+link: https://github.com/ouvroir/common
 ---
 
 ## Base de Données Documentaire du Partenariat CIÉCO
