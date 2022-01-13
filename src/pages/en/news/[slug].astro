@@ -15,6 +15,6 @@ import Debug from 'astro/debug'
 const {post} = Astro.props;
 
 ---
-<BlogLayout content={post}>
+<BlogLayout content={post} slug={post.slug}>
   {post.astro.html}
 </BlogLayout>

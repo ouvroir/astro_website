@@ -9,7 +9,7 @@ tags:
     - documentation
     - modélisation 3D
 since: 2019
-url: https://www.dataartem.org/dataartem/digital/allprojects
+link: https://www.dataartem.org/dataartem/digital/allprojects
 ---
 
 

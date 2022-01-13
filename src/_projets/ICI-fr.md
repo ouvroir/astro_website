@@ -8,7 +8,7 @@ tags:
     - web
     - documentation
 since: 2021-11 
-url: https://www.dataartem.org/dataartem/ici/alldata
+link: https://www.dataartem.org/dataartem/ici/alldata
 ---
 
 

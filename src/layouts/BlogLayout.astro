@@ -2,9 +2,10 @@
 import MetaData from '../components/MetaData.astro'
 import Header from '../components/Header.astro'
 import BlogPost from '../components/BlogPost.astro'
+import Footer from '../components/Footer.astro'
 
 const {content} = Astro.props;
-const {title, description, author, publishDate, tags, permalink} = content;
+const {title, description, author, publishDate, tags, permalink, slug} = content;
 ---
 
 
@@ -14,9 +15,24 @@ const {title, description, author, publishDate, tags, permalink} = content;
     <!-- change for Blog metadata component, type: blog-->
   </head>
   <body>
-    <Header/>
-    <BlogPost title={title} author={author} publishDate={publishDate} description={description} tags={tags}>
-        <slot />
-    </BlogPost>
+    <div class="container grid-xl">
+          <div class="columns">
+            <div class="col-1"><!--nav gauche--></div>
+            <div class="col-10">
+              <div id="app" class="container grid-xl">
+
+                <Header slug={slug}/>
+
+                <BlogPost title={title} author={author} publishDate={publishDate} description={description} tags={tags}>
+                    <slot />
+                </BlogPost>
+                
+                <Footer />
+              </div>
+            </div>
+            <div class="col-1"><!--nav droite--></div>
+          </div>
+        </div>
+
   </body>
 </html>

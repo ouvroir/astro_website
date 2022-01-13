@@ -4,10 +4,10 @@ export interface Props {
   description: string,
   since: Date,
   tags: Array<string>,
-  url: string
+  link: string
 }
 
-const { title, description, since, tags, url } = Astro.props;
+const { title, description, since, tags, link } = Astro.props;
 ---
 <div class="container">
     <article class="content">
@@ -15,8 +15,8 @@ const { title, description, since, tags, url } = Astro.props;
             <div class="hero-body">
                 <h1>{title}</h1>
                 <p>{description}, {since}</p>
-                <p>{tags}</p>
-                <a href={url} target="_blank">Consulter le projet</a>
+                <p>{tags.map(t => <span class="chip">{t}</span>)}</p>
+                <a href={link} target="_blank">Consulter le projet</a>
             </div>
         </header>
         <main>

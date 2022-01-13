@@ -9,7 +9,7 @@ tags:
     - documentation
     - partage
 since: 2021-11
-url: https://github.com/ouvroir/common
+link: https://github.com/ouvroir/common
 ---
 
 ## CIÉCO Partenership Documentary Database

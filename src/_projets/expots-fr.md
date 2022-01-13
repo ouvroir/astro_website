@@ -10,7 +10,7 @@ tags:
     - modèle de données
     - visualisation 3D
 since: 2021-11
-url: https://github.com/ouvroir/expots
+link: https://github.com/ouvroir/expots
 ---
 
 ## Outil pour la documentation des accrochages de collection et de visualisation 3D

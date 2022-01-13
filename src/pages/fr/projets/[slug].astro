@@ -14,6 +14,6 @@ import ProjectLayout from '/src/layouts/ProjectLayout.astro';
 const {projet} = Astro.props;
 
 ---
-<ProjectLayout content={projet}>
+<ProjectLayout content={projet} slug={projet.slug}>
   {projet.astro.html}
 </ProjectLayout>

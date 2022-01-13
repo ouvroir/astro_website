@@ -9,7 +9,7 @@ tags:
     - web
     - édition numérique
 since: 2021-11
-url: https://github.com/ouvroir/encyclopedie
+link: https://github.com/ouvroir/encyclopedie
 ---
 
 ## Encyclopédie CIECO

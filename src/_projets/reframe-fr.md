@@ -9,7 +9,7 @@ tags:
     - JavaScript
     - web
 since: 2021-11
-url: https://github.com/ouvroir/reframe
+link: https://github.com/ouvroir/reframe
 ---
 
 ## Librairie JavaScript pour la présentation des contenus visuels

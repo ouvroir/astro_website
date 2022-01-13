@@ -4,7 +4,9 @@ export async function getStaticPaths() {
 
   return projects.map((projet) => {
         return {
-            params: { slug: projet.slug },
+            params: { 
+              slug: projet.slug
+            },
             props: {projet} };
     });
 }
@@ -12,8 +14,7 @@ export async function getStaticPaths() {
 import ProjectLayout from '/src/layouts/ProjectLayout.astro';
 
 const {projet} = Astro.props;
-
 ---
-<ProjectLayout content={projet}>
+<ProjectLayout content={projet} slug={projet.slug} url={projet.link}>
   {projet.astro.html}
 </ProjectLayout>

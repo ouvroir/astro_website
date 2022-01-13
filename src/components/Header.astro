@@ -12,13 +12,10 @@ let languages = Object.keys(KNOWN_LANGUAGES);
 const currentPath = Astro.request.url.pathname;
 const lang = currentPath && getLanguageFromURL(currentPath);
 
-
 const currentSlug = Astro.props.slug
 
 const currentGeneric = mapSlugToGeneric[currentSlug]
 ---
-
-
 
 <style>
     header {

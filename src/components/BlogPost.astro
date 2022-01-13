@@ -17,7 +17,7 @@ const { title, author, description, publishDate, tags } = Astro.props;
                 <h1>{title}</h1>
                 <p>{description}</p>
                 <p>publié le {publishDate} par {author}</p>
-                <p>{tags}</p>
+                <p>{tags.map(t => <span class="chip">{t}</span>)}</p>
             </div>
         </header>
         <main>

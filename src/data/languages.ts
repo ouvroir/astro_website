@@ -25,40 +25,6 @@ export function getLanguageFromURL(pathname: string) {
 
 
 
-//slugs
-//ajouter slugs blog et projets
-export const mapGenericToSlug = {
-    "": {
-        fr: '',
-        en: ''
-    },
-    "BLOG": {
-        fr: 'actualites',
-        en: 'news'
-
-    },
-    "PROJETS": {
-        fr: 'projets',
-        en: 'projects',
-    },
-    "SERVICES":{
-        fr: 'services',
-        en: 'services',
-    },
-    "INFO":{
-        fr: 'info',
-        en: 'info',
-    }
-}
-
-export const mapSlugToGeneric = Object.keys(mapGenericToSlug).reduce((acc, k) => {
-    Object.keys(mapGenericToSlug[k]).forEach(l => {
-        acc[mapGenericToSlug[k][l]] = k
-    })
-    return acc
-}, {})
-
-
 export const mapGenericToText = {
     "SERVICES":{
         fr: "Services",
@@ -78,3 +44,68 @@ export const mapGenericToText = {
     }
     
 }    
+
+//slugs
+//TODO: trouver un moyen de parser _blog et _projets pour récupérer les slugs 
+export const mapGenericToSlug = {
+    "BLOG": {
+        fr: 'actualites',
+        en: 'news'
+
+    },
+    "PROJETS": {
+        fr: 'projets',
+        en: 'projects',
+    },
+    "SERVICES":{
+        fr: 'services',
+        en: 'services',
+    },
+    "INFO":{
+        fr: 'info',
+        en: 'info',
+    },
+    "ARTICLE_1":{
+        fr: 'premier-billet',
+        en: 'first-blogpost'
+    },
+    "ARTICLE_2":{
+        fr: 'demo-site',
+        en: 'site-demo'
+    },
+    "ARTICLE_3":{
+        fr: 'billet-cieco',
+        en: 'cieco-blogpost'
+    },
+    "COMMON":{
+        fr: 'common',
+        en: 'common'
+    },
+    "DIGITALMODELS":{
+        fr: 'digital-models-reconstruction-projects',
+        en: 'digital-models-reconstruction-projects'
+    },
+    "ENCYCLO":{
+        fr: 'encyclopedie',
+        en: 'encyclopedia'
+    },
+    "EXPOTS":{
+        fr: 'expots',
+        en: 'expots'
+    },
+    "ICI":{
+        fr: 'inscribed-capitals-index',
+        en: 'inscribed-capitals-index'
+    },
+    "REFRAME":{
+        fr: 'reframe',
+        en: 'reframe'
+    }
+}
+
+export const mapSlugToGeneric = Object.keys(mapGenericToSlug).reduce((acc, k) => {
+    Object.keys(mapGenericToSlug[k]).forEach(l => {
+        acc[mapGenericToSlug[k][l]] = k
+    })
+    return acc
+}, {})
