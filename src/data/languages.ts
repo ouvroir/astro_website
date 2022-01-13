@@ -48,6 +48,10 @@ export const mapGenericToText = {
 //slugs
 //TODO: trouver un moyen de parser _blog et _projets pour récupérer les slugs 
 export const mapGenericToSlug = {
+    "":{
+        fr:"",
+        en:""
+    },
     "BLOG": {
         fr: 'actualites',
         en: 'news'
@@ -82,8 +86,8 @@ export const mapGenericToSlug = {
         en: 'common'
     },
     "DIGITALMODELS":{
-        fr: 'digital-models-reconstruction-projects',
-        en: 'digital-models-reconstruction-projects'
+        fr: 'digital-models-reconstruction-project',
+        en: 'digital-models-reconstruction-project'
     },
     "ENCYCLO":{
         fr: 'encyclopedie',
