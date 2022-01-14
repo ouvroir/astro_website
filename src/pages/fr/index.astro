@@ -42,18 +42,23 @@ let posts = Astro.fetchContent('/src/_blog/*-fr.md');
   
   <h2>Crédits</h2>
   <Markdown>
-    L’Ouvroir bénéficie du soutien de l’[Université de Montréal](https://www.umontreal.ca/), du [Fonds Canadien pour l’Innovation](https://www.innovation.ca/) et du de la [province du Québec](https://www.economie.gouv.qc.ca/bibliotheques/programmes/aide-financiere/programme-de-soutien-aux-organismes-de-recherche-et-dinnovation-pso/cofinancement-du-gouvernement-du-quebec-aux-programmes-de-la-fondation-canadienne-pour-linnovation-fci/fonds-dinnovation/).   
+    L’Ouvroir bénéficie du soutien de l’[Université de Montréal](https://www.umontreal.ca/), du [Fonds Canadien pour l’Innovation](https://www.innovation.ca/) et de la [province du Québec](https://www.economie.gouv.qc.ca/bibliotheques/programmes/aide-financiere/programme-de-soutien-aux-organismes-de-recherche-et-dinnovation-pso/cofinancement-du-gouvernement-du-quebec-aux-programmes-de-la-fondation-canadienne-pour-linnovation-fci/fonds-dinnovation/).   
   </Markdown>
 
-          <!--
-          <div class="container">
-            <div class="columns">
-              <div class="column col-lg-8">
-                <img src={Astro.resolve('../../public/img/CFI/fr/CFI_RGB-FR.png')}>
-              </div>
-            </div>
-          </div>    
-            -->
+  <div class="container">
+    <div class="columns">
+      <div class="column col-md-4 logo">
+        <img src={Astro.resolve('/public/style/img/UdeM/Logo_UdeM-RVB.png')} width="100%">
+      </div>
+      <div class="column col-md-4 logo">
+        <img src={Astro.resolve('/public/style/img/CFI/fr/CFI_RGB-FR.png')} width="100%">
+      </div>
+      <div class="column col-md-4 logo">
+        <img src={Astro.resolve('/public/style/img/qc/png/QUEBEC_w3_couleur.png')} width="100%">
+      </div>
+
+    </div>
+  </div>   
 
   <!--
 
