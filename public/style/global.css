@@ -26,3 +26,9 @@ h2 {
     font-size: medium;
     color: grey
 }
+
+#logo{
+    display: flex;
+    justify-content: center;
+    align-items:center
+}

@@ -1,0 +1,62 @@
+---
+export async function getStaticPaths() {
+    let blog = Astro.fetchContent('/src/_blog/*-fr.md');
+        
+    //get a set of tags
+    let tagSet = new Set();
+    blog.forEach(p =>{
+        p.tags.forEach(t => {
+            tagSet.add(t)
+        });
+    });
+
+    //for each tag, return a page with URL formed by tag
+    return Array.from(tagSet).map((tag) => {
+        var selection = blog.filter(post => post.tags.includes(tag));
+        return {
+            params: { tag: tag },
+            props: {selection} };
+    });
+}
+
+import BaseLayout from '/src/layouts/BaseLayout.astro';
+import BlogPostPreview from '/src/components/BlogPostPreview.astro';
+
+const {tag} = Astro.request.params;
+const {selection} = Astro.props
+const currentPath = Astro.request.url.pathname;
+
+let title = `Actualités`
+let description = `Tri des actualités avec le tag`
+let permalink=`tata`
+
+let retour = currentPath.replace('tags/','').replace(tag, '')
+---  
+
+<BaseLayout title={title} description={description} permalink={permalink} slug={tag}>
+    
+    <div class="container grid-xl">
+    <div class="columns">
+      <div class="col-12">
+        <h1>{title}</h1>
+        <p>{description} <span class="chip">{tag}</span><span class="chip"><a href={retour}><i class="fa fa-close"></i></a></span></p>
+      </div>
+      <div class="col-9">
+        {selection.map(s => <BlogPostPreview post={s}></BlogPostPreview>)}
+      </div>
+      <div class="col-3" id="tagColumn">
+            <h2>Tags</h2>
+            <div class="chip"><a href={retour}>{tag}</a></div>
+            <span class="chip"><a href={retour}><i class="fa fa-close"></i></a></span>
+          </div>
+    </div>
+  </div>
+</BaseLayout>
+
+
+<style>
+#tagColumn {
+  background-color: lightgray;
+  padding-left: 1rem;
+}
+</style>

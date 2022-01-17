@@ -26,16 +26,16 @@ export function getLanguageFromURL(pathname: string) {
 
 
 export const mapGenericToText = {
-    "SERVICES":{
+    "MENU_SERVICES":{
         fr: "Services",
         en: "Services"
     },
-    "PROJETS":{
+    "MENU_PROJETS":{
         fr: "Projets",
         en: "Projects"
     },    
-    "BLOG":{
-        fr: "Actualité",
+    "MENU_BLOG":{
+        fr: "Actualités",
         en: "News"
     },
     "LIRE_SUITE":{
@@ -46,13 +46,13 @@ export const mapGenericToText = {
 }    
 
 //slugs
-//TODO: trouver un moyen de parser _blog et _projets pour récupérer les slugs 
+//TODO: trouver un moyen de parser _blog et _projets pour récupérer les slugs et les tags
 export const mapGenericToSlug = {
     "":{
         fr:"",
         en:""
     },
-    "BLOG": {
+    "ACTUALITES": {
         fr: 'actualites',
         en: 'news'
 
@@ -104,6 +104,26 @@ export const mapGenericToSlug = {
     "REFRAME":{
         fr: 'reframe',
         en: 'reframe'
+    },
+    "TAGS":{
+        fr: 'tags',
+        en: 'tags'
+    },
+    "LAB": {
+        fr: 'lab',
+        en: 'lab'
+    },
+    "BLOG":{
+        fr: 'blog',
+        en: 'blog'
+    },
+    "EVENT":{
+        fr: 'event',
+        en: 'event'
+    },
+    "PARTENARIAT":{
+        fr: 'partenariat',
+        en: 'partenariat'
     }
 }
 

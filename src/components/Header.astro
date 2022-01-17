@@ -12,9 +12,6 @@ let languages = Object.keys(KNOWN_LANGUAGES);
 const currentPath = Astro.request.url.pathname;
 const lang = currentPath && getLanguageFromURL(currentPath);
 
-const currentSlug = Astro.props.slug
-
-const currentGeneric = mapSlugToGeneric[currentSlug]
 ---
 
 <style>
@@ -62,23 +59,36 @@ const currentGeneric = mapSlugToGeneric[currentSlug]
         </section>
         <section class="navbar-section">
             <a class="nav-item" href={`/${lang}/${mapGenericToSlug["SERVICES"][lang]}/`}>
-                <span>{mapGenericToText["SERVICES"][lang]}</span>
+                <span>{mapGenericToText["MENU_SERVICES"][lang]}</span>
             </a>
 
             <a class="nav-item" href={`/${lang}/${mapGenericToSlug["PROJETS"][lang]}/`}>
-                <span>{mapGenericToText["PROJETS"][lang]}</span>
+                <span>{mapGenericToText["MENU_PROJETS"][lang]}</span>
             </a>
 
-            <a class="nav-item" href={`/${lang}/${mapGenericToSlug["BLOG"][lang]}/`}>
-                <span>{mapGenericToText["BLOG"][lang]}</span>
+            <a class="nav-item" href={`/${lang}/${mapGenericToSlug["ACTUALITES"][lang]}/`}>
+                <span>{mapGenericToText["MENU_BLOG"][lang]}</span>
             </a>
 
             <a class="nav-item" href={`/${lang}/${mapGenericToSlug["INFO"][lang]}/`}>
-                <span><i class="fas fa-info-circle"></i></span>
+                <span><i class="fa fa-info-circle"></i></span>
             </a>
             <div class="nav-item">
-                {languages.map(l => <a class="langChange" href={currentSlug ? `/${KNOWN_LANGUAGES[l]}/${mapGenericToSlug[currentGeneric][KNOWN_LANGUAGES[l]]}/` : `/${KNOWN_LANGUAGES[l]}/`}>{KNOWN_LANGUAGES[l]}</a>
-                )}
+                {languages.map(l => {
+                    
+                    var newSlug = currentPath.split('/').map(p => {
+                        var currentLang = KNOWN_LANGUAGES[l]
+                        if (p == 'fr' || p =='en')
+                            return currentLang
+                        else {
+                            var gen = mapSlugToGeneric[p];
+                            var langSlug = mapGenericToSlug[gen][currentLang]
+                            return langSlug
+                        }
+                    }).join('/');
+
+                    return <a class="langChange" href={newSlug}>{KNOWN_LANGUAGES[l]}</a>
+                })}
             </div>
         </section>
     </nav>

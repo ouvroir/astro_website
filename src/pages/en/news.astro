@@ -6,7 +6,7 @@ let title = "News"
 let slug = "news"
 let description = "Blog, announcements, events and newsletter"
 let permalink = "https://ouvroir.umontreal.ca/en/news/"
-
+const currentPath = Astro.request.url.pathname;
 interface MarkdownFrontmatter {
   publishDate: Date;
   tags: Array<string>
@@ -43,7 +43,12 @@ allTags = allTags.sort();
       </div>
       <div class="col-3" id="tagColumn">
             <h2>Tags</h2>
-            {allTags.map(t => <div class="chip">{t}</div>)} 
+            {allTags.map(t => {
+                return <div class="chip">
+                  <a href={`${currentPath}tags/${t}`}>{t}</a>
+                </div>
+              }
+            )} 
           </div>
     </div>
   </div>
