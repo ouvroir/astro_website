@@ -59,19 +59,19 @@ const lang = currentPath && getLanguageFromURL(currentPath);
         </section>
         <section class="navbar-section">
             <a class="nav-item" href={`/${lang}/${mapGenericToSlug["SERVICES"][lang]}/`}>
-                <span>{mapGenericToText["SERVICES"][lang]}</span>
+                <span>{mapGenericToText["MENU_SERVICES"][lang]}</span>
             </a>
 
             <a class="nav-item" href={`/${lang}/${mapGenericToSlug["PROJETS"][lang]}/`}>
-                <span>{mapGenericToText["PROJETS"][lang]}</span>
+                <span>{mapGenericToText["MENU_PROJETS"][lang]}</span>
             </a>
 
-            <a class="nav-item" href={`/${lang}/${mapGenericToSlug["BLOG"][lang]}/`}>
-                <span>{mapGenericToText["BLOG"][lang]}</span>
+            <a class="nav-item" href={`/${lang}/${mapGenericToSlug["ACTUALITES"][lang]}/`}>
+                <span>{mapGenericToText["MENU_BLOG"][lang]}</span>
             </a>
 
             <a class="nav-item" href={`/${lang}/${mapGenericToSlug["INFO"][lang]}/`}>
-                <span><i class="fas fa-info-circle"></i></span>
+                <span><i class="fa fa-info-circle"></i></span>
             </a>
             <div class="nav-item">
                 {languages.map(l => {
