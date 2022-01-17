@@ -13,8 +13,77 @@ const currentPath = Astro.request.url.pathname;
 const lang = currentPath && getLanguageFromURL(currentPath);
 
 const currentSlug = Astro.props.slug
-
 const currentGeneric = mapSlugToGeneric[currentSlug]
+
+
+
+console.log("path: "+ currentPath)
+console.log("current lang: " + lang)
+console.log("current slug: " + currentSlug)
+
+languages.map(l => {
+    console.log("langue : " + l)
+    var newSlug = currentPath.split('/').map(p => {
+            console.log(p)
+            var currentLang = KNOWN_LANGUAGES[l]
+            if (p == 'fr' || p =='en')
+                return currentLang
+            else {
+                var gen = mapSlugToGeneric[p];
+                var langSlug = mapGenericToSlug[gen][currentLang]
+                console.log(langSlug)
+                return langSlug
+
+            }
+        }).join('/');
+    
+    console.log(newSlug)
+
+}) 
+
+
+
+
+/*
+**situation**
+lang = fr
+currentPath = /fr/actualites/premier-billet
+currentSlug = premier-billet
+
+**test1**
+console.log(`/en${currentPath.replace(currentSlug,mapGenericToSlug[currentGeneric]['en'] )}`) 
+==> /fr//fr/actualites/premier-billet
+//doubles the lang
+
+
+**test2**
+languages.map(l => {
+    console.log(l)
+    console.log(`${currentPath.replace(lang, KNOWN_LANGUAGES[l]).replace(currentSlug,mapGenericToSlug[currentGeneric]['fr'] )}`)
+}) 
+==> fr
+    /fr/actualites/premier-billet
+    premier-billet
+    Français
+    /fr/actualites/premier-billet
+    English
+    /en/actualites/premier-billet
+//need to change actualité to news (two slugs...)
+
+regex: split at / and deal with each part ! 
+
+currentPath.split('/').map(p => {
+    console.log(p)
+})
+
+
+
+
+*/
+
+
+
+
 ---
 
 <style>
@@ -77,8 +146,23 @@ const currentGeneric = mapSlugToGeneric[currentSlug]
                 <span><i class="fas fa-info-circle"></i></span>
             </a>
             <div class="nav-item">
-                {languages.map(l => <a class="langChange" href={currentSlug ? `/${KNOWN_LANGUAGES[l]}/${mapGenericToSlug[currentGeneric][KNOWN_LANGUAGES[l]]}/` : `/${KNOWN_LANGUAGES[l]}/`}>{KNOWN_LANGUAGES[l]}</a>
-                )}
+                {languages.map(l => {
+                    
+                    var newSlug = currentPath.split('/').map(p => {
+                        var currentLang = KNOWN_LANGUAGES[l]
+                        if (p == 'fr' || p =='en')
+                            return currentLang
+                        else {
+                            var gen = mapSlugToGeneric[p];
+                            var langSlug = mapGenericToSlug[gen][currentLang]
+                            console.log(langSlug)
+                            return langSlug
+
+                        }
+                    }).join('/');
+
+                    return <a class="langChange" href={newSlug}>{KNOWN_LANGUAGES[l]}</a>
+                })}
             </div>
         </section>
     </nav>
