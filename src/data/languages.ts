@@ -52,7 +52,7 @@ export const mapGenericToSlug = {
         fr:"",
         en:""
     },
-    "BLOG": {
+    "ACTUALITES": {
         fr: 'actualites',
         en: 'news'
 
@@ -104,6 +104,26 @@ export const mapGenericToSlug = {
     "REFRAME":{
         fr: 'reframe',
         en: 'reframe'
+    },
+    "TAGS":{
+        fr: 'tags',
+        en: 'tags'
+    },
+    "LAB": {
+        fr: 'lab',
+        en: 'lab'
+    },
+    "BLOG":{
+        fr: 'blog',
+        en: 'blog'
+    },
+    "EVENT":{
+        fr: 'event',
+        en: 'event'
+    },
+    "PARTENARIAT":{
+        fr: 'partenariat',
+        en: 'partenariat'
     }
 }
 
