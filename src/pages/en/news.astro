@@ -43,7 +43,12 @@ allTags = allTags.sort();
       </div>
       <div class="col-3" id="tagColumn">
             <h2>Tags</h2>
-            {allTags.map(t => <div class="chip">{t}</div>)} 
+            {allTags.map(t => {
+                return <div class="chip">
+                  <a href={`/en/news/tags/${t}`}>{t}</a>
+                </div>
+              }
+            )} 
           </div>
     </div>
   </div>
