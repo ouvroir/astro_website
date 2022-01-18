@@ -1,5 +1,5 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import BaseLayout from '/src/layouts/BaseLayout.astro';
 import { Markdown } from 'astro/components';
 
 let title = "Services"
@@ -26,6 +26,7 @@ equipement = equipement.split("---\n\n")[1]
   <p>{description}</p>
 
 <!--
+    <nav>
       <a href="#code">Code de conduite</a>
       <a href='#equipement'>Équipement</a>
     </nav>
