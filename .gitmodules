@@ -1,3 +1,3 @@
 [submodule "src/_labouvroir"]
-        path = src/_labouvroir
-        url = https://github.com/ouvroir/labouvroir.git
+	path = src/_labouvroir
+	url = https://github.com/ouvroir/labouvroir.git
