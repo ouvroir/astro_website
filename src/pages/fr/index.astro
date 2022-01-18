@@ -1,8 +1,15 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import BaseLayout from '/src/layouts/BaseLayout.astro';
 import {Markdown} from 'astro/components';
-import BlogPostPreview from '../../components/BlogPostPreview.astro';
-import ProjectCardPreview from '../../components/ProjectCardPreview.astro'
+import BlogPostPreview from '/src/components/BlogPostPreview.astro';
+import ProjectCardPreview from '/src/components/ProjectCardPreview.astro';
+import {
+    getLanguageFromURL,
+    mapGenericToText
+} from '/src/data/languages.ts';
+
+const currentPath = Astro.request.url.pathname;
+const lang = currentPath && getLanguageFromURL(currentPath);
 
 let title = "Ouvroir"
 let slug = ""
@@ -19,14 +26,15 @@ let posts = Astro.fetchContent('/src/_blog/*-fr.md');
     <div class="hero-body">
       <h1>{title}</h1>
       <p>{description}</p>
-      <p><i>An inclusive and open-source space</i></p>
-      <p>Un espace ouvert et inclusif</p>
+      <p><i>{mapGenericToText["TAGLINE"][lang]}</i></p>
     </div>
   </div>
 
 
   <h2>Présentation</h2>
-  <p>L’Ouvroir, laboratoire d’histoire de l’art et de muséologie numérique de l’Université de Montréal, est une infrastructure de recherche destinée à soutenir le travail conduit dans le cadre du Partenariat « Des nouveaux usages des collections dans les musées d’art ». Ce laboratoire fournit à l’ensemble de l’équipe un équipement de pointe pour mener la recherche mais aussi pour expérimenter et développer de nouveaux usages des collections numérisées qui utilisent le web, les techniques de visualisation 3D et la réalité virtuelle et augmentée. Il donne l’occasion de créer une infrastructure éditoriale solide pour l’Encyclopédie numérique et de produire trois développements informatiques qui seront mobilisés dans les différents axes de la recherche : d’abord avec la mise en place d’une plateforme collaborative de travail pour le travail sur les archives ; ensuite avec la création d’un outil numérique consacré à la documentation des accrochages de collections ; enfin, avec la création d’une librairie JavaScript destinée à faciliter la production et le déploiement de dispositifs d’expositions numériques et de l’illustration de l’Encyclopédie. C’est aussi une structure polyvalente qui permet de faciliter le travail collaboratif et l’organisation de téléréunions avec les partenaires muséaux et internationaux du projet. Sa création permet de doter le Canada d’un équipement de recherche dédié à l’expérimentation et le développement d’innovations dans le domaine de l’histoire de l’art et de la muséologie numérique.</p>
+  <Markdown>
+    L’**Ouvroir**, laboratoire d’histoire de l’art et de muséologie numérique de l’Université de Montréal, est une infrastructure de recherche destinée à soutenir le travail conduit dans le cadre du Partenariat « Des nouveaux usages des collections dans les musées d’art » ([CIÉCO](https://www.cieco.co)). Ce laboratoire fournit à l’ensemble de l’équipe un équipement de pointe pour mener la recherche mais aussi pour expérimenter et développer de nouveaux usages des collections numérisées qui utilisent le web, les techniques de visualisation 3D et la réalité virtuelle et augmentée. Il donne l’occasion de créer une infrastructure éditoriale solide pour l’Encyclopédie numérique et de produire trois développements informatiques qui seront mobilisés dans les différents axes de la recherche : d’abord avec la mise en place d’une plateforme collaborative de travail pour le travail sur les archives ; ensuite avec la création d’un outil numérique consacré à la documentation des accrochages de collections ; enfin, avec la création d’une librairie JavaScript destinée à faciliter la production et le déploiement de dispositifs d’expositions numériques et de l’illustration de l’Encyclopédie. C’est aussi une structure polyvalente qui permet de faciliter le travail collaboratif et l’organisation de téléréunions avec les partenaires muséaux et internationaux du projet. Sa création permet de doter le Canada d’un équipement de recherche dédié à l’expérimentation et le développement d’innovations dans le domaine de l’histoire de l’art et de la muséologie numérique.
+  </Markdown>
 
   <h2>Actualités</h2>
   {posts.map(p => <BlogPostPreview post={p}/>)}
@@ -48,15 +56,14 @@ let posts = Astro.fetchContent('/src/_blog/*-fr.md');
   <div class="container">
     <div class="columns">
       <div class="column col-md-4 logo">
-        <img src={Astro.resolve('/public/style/img/UdeM/Logo_UdeM-RVB.png')} width="100%">
+        <img src={Astro.resolve('/style/img/UdeM/Logo_UdeM-RVB.png')} width="100%">
       </div>
       <div class="column col-md-4 logo">
-        <img src={Astro.resolve('/public/style/img/CFI/fr/CFI_RGB-FR.png')} width="100%">
+        <img src={Astro.resolve('/style/img/CFI/fr/CFI_RGB-FR.png')} width="100%">
       </div>
       <div class="column col-md-4 logo">
-        <img src={Astro.resolve('/public/style/img/qc/png/QUEBEC_w3_couleur.png')} width="100%">
+        <img src={Astro.resolve('/style/img/qc/svg/QUEBEC_couleur.svg')} width="100%">
       </div>
-
     </div>
   </div>   
 
@@ -77,6 +84,5 @@ let posts = Astro.fetchContent('/src/_blog/*-fr.md');
 #projectCards{
   display: grid;
   grid-gap: 50px 50px
-  
   }
 </style>

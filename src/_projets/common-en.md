@@ -5,7 +5,7 @@ lang: en
 description: "CIÉCO Partenership Documentary Database"
 layout: '/src/layouts/ProjectLayout.astro'
 tags: 
-    - CIECO
+    - ciéco
     - documentation
     - partage
 since: 2021-11
@@ -18,5 +18,6 @@ La BDD est destinée à rassembler, décrire avec des métadonnées appropriées
 
 La base de données sera produite par un prestataire externe spécialisé dans les applications bibliothéconomiques en utilisant le gestionnaire de contenus libre et open source Omeka-S qui offre les fonctionnalités nécessaires pour la description des ressources culturelles avec des métadonnées métiers (Dublin Core qualifié, BIBO, LIDO, BIO-CRM) et permet l’utilisation de vocabulaires structurés au format SKOS. Omeka-S permet d’alimenter un entrepôt OAI-PMH à destination des moteurs de recherche spécialisés en sciences humaines ainsi qu’une interface programmable (API REST) pour connecter les ressources avec l’Encyclopédie.
 
+*Common est conçu par le laboratoire dans le cadre du Partenariat « Des nouveaux usages des collections dans les musées d’art ». Maîtrise d’ouvrage : Lena Krause. Direction scientifique : Emmanuel Chateau-Dutier.*
 
 Pour en savoir plus: [repo Github](https://github.com/ouvroir/common)

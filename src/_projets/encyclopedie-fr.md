@@ -5,7 +5,7 @@ lang: fr
 description: "Modèle éditorial de l’Encylopédie numérique des nouveaux usages des collections d’art"
 layout: '/src/layouts/ProjectLayout.astro'
 tags: 
-    - CIECO
+    - ciéco
     - web
     - édition numérique
 since: 2021-11

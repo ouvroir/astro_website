@@ -122,6 +122,19 @@ base: contient la navbar
 
 Publication de blogue, utilisée dans layout Actualite
 
+## Sous-modules
 
+Configuration des sous-modules :
+```bash
+git submodule add https://github.com/ouvroir/labouvroir.git src/_labouvroir
+```
 
+Initialiser les sous-modules
+```bash
+git submodule update --init --recursive
+```
 
+Mettre à jour les sous-modules
+```bash
+git submodule update --remote --merge
+```

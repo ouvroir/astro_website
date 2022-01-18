@@ -1,8 +1,8 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import BaseLayout from '/src/layouts/BaseLayout.astro';
 import {Markdown} from 'astro/components';
-import BlogPostPreview from '../../components/BlogPostPreview.astro';
-import ProjectCardPreview from '../../components/ProjectCardPreview.astro';
+import BlogPostPreview from '/src/components/BlogPostPreview.astro';
+import ProjectCardPreview from '/src/components/ProjectCardPreview.astro';
 
 let title = "Ouvroir"
 let slug = ""
@@ -44,18 +44,20 @@ let posts = Astro.fetchContent('/src/_blog/*-en.md');
     L’Ouvroir bénéficie du soutien de l’[Université de Montréal](https://www.umontreal.ca/), du [Fonds Canadien pour l’Innovation](https://www.innovation.ca/) et du de la [province du Québec](https://www.economie.gouv.qc.ca/bibliotheques/programmes/aide-financiere/programme-de-soutien-aux-organismes-de-recherche-et-dinnovation-pso/cofinancement-du-gouvernement-du-quebec-aux-programmes-de-la-fondation-canadienne-pour-linnovation-fci/fonds-dinnovation/).   
   </Markdown>
 
-          <!--
-          <div class="container">
-            <div class="columns">
-              <div class="column col-lg-8">
-                <img src={Astro.resolve('../../public/img/CFI/fr/CFI_RGB-FR.png')}>
-              </div>
-            </div>
-          </div>    
-            -->
-
-  <!--
-
+  <div class="container">
+    <div class="columns">
+      <div class="column col-md-4 logo">
+        <img src={Astro.resolve('/style/img/UdeM/Logo_UdeM-RVB.svg')} width="100%">
+      </div>
+      <div class="column col-md-4 logo">
+        <img src={Astro.resolve('/style/img/CFI/fr/CFI_RGB-FR.png')} width="100%">
+      </div>
+      <div class="column col-md-4 logo">
+        <img src={Astro.resolve('/style/img/qc/svg/QUEBEC_couleur.svg')} width="100%">
+      </div>
+    </div>
+  </div>
+<!--
   ├─ Page d’accueil
     ├─ Tagline: (un espace) inclusif et ouvert
     ├─ Présentation courte [à propos] 

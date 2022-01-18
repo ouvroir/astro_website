@@ -1,5 +1,5 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import BaseLayout from '/src/layouts/BaseLayout.astro';
 import { Markdown } from 'astro/components';
 
 let title = "Services"
@@ -12,6 +12,12 @@ let permalink = "https://ouvroir.umontreal.ca/fr/services/"
 //trouvr une façon que le titre devienne de niveau 2? 
 var code = await fetch('https://raw.githubusercontent.com/ouvroir/labouvroir/main/web/codeDeConduite.md').then(res => res.text());
 code = code.split("---\n\n")[1]
+
+var codeTest = Astro.fetchContent(code)
+
+console.log(codeTest)
+
+
 
 var equipement = await fetch('https://raw.githubusercontent.com/ouvroir/labouvroir/main/web/equipement.md').then(res => res.text());
 equipement = equipement.split("---\n\n")[1]

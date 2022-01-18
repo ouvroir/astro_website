@@ -5,7 +5,7 @@ lang: fr
 description: "Librairie JavaScript pour la présentation des contenus visuels"
 layout: '/src/layouts/ProjectLayout.astro'
 tags: 
-    - CIECO
+    - ciéco
     - JavaScript
     - web
 since: 2021-11

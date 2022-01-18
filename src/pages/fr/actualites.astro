@@ -1,6 +1,6 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro'
-import BlogPostPreview from '../../components/BlogPostPreview.astro'
+import BaseLayout from '/src/layouts/BaseLayout.astro'
+import BlogPostPreview from '/src/components/BlogPostPreview.astro'
 
 let title = "Actualités"
 let slug = "actualites"
@@ -8,14 +8,14 @@ let description = "Blogue, annonces, événements et lettre d'information du lab
 let permalink = "https://ouvroir.umontreal.ca/fr/actualites/"
 const currentPath = Astro.request.url.pathname;
 
-console.log(`path ${currentPath}`)
-
 interface MarkdownFrontmatter {
   publishDate: Date;
   tags: Array<string>
 }
 // Get all blog posts
 let allPosts = Astro.fetchContent<MarkdownFrontmatter>('/src/_blog/*-fr.md');
+
+
 allPosts = allPosts.sort((a, b) => (b.publishDate).valueOf() - (a.publishDate).valueOf());
 
 let tagSet = new Set();
@@ -34,9 +34,6 @@ allTags = allTags.sort();
 ---
 
 <BaseLayout title={title} description={description} permalink={permalink} slug={slug}>
-  <script>
-    console.log(currentPath)
-  </script>
   <div class="container grid-xl">
     <div class="columns">
       <div class="col-12">

@@ -41,7 +41,11 @@ export const mapGenericToText = {
     "LIRE_SUITE":{
         fr: "Continuer la lecture",
         en: "Read more"
-    }
+    },
+    "TAGLINE":{
+        fr: "Un espace ouvert et inclusif",
+        en: "An inclusive and open-sources"
+    },
     
 }    
 
