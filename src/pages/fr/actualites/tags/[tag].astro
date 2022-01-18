@@ -25,10 +25,7 @@ import BlogPostPreview from '/src/components/BlogPostPreview.astro';
 const {tag} = Astro.request.params;
 const {selection} = Astro.props
 const currentPath = Astro.request.url.pathname;
-console.log(currentPath)
-
 let retour = currentPath.replace('tags/','').replace(`${tag}/`, '')
-console.log(retour)
 
 
 let title = `Actualités`

@@ -29,9 +29,7 @@ const currentPath = Astro.request.url.pathname;
 let title = `News`
 let description = `Applying a filter on the blogposts with the tag`
 let permalink=`tata`
-console.log(currentPath)
 let back = currentPath.replace('tags/','').replace(`${tag}/`, '')
-console.log(back)
 ---  
 
 <BaseLayout title={title} description={description} permalink={permalink} slug={tag}>
