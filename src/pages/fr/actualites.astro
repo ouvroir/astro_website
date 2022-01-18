@@ -8,6 +8,8 @@ let description = "Blogue, annonces, événements et lettre d'information du lab
 let permalink = "https://ouvroir.umontreal.ca/fr/actualites/"
 const currentPath = Astro.request.url.pathname;
 
+console.log(`path ${currentPath}`)
+
 interface MarkdownFrontmatter {
   publishDate: Date;
   tags: Array<string>
@@ -29,7 +31,6 @@ for (let t of tagSet){
 }
 allTags = allTags.sort();
 
-
 ---
 
 <BaseLayout title={title} description={description} permalink={permalink} slug={slug}>
@@ -47,7 +48,7 @@ allTags = allTags.sort();
             <h2>Tags</h2>
             {allTags.map(t => {
                 return <div class="chip">
-                  <a href={`${currentPath}/tags/${t}`}>{t}</a>
+                  <a href={`${currentPath}tags/${t}/`}>{t}</a>
                 </div>
               }
             )} 

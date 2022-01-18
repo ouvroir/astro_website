@@ -16,11 +16,11 @@ let tags = post.tags
 ---
 <article class="section">
     <header>
-        <a href={`${post.slug}`}><h3 class="title">{post.title}</h3></a>
+        <a href={`${post.slug}/`}><h3 class="title">{post.title}</h3></a>
     </header>
     <p>{post.description}</p>
     <div>{tags.map(t => <span class="chip">{t}</span>)}</div>
-    <a href={`${post.slug}`}>{mapGenericToText["LIRE_SUITE"][lang]}</a>
+    <a href={`${post.slug}/`}>{mapGenericToText["LIRE_SUITE"][lang]}</a>
 </article>
 
 <style>
