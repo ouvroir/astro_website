@@ -27,8 +27,9 @@ h2 {
     color: grey
 }
 
-#logo{
+.logo{
     display: flex;
     justify-content: center;
     align-items:center
 }
+
