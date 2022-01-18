@@ -25,6 +25,12 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+      
+      # Update references
+      - name: Git Submodule Update
+        run: |
+          git pull --recurse-submodules 
+          git submodule update --remote --recursive
 
       # Install dependencies with npm
       - name: Install dependencies
