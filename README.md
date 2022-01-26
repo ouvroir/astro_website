@@ -5,9 +5,35 @@ Site web du lab ouvroir
 - [feuille de route](https://github.com/ouvroir/site-lab/milestones?direction=asc&sort=due_date&state=open)
 - [arborescence - navigation](https://github.com/ouvroir/labouvroir/blob/main/web/arborescence.md) (navigation du contenu)
 
+## Cloner le projet
+
+Ce projet contient des sous-modules git
+
+Cloner le répertoire :
+```bash
+git clone --recursive https://github.com/ouvroir/ouvroir.github.io.git
+```
+
+Mettre à jour le répertoire et ses sous-modules [à revoir]
+```bash
+git pull --recurse-submodules
+```
+
+Mettre à jour les sous-modules [à revoir]
+```bash
+git submodule update --remote --merge
+```
+
+Ajout d’un sous-module :
+
+```bash
+git submodule add https://github.com/path/submodule.git src/_name
+git submodule update --init --recursive
+```
+
 ## Structure du code
 
-première version en français uniquement
+version billingue 1.0
 
 ```
 ├─ public
@@ -16,24 +42,62 @@ première version en français uniquement
 	├─ ouvroir.png
 	└─ favicon.ico 
 ├─ src
+    ├─ _blog 						/*billets de blogue en .md, attention au yaml nécessaire*/
+    	├─ article-en.md 
+		└─ article-fr.md
+    ├─ _labouvroir (sous-module)
+    ├─ _projets    					/*présentation de projets en .md, attention au yaml nécessaire*
+    	├─ projet-en.md 
+		└─ projet-fr.md
 	├─ components
-		├─ HeadMeta.astro 
-		└─ Header.astro
-	├─ layouts
+		├─ BlogPost.astro
+		├─ BlogPostPreview.astro
+		├─ Footer
+		├─ Header.astro
+		├─ MetaData.astro 
+		├─ Project.astro
+		├─ ProjectCardPreview.astro
+		└─ ProjectPreview.astro
+	├─ data
+		├─ languages.ts
+		└─ locales.json
+	├─ layouts	
 		├─ BaseLayout.astro 
 		├─ BlogLayout.astro
 		└─ ProjectLayout.astro
 	└─ pages
-		├─ index.astro
-		├─ fonctionnement.astro
-		├─ projets.astro 
-		├─ actualites.astro 
-		└─ info.astro 
+		├─ en
+            ├─ news
+                ├─ tags
+                	└─ [slug].astro			/* pages générées à partir des tags des news*/
+                └─ [slug].astro 			/* pages générées à partir des _blog/*-en.md*/
+            ├─ projects
+                └─ [slug].astro 			/* pages générées à partir des _projets/*-en.md*/
+			├─ index.astro
+            ├─ info.astro
+            ├─ news.astro 
+            ├─ projects.astro 
+            └─ info.astro 
+		├─ fr
+			├─ actualités
+				├─ tags
+					└─ [slug].astro			/* pages générées à partir des tags des actualités*/
+				└─ [slug].astro 			/* pages générées à partir des _blog/*-fr.md*/
+            ├─ projets
+                └─ [slug].astro 			/* pages générées à partir des _projets/*-fr.md*/
+            ├─ actualites.astro 
+            ├─ index.astro
+            ├─ info.astro
+            ├─ projets.astro 
+            └─ services.astro 
+		└─ index.astro 
+├─ .gitmodules
+├─ arborescence.md
 ├─ .gitignore
 	└─ node_modules
 ├─ package-lock.json
 	└─ pour astro
-└─ package.json
+├─ package.json
 	└─ pour le site
 	"name: astro"
 	"author": "Ouvroir",
@@ -41,6 +105,7 @@ première version en français uniquement
       "dependencies": {
         "astro": "^0.21.0"
       }
+└─ README.md
 ```
 
 ## Pages
@@ -60,27 +125,71 @@ pages de projets en .md
 
 layout pour les pages principales du site (celles accessibles directement depuis la nav)
 
+requiert: 
+
+```typescript
+const {title, description, permalink, slug}
+```
+
 ### BlogLayout
 
 layout pour pages/blog/*.md 
-blogpost yaml front matter: 
+
+requiert: 
+
+```typescript
+const {title, description, author, publishDate, tags, permalink, slug} 
+```
+
+<!-- ajouter lang-->
+
+**Project yaml front matter**:
+
+```yaml
+title: 
+date: (yyyy-[mm]-[dd])
+description:
+lang: (en / fr)
+slug: 
+permalink:
+tags: 
+    - tag 1
+    - tag 2
+category:
+status: 
+```
 
 
 ### ProjectLayout
 layout pour pages/projets/*.md 
 
-Project yaml front matter:
-- title
-- description
-- layout: '../../layouts/ProjectLayout.astro'
-- tags
-	- tag 1
-	- tag 2
-- since: (yyyy-[mm]-[dd])
-- url: lien vers site/code/doc du projet
+requiert: 
 
-Content: 
-bien mettre de l'avant les auteur·rice·s car il n'est pas dans les métadonnées
+```typescript
+const {title, description, since, tags, permalink, link, slug, lang}
+```
+
+
+
+**Project yaml front matter**:
+
+```yaml
+title: 
+since: (yyyy-[mm]-[dd])
+description:
+lang: (en / fr)
+slug: 
+permalink:
+tags: 
+    - tag 1
+    - tag 2
+link: 
+category:
+status: 
+```
+
+**Content**
+bien mettre de l'avant les auteur·rice·s car il n'est pas encoredans les métadonnées
 
 
 
@@ -120,8 +229,4 @@ base: contient la navbar
 
 ### BlogPost
 
-Publication de blogue, utilisée dans layout Actualite
-
-
-
-
+Publication de blogue, utilisée dans layout BlogLayout
