@@ -10,7 +10,7 @@ let permalink = "https://ouvroir.umontreal.ca/fr/services/"
 //fonctionne mais lit le yaml front matter et ajoute une ligne noire
 //use gray-matter to parse md https://www.npmjs.com/package/gray-matter
 //trouvr une façon que le titre devienne de niveau 2? 
-var code = await fetch('https://raw.githubusercontent.com/ouvroir/labouvroir/main/codeDeConduite.md').then(res => res.text());
+var code = await fetch('https://raw.githubusercontent.com/ouvroir/labouvroir/main/web/codeDeConduite.md').then(res => res.text());
 code = code.split("---\n\n")[1]
 
 var codeTest = Astro.fetchContent(code)
@@ -19,7 +19,7 @@ console.log(codeTest)
 
 
 
-var equipement = await fetch('https://raw.githubusercontent.com/ouvroir/labouvroir/main/equipement.md').then(res => res.text());
+var equipement = await fetch('https://raw.githubusercontent.com/ouvroir/labouvroir/main/web/equipement.md').then(res => res.text());
 equipement = equipement.split("---\n\n")[1]
 
 ---

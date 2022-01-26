@@ -5,32 +5,6 @@ Site web du lab ouvroir
 - [feuille de route](https://github.com/ouvroir/site-lab/milestones?direction=asc&sort=due_date&state=open)
 - [arborescence - navigation](https://github.com/ouvroir/labouvroir/blob/main/web/arborescence.md) (navigation du contenu)
 
-## Cloner le projet
-
-Ce projet contient des sous-modules git
-
-Cloner le répertoire :
-```bash
-git clone --recursive https://github.com/ouvroir/ouvroir.github.io.git
-```
-
-Mettre à jour le répertoire et ses sous-modules
-```bash
-git pull --recurse-submodules
-```
-
-Mettre à jour les sous-modules :
-```bash
-git submodule update --remote --merge
-```
-
-Ajout d’un sous-module :
-
-```bash
-git submodule add https://github.com/path/submodule.git src/_name
-git submodule update --init --recursive
-```
-
 ## Structure du code
 
 première version en français uniquement
@@ -147,3 +121,7 @@ base: contient la navbar
 ### BlogPost
 
 Publication de blogue, utilisée dans layout Actualite
+
+
+
+
