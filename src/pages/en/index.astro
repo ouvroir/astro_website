@@ -3,6 +3,13 @@ import BaseLayout from '/src/layouts/BaseLayout.astro';
 import {Markdown} from 'astro/components';
 import BlogPostPreview from '/src/components/BlogPostPreview.astro';
 import ProjectCardPreview from '/src/components/ProjectCardPreview.astro';
+import {
+    getLanguageFromURL,
+    mapGenericToText
+} from '/src/data/languages.ts';
+
+const currentPath = Astro.request.url.pathname;
+const lang = currentPath && getLanguageFromURL(currentPath);
 
 let title = "Ouvroir"
 let slug = ""
@@ -25,9 +32,9 @@ let posts = Astro.fetchContent('/src/_blog/*-en.md');
 
 
   <h2>Presentation</h2>
-  <p>
+  <Markdown>
     L’**Ouvroir** is a Digital Art History and Museology lab at the Université de Montréal dedicated to support the work conducted within the framework of the Partnership “New Uses of Collections in Art Museums” ([CIÉCO](https://www.cieco.co)). This laboratory provides the entire team with state-of-the-art equipment to conduct research but also to experiment and develop new uses of digitized collections that use the web, 3D visualization techniques and virtual and augmented reality. It provides the opportunity to create a solid editorial infrastructure for the Digital Encyclopedia and to produce three computer developments that will be mobilized in the various axes of research: first with the establishment of a collaborative platform for work on the archives; secondly with the creation of a digital tool dedicated to the documentation of collection hangings; thirdly, with the creation of a JavaScript library designed to facilitate the production and deployment of digital exhibition devices and illustration of the Encyclopedia. It is also a versatile structure that facilitates collaborative work and the organization of teleconferences with the project’s museum and international partners. Its creation provides Canada with a research facility dedicated to the experimentation and development of innovations in the field of art history and digital museology.
-  </p>
+  </Markdown>
 
   <h2>Latest News</h2>
   {posts.map(p => <BlogPostPreview post={p}/>)}
