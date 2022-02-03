@@ -6,7 +6,8 @@ let title = "Actualités"
 let slug = "actualites"
 let description = "Blogue, annonces, événements et lettre d'information du lab"
 let permalink = "https://ouvroir.umontreal.ca/fr/actualites/"
-const currentPath = Astro.request.url.pathname;
+const currentPath = Astro.request.canonicalURL.pathname;
+console.log(currentPath)
 
 interface MarkdownFrontmatter {
   publishDate: Date;
