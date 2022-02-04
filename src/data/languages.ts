@@ -151,7 +151,7 @@ export const mapGenericToSlug = {
     },
     "MODELISATION3D":{
         fr: 'modélisation-3D',
-        en: '3D-Modeling'
+        en: '3D-modeling'
     },
     "EDITION_NUMERIQUE":{
         fr: 'édition-numérique',

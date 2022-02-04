@@ -5,8 +5,8 @@ import ProjectPreview from '/src/components/ProjectPreview.astro'
 let title = "Projects"
 let slug = "projects"
 let description = "Introducing lab projects and collaborations"
-let permalink = "https://ouvroir.umontreal.ca/en/projets/"
-
+let permalink = "https://ouvroir.umontreal.ca/en/projects/"
+const currentPath = Astro.request.canonicalURL.pathname;
 
 let projects = Astro.fetchContent('/src/_projets/*-en.md');
 let tagSet = new Set();
@@ -38,7 +38,12 @@ allTags = allTags.sort();
           </div>
           <div class="col-3" id="tagColumn">
             <h2>Tags</h2>
-            {allTags.map(t => <div class="chip">{t}</div>)} 
+            {allTags.map((t:string) => {
+                return <div class="chip">
+                  <a href={`${currentPath}tags/${t.replaceAll(" ", "-")}/`}>{t}</a>
+                </div>
+              }
+            )} 
           </div>
         </div>
       </div>
