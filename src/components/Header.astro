@@ -9,7 +9,7 @@ import {
 
 let languages = Object.keys(KNOWN_LANGUAGES);
 
-const currentPath = Astro.request.url.pathname;
+const currentPath = Astro.request.canonicalURL.pathname;
 const lang = currentPath && getLanguageFromURL(currentPath);
 
 ---

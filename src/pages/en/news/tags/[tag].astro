@@ -24,7 +24,7 @@ import BlogPostPreview from '/src/components/BlogPostPreview.astro';
 
 const {tag} = Astro.request.params;
 const {selection} = Astro.props
-const currentPath = Astro.request.url.pathname;
+const currentPath = Astro.request.canonicalURL.pathname;
 
 let title = `News`
 let description = `Applying a filter on the blogposts with the tag`

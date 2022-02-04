@@ -8,7 +8,7 @@ export interface Props{
     post: any;
 }
 
-const currentPath = Astro.request.url.pathname;
+const currentPath = Astro.request.canonicalURL.pathname;
 const lang = currentPath && getLanguageFromURL(currentPath);
 
 const { post } = Astro.props;
