@@ -7,10 +7,31 @@ import {
     mapGenericToText
 } from '/src/data/languages.ts';
 
-let languages = Object.keys(KNOWN_LANGUAGES);
-
 const currentPath = Astro.request.canonicalURL.pathname;
 const lang = currentPath && getLanguageFromURL(currentPath);
+
+// définit comme ça, otherLang ne fonctionne que quand il y a 2 langues
+// si plus, retourner à un sélecteur avec menu déroulant
+var otherLang;
+if (lang == 'fr')
+    otherLang = 'en'
+else if (lang == 'en' )
+    otherLang = 'fr'
+else 
+    console.log('error in lang '+lang)
+    
+console.log(otherLang.toUpperCase())
+
+var newSlug = currentPath.split('/').map(p => {
+    if (p == 'fr' || p =='en')
+        return otherLang
+    else {
+        var gen = mapSlugToGeneric[p];
+        var langSlug = mapGenericToSlug[gen][otherLang]
+        return langSlug
+    }
+}).join('/');
+
 
 ---
 
@@ -74,22 +95,11 @@ const lang = currentPath && getLanguageFromURL(currentPath);
                 <span><i class="fa fa-info-circle"></i></span>
             </a>
             <div class="nav-item">
-                {languages.map(l => {
-                    
-                    var newSlug = currentPath.split('/').map(p => {
-                        var currentLang = KNOWN_LANGUAGES[l]
-                        if (p == 'fr' || p =='en')
-                            return currentLang
-                        else {
-                            var gen = mapSlugToGeneric[p];
-                            var langSlug = mapGenericToSlug[gen][currentLang]
-                            return langSlug
-                        }
-                    }).join('/');
-
-                    return <a class="langChange" href={newSlug}>{KNOWN_LANGUAGES[l]}</a>
+            <a class="langChange" href={newSlug}>{otherLang.toUpperCase()}</a>
+            <!--
+                {languages.map(l => <a class="langChange" href={newSlug}>{KNOWN_LANGUAGES[l]}</a>
                 })}
-            </div>
+-->           </div>
         </section>
     </nav>
 </header>
