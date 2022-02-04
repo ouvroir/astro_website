@@ -5,10 +5,10 @@ lang: en
 description: "Outil pour la documentation des accrochages de collection et de visualisation 3D"
 layout: '/src/layouts/ProjectLayout.astro'
 tags: 
-    - ciéco
+    - CIÉCO
     - documentation
-    - modèle de données
-    - visualisation 3D
+    - data model
+    - 3D visualisation 
 since: 2021-11
 link: https://github.com/ouvroir/expots
 ---

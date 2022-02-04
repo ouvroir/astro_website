@@ -5,9 +5,9 @@ lang: en
 description: "Modèle éditorial de l’Encylopédie numérique des nouveaux usages des collections d’art"
 layout: '/src/layouts/ProjectLayout.astro'
 tags: 
-    - ciéco
+    - CIÉCO
     - web
-    - édition numérique
+    - digital edition
 since: 2021-11
 link: https://github.com/ouvroir/encyclopedie
 ---

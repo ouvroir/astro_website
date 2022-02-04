@@ -5,9 +5,9 @@ lang: en
 description: "CIÉCO Partenership Documentary Database"
 layout: '/src/layouts/ProjectLayout.astro'
 tags: 
-    - ciéco
+    - CIÉCO
     - documentation
-    - partage
+    - sharing
 since: 2021-11
 link: https://github.com/ouvroir/common
 ---
