@@ -31,6 +31,30 @@ git submodule add https://github.com/path/submodule.git src/_name
 git submodule update --init --recursive
 ```
 
+## Déployer en local
+
+Ce site utilise le générateur de site statique [Astro](http://astro.build)
+
+Installer les dépendances# :
+```js
+	npm install
+```
+
+Déployer pour le développement :
+```bash
+	npm run dev
+```
+
+Construire le site
+
+Ce répertoire contient des instructions pour l’intégration continue avec GitHub dans `.github/main.yml`
+
+Pour déployer localement :
+```bash
+	npm run build
+```
+
+
 ## Structure du code
 
 version billingue 1.0
