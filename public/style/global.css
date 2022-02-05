@@ -1,24 +1,29 @@
-body {
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root {
     font-family: 'Open Sans', 'Calibri', 'Trebuchet MS', sans-serif;
-    font-size: 100%;
-    
-    margin: 0
+    font-size: calc(1rem + 0.7vw);
+    font-weight: 400;
 }
 
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Open Sans';
-    font-weight: bold;
+h1, h2 {
+    font-weight: 800;
+    letter-spacing: 0.05em;
 }
 
+h3, h4, h5, h6 {
+    font-weight: 500;
+    letter-spacing: 0.04em;
+}
 
 h2 {
-    padding-top: 3rem;
-    padding-bottom: 1.5rem;
+    padding-top: 1.5rem;
 }
 
 .section{
-    border-bottom: solid 1px lightgrey; /* learn to define colors*/
     margin-bottom: 1.5rem
 }
 
