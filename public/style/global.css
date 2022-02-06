@@ -55,6 +55,20 @@ a:active {
     color: #626873 ; /* revoir */
 }
 
+.dark a:link {
+    font-weight: 500;
+    color: white;
+}
+
+.dark a:visited {
+  color:#626873 ; /* revoir */
+}
+
+.dark a:hover a:focus {
+  color:#626873 ; /* revoir */
+}
+
+
 #nav-logo {
     content: url(/style/img/ouvroir-logo-site.svg);
     width: 100%;
