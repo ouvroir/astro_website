@@ -15,81 +15,56 @@ const lang = currentPath && getLanguageFromURL(currentPath);
 ---
 
 <style>
-    header {
-        height: 4rem;
-        padding-top: 1rem;   
-        padding-bottom: 1rem;   
+.navbar a {
+  font-weight: 800;
+}
+.nav-item {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.07rem;
+  padding: 0.5rem;
+}
 
-    }   
+.nav-item:hover {
+  /*à définir color: var(--theme-accent); */
+  color: error;
+}
 
-    nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
+.navbar-brand {
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: 0.1rem;
+}
 
-    .nav-item {
-        display: flex;
-        flex-grow: 0;
-        gap: 0.5em;
-        align-items: center;
-        justify-content: center;
-        /*à définir color: var(--theme-text-lighter)*/
-        font-size: 1.5rem;
-        padding: 0.5rem;
-    }
-    .nav-item:hover {
-       /*à définir color: var(--theme-accent); */
-       color: red
-    }
-    
-    #navlogo {
-        width: 2rem;
-        height: 2rem;
-    }
+#nav-logo {
+    width: 12rem;
+}
 </style>
 
-<header>
-    <nav class="navbar">    
-        <section class="navbar-section">
-            <a class="nav-item" href={`/${lang}/`}>
-                <img id="navlogo" src="/style/img/ouvroir.png">
-                <span>Ouvroir</span>
-            </a>
-        </section>
-        <section class="navbar-section">
-            <a class="nav-item" href={`/${lang}/${mapGenericToSlug["SERVICES"][lang]}/`}>
-                <span>{mapGenericToText["MENU_SERVICES"][lang]}</span>
-            </a>
+<header class="navbar">
+  <section class="navbar-section">
+    <a href={`/${lang}/`} class="navbar-brand mr-2"><span id="nav-logo">Ouvroir</span></a>
+    <a class="nav-item" href={`/${lang}/${mapGenericToSlug["SERVICES"][lang]}/`}>{mapGenericToText["MENU_SERVICES"][lang]}</a>
+    <a class="nav-item" href={`/${lang}/${mapGenericToSlug["PROJETS"][lang]}/`}>{mapGenericToText["MENU_PROJETS"][lang]}</a>
+    <a class="nav-item" href={`/${lang}/${mapGenericToSlug["ACTUALITES"][lang]}/`}>{mapGenericToText["MENU_BLOG"][lang]}</a>
+    </section>
+    <section class="navbar-section">
+        <a class="nav-item" href={`/${lang}/${mapGenericToSlug["INFO"][lang]}/`}><i class="fa fa-info-circle"></i></a>
+        <div class="nav-item">
+            {languages.map(l => {
+            var newSlug = currentPath.split('/').map(p => {
+                var currentLang = KNOWN_LANGUAGES[l]
+                if (p == 'fr' || p =='en')
+                return currentLang
+                else {
+                    var gen = mapSlugToGeneric[p];
+                    var langSlug = mapGenericToSlug[gen][currentLang]
+                    return langSlug
+                    }
+                }).join('/');
 
-            <a class="nav-item" href={`/${lang}/${mapGenericToSlug["PROJETS"][lang]}/`}>
-                <span>{mapGenericToText["MENU_PROJETS"][lang]}</span>
-            </a>
-
-            <a class="nav-item" href={`/${lang}/${mapGenericToSlug["ACTUALITES"][lang]}/`}>
-                <span>{mapGenericToText["MENU_BLOG"][lang]}</span>
-            </a>
-
-            <a class="nav-item" href={`/${lang}/${mapGenericToSlug["INFO"][lang]}/`}>
-                <span><i class="fa fa-info-circle"></i></span>
-            </a>
-            <div class="nav-item">
-                {languages.map(l => {
-                    
-                    var newSlug = currentPath.split('/').map(p => {
-                        var currentLang = KNOWN_LANGUAGES[l]
-                        if (p == 'fr' || p =='en')
-                            return currentLang
-                        else {
-                            var gen = mapSlugToGeneric[p];
-                            var langSlug = mapGenericToSlug[gen][currentLang]
-                            return langSlug
-                        }
-                    }).join('/');
-
-                    return <a class="langChange" href={newSlug}>{KNOWN_LANGUAGES[l]}</a>
-                })}
-            </div>
-        </section>
-    </nav>
+            return <a class="langChange" href={newSlug}>{KNOWN_LANGUAGES[l]}</a>
+        })}
+    </div>
+  </section>
 </header>

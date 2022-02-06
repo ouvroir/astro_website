@@ -38,3 +38,27 @@ h2 {
     align-items:center
 }
 
+a:link {
+    font-weight: 500;
+    color: #3b4351;
+}
+
+a:visited {
+  color:#292E38 ; /* revoir */
+}
+
+a:hover a:focus {
+  color:#292E38 ; /* revoir */
+}
+
+a:active {
+    color: #626873 ; /* revoir */
+}
+
+#nav-logo {
+    content: url(/style/img/ouvroir-logo-site.svg);
+    width: 100%;
+    fill: #292E38;
+}
+
+.change-my-color {fill: #292E38;}
