@@ -5,7 +5,7 @@ lang: fr
 description: "Outil pour la documentation des accrochages de collection et de visualisation 3D"
 layout: '/src/layouts/ProjectLayout.astro'
 tags: 
-    - ciéco
+    - CIÉCO
     - documentation
     - modèle de données
     - visualisation 3D

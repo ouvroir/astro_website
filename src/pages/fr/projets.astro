@@ -6,7 +6,7 @@ let title = "Projets"
 let slug ="projets"
 let description = "Présentation de projets et de collaborations du laboratoire"
 let permalink = "https://ouvroir.umontreal.ca/fr/projets/"
-
+const currentPath = Astro.request.canonicalURL.pathname;
 
 let projects = Astro.fetchContent('/src/_projets/*-fr.md');
 let tagSet = new Set();
@@ -38,7 +38,12 @@ allTags = allTags.sort();
         </div>
         <div class="col-3" id="tagColumn">
           <h2>Tags</h2>
-          {allTags.map(t => <div class="chip">{t}</div>)} 
+          {allTags.map((t:string) => {
+                return <div class="chip">
+                  <a href={`${currentPath}tags/${t.replaceAll(" ", "-")}/`}>{t}</a>
+                </div>
+              }
+          )} 
         </div>
       </div>
     </div>

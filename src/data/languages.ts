@@ -128,7 +128,44 @@ export const mapGenericToSlug = {
     "PARTENARIAT":{
         fr: 'partenariat',
         en: 'partenariat'
+    },
+    "JAVASCRIPT":{
+        fr: 'JavaScript',
+        en: 'JavaScript'
+    },
+    "CIECO":{
+        fr: 'CIÉCO',
+        en: 'CIÉCO'
+    },
+    "DOCUMENTATION":{
+        fr: 'documentation',
+        en: 'documentation'
+    },
+    "PARTAGE":{
+        fr: 'partage',
+        en: 'sharing'
+    },
+    "WEB":{
+        fr: 'web',
+        en: 'web'
+    },
+    "MODELISATION3D":{
+        fr: 'modélisation-3D',
+        en: '3D-modeling'
+    },
+    "EDITION_NUMERIQUE":{
+        fr: 'édition-numérique',
+        en: 'digital-edition'
+    },
+    "VISUALISATION3D":{
+        fr: 'visualisation-3D',
+        en: '3D-visualisation'
+    },
+    "MODELE_DE_DONNEES":{
+        fr: 'modèle-de-données',
+        en: 'data-model'
     }
+
 }
 
 export const mapSlugToGeneric = Object.keys(mapGenericToSlug).reduce((acc, k) => {

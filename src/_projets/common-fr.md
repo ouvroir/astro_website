@@ -5,7 +5,7 @@ lang: fr
 description: "Base de Données Documentaire du Partenariat CIÉCO"
 layout: '/src/layouts/ProjectLayout.astro'
 tags: 
-    - ciéco
+    - CIÉCO
     - documentation
     - partage
 since: 2021-11

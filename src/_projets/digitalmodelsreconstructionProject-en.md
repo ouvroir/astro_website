@@ -7,7 +7,7 @@ layout: '/src/layouts/ProjectLayout.astro'
 tags: 
     - web
     - documentation
-    - modélisation 3D
+    - 3D modeling
 since: 2019
 link: https://www.dataartem.org/dataartem/digital/allprojects
 ---

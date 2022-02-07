@@ -1,6 +1,6 @@
 ---
 export async function getStaticPaths() {
-    let blog = Astro.fetchContent('/src/_blog/*-en.md');
+    let blog = Astro.fetchContent('/src/_projets/*-en.md');
         
     //get a set of tags
     let tagSet = new Set();
@@ -10,9 +10,11 @@ export async function getStaticPaths() {
         });
     });
 
-    //for each tag, return a page with URL formed by tag
-    return Array.from(tagSet).map((tag) => {
+    //for each tag, return a page with URL formed by tag (replacing spaces by "-")
+    return Array.from(tagSet).map((tag: string) => {
         var selection = blog.filter(post => post.tags.includes(tag));
+
+        tag = tag.replaceAll(" ", "-")
         return {
             params: { tag: tag },
             props: {selection} };
@@ -20,16 +22,18 @@ export async function getStaticPaths() {
 }
 
 import BaseLayout from '/src/layouts/BaseLayout.astro';
-import BlogPostPreview from '/src/components/BlogPostPreview.astro';
+import ProjectPreview from '/src/components/ProjectPreview.astro';
 
 const {tag} = Astro.request.params;
 const {selection} = Astro.props
 const currentPath = Astro.request.canonicalURL.pathname;
+let retour = currentPath.replace('tags/','').replace(`${tag}/`, '')
 
-let title = `News`
-let description = `Applying a filter on the blogposts with the tag`
+
+let title = `Projects`
+let description = `Applying a filter on the tag`
 let permalink=`tata`
-let back = currentPath.replace('tags/','').replace(`${tag}/`, '')
+
 ---  
 
 <BaseLayout title={title} description={description} permalink={permalink} slug={tag}>
@@ -38,15 +42,15 @@ let back = currentPath.replace('tags/','').replace(`${tag}/`, '')
     <div class="columns">
       <div class="col-12">
         <h1>{title}</h1>
-        <p>{description} <span class="chip">{tag}</span><span class="chip"><a href={back}><i class="fa fa-close"></i></a></span></p>
+        <p>{description} <span class="chip">{tag.replaceAll("-", " ")}</span><span class="chip"><a href={retour}><i class="fa fa-close"></i></a></span></p>
       </div>
       <div class="col-9">
-        {selection.map(s => <BlogPostPreview post={s}></BlogPostPreview>)}
+        {selection.map(s => <ProjectPreview post={s}></ProjectPreview>)}
       </div>
       <div class="col-3" id="tagColumn">
             <h2>Tags</h2>
-            <div class="chip"><a href={back}>{tag}</a></div>
-            <span class="chip"><a href={back}><i class="fa fa-close"></i></a></span>
+            <div class="chip"><a href={retour}>{tag.replaceAll("-", " ")}</a></div>
+            <span class="chip"><a href={retour}><i class="fa fa-close"></i></a></span>
           </div>
     </div>
   </div>
