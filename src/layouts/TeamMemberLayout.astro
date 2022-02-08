@@ -6,7 +6,7 @@ import Footer from '/src/components/Footer.astro'
 import { getLanguageFromURL } from '/src/data/languages.ts'
 
 const {content} = Astro.props;
-const {firstname, lastname, description, tags, link, mail, permalink, slug } = content;
+const {firstname, lastname, username, description, tags, link, mail, permalink, slug } = content;
 
 const currentPath = Astro.request.canonicalURL.pathname;
 const lang = currentPath && getLanguageFromURL(currentPath);
@@ -26,7 +26,7 @@ const title = firstname.concat(" ").concat(lastname)
 
                   <Header slug={slug}/>
 
-                  <TeamMember firstname={firstname} lastname={lastname} description={description} tags={tags} link={link} mail={mail} slug={slug} permalink={permalink}>
+                  <TeamMember firstname={firstname} lastname={lastname} username={username} description={description} tags={tags} link={link} mail={mail} slug={slug} permalink={permalink}>
                       <slot />
                   </TeamMember>
 

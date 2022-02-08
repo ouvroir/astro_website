@@ -1,5 +1,6 @@
 ---
-import {mapGenericToText, getLanguageFromURL} from '/src/data/languages.ts'    
+import {mapGenericToText, getLanguageFromURL} from '/src/data/languages.ts';
+import ProjectCardPreview from '/src/components/ProjectCardPreview.astro' 
 export interface Props {
   firstname: string,
   lastname: string,
@@ -14,10 +15,15 @@ export interface Props {
 const currentPath = Astro.request.canonicalURL.pathname;
 const lang = currentPath && getLanguageFromURL(currentPath);
 
-const { firstname, lastname, description, tags, link, username, mail, permalink, slug} = Astro.props;
+const { firstname, lastname, username, description, tags, link, mail, permalink, slug} = Astro.props;
 
+interface MarkdownFrontmatter {
+    lang: string,
+    team: Array<string>;
+}
+var projects = Astro.fetchContent<MarkdownFrontmatter>('/src/_projets/*.md')
 
-
+var relevantProjects = projects.filter(p => p.lang == lang).filter(p => p.team.includes(username))
 ---
 <div class="container">
     <article class="content">
@@ -54,7 +60,12 @@ const { firstname, lastname, description, tags, link, username, mail, permalink,
         </main>
         <div>
             <h3>Projets</h3>
-            
+            <div class="container grid-xl" id="projectCards">
+            <div class="columns">
+                {relevantProjects.map(p => <ProjectCardPreview post={p}/>)}
+            </div>
+  </div>
+
         </div>
         <div>
             <h3>Billets de blog</h3>
@@ -68,9 +79,6 @@ img {
     margin-left: auto;
     margin-right: auto;
     width: 70%;
-}
-#courriel{
-
 }
 
 </style>
