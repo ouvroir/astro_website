@@ -76,3 +76,8 @@ a:active {
 }
 
 .change-my-color {fill: #292E38;}
+
+.chip{
+    background-color: #ff5757;
+    color:white
+}
