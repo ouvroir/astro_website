@@ -61,11 +61,10 @@ var relevantProjects = projects.filter(p => p.lang == lang).filter(p => p.team.i
         <div>
             <h3>Projets</h3>
             <div class="container grid-xl" id="projectCards">
-            <div class="columns">
-                {relevantProjects.map(p => <ProjectCardPreview post={p}/>)}
+                <div class="columns">
+                    {relevantProjects.map(p => <ProjectCardPreview post={p}/>)}
+                </div>
             </div>
-  </div>
-
         </div>
         <div>
             <h3>Billets de blog</h3>
