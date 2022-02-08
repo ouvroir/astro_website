@@ -65,6 +65,10 @@ export const mapGenericToText = {
         fr: "Un espace ouvert et inclusif",
         en: "An inclusive and open-sources"
     },
+    "SITE_WEB":{
+        fr: "site web",
+        en: "website"
+    }
     
 }    
 
@@ -183,6 +187,14 @@ export const mapGenericToSlug = {
     "MODELE_DE_DONNEES":{
         fr: 'modele-de-donnees',
         en: 'data-model'
+    },
+    "EQUIPE":{
+        fr: 'equipe',
+        en: 'team'
+    },
+    "LENA":{
+        fr: 'lena-krause',
+        en: 'lena-krause'
     }
 
 }

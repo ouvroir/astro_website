@@ -1,0 +1,76 @@
+---
+import {mapGenericToText, getLanguageFromURL} from '/src/data/languages.ts'    
+export interface Props {
+  firstname: string,
+  lastname: string,
+  username: string,
+  description: string,
+  tags: Array<string>,
+  link: string,
+  mail: string,
+  permalink: string,
+  slug: string
+}
+const currentPath = Astro.request.canonicalURL.pathname;
+const lang = currentPath && getLanguageFromURL(currentPath);
+
+const { firstname, lastname, description, tags, link, username, mail, permalink, slug} = Astro.props;
+
+
+
+---
+<div class="container">
+    <article class="content">
+        <header class="hero bg-gray">
+            <div class="hero-body">
+                <div class="columns">
+                    <div class="col-3">
+                        <img src="/public/style/img/ouvroir-roue.svg">
+                    </div>
+                    <div class="col-9">
+                        <h2>{firstname} {lastname}</h2>
+                        <p>{description} <br>
+                        </p>
+                    </div>
+                </div>  
+                <br>
+                <div class="columns"> 
+                    <div class="col-3">
+                        <p style="text-align: center;">
+                            <a href={link} target="_blank">{mapGenericToText["SITE_WEB"][lang]}</a>
+                            <br>
+                            <span id="courriel">contact</span>
+                        </p>
+                    </div>
+                        
+                    <div class="col-9">
+                        {tags.map(t => <span class="chip">{t}</span>)}
+                    </div>
+                </div>                
+            </div>
+        </header>
+        <main>
+            <slot />
+        </main>
+        <div>
+            <h3>Projets</h3>
+            
+        </div>
+        <div>
+            <h3>Billets de blog</h3>
+        </div>
+    </article>
+</div>
+
+<style>
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
+#courriel{
+
+}
+
+</style>

@@ -1,6 +1,11 @@
 ---
 import BaseLayout from '/src/layouts/BaseLayout.astro';
 import {Markdown} from 'astro/components';
+import {
+    getLanguageFromURL,
+    mapGenericToSlug
+} from '/src/data/languages.ts';
+
 
 
 let title = "Informations"
@@ -10,7 +15,8 @@ let permalink = "https://ouvroir.umontreal.ca/fr/info/"
 
 //var presentation = await fetch('https://raw.githubusercontent.com/ouvroir/labouvroir/main/README.md').then(res => res.text());
 
-
+const currentPath = Astro.request.canonicalURL.pathname;
+const lang = currentPath && getLanguageFromURL(currentPath);
 
 ---
 
@@ -30,7 +36,7 @@ let permalink = "https://ouvroir.umontreal.ca/fr/info/"
     <ul>
         <li>Emmanuel Château-Dutier (directeur scientifique)</li>
         <li>Kristine Tanton (directrice scientifique)</li>
-        <li>Lena Krause (responsable du laboratoire)</li>
+        <li><a href={`/${lang}/${mapGenericToSlug["EQUIPE"][lang]}/lena-krause`}>Lena Krause</a> (responsable du laboratoire)</li>
     </ul>
     <!--    
         <Person> et <PersonPreview>, avec une page par personne? ou juste des entrées directement ici? 

@@ -1,0 +1,40 @@
+---
+import MetaData from '/src/components/MetaData.astro'
+import Header from '/src/components/Header.astro'
+import TeamMember from '/src/components/TeamMember.astro'
+import Footer from '/src/components/Footer.astro'
+import { getLanguageFromURL } from '/src/data/languages.ts'
+
+const {content} = Astro.props;
+const {firstname, lastname, description, tags, link, mail, permalink, slug } = content;
+
+const currentPath = Astro.request.canonicalURL.pathname;
+const lang = currentPath && getLanguageFromURL(currentPath);
+
+const title = firstname.concat(" ").concat(lastname)
+---
+<html lang={lang} prefix="og: https://ogp.me/ns# article: https://ogp.me/ns/article#">
+  <head>
+    <MetaData title={title} description={description} permalink={permalink}/>
+  </head>
+  <body>
+    <div class="container grid-xl">
+            <div class="columns">
+              <div class="col-1"><!--nav gauche--></div>
+              <div class="col-10">
+                <div id="app" class="container grid-xl">
+
+                  <Header slug={slug}/>
+
+                  <TeamMember firstname={firstname} lastname={lastname} description={description} tags={tags} link={link} mail={mail} slug={slug} permalink={permalink}>
+                      <slot />
+                  </TeamMember>
+
+                  <Footer />
+                </div>
+            </div>
+            <div class="col-1"><!--nav droite--></div>
+          </div>
+        </div>
+  </body>
+</html>

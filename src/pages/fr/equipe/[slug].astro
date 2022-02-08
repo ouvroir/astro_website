@@ -1,0 +1,18 @@
+---
+export async function getStaticPaths() {
+  let persons = Astro.fetchContent('/src/_equipe/*-fr.md');
+
+  return persons.map((person) => {
+        return {
+            params: { slug: person.slug },
+            props: {person} };
+    });
+}
+
+import TeamMemberLayout from '/src/layouts/TeamMemberLayout.astro';
+
+const {person} = Astro.props;
+---
+<TeamMemberLayout content={person}>
+  {person.astro.html}
+</TeamMemberLayout> 
