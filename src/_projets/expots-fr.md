@@ -10,6 +10,7 @@ tags:
     - modèle de données
     - visualisation 3D
 since: 2021-11
+team: [lenamk, emchateau]
 link: https://github.com/ouvroir/expots
 ---
 

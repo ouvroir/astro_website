@@ -7,7 +7,8 @@ layout: '/src/layouts/ProjectLayout.astro'
 tags: 
     - web
     - documentation
-since: 2021-11 
+since: 2021-11
+team: [ktanton]
 link: https://www.dataartem.org/dataartem/ici/alldata
 ---
 

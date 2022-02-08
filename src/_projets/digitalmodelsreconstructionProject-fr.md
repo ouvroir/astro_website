@@ -9,6 +9,7 @@ tags:
     - documentation
     - modélisation 3D
 since: 2019
+team: [ktanton]
 link: https://www.dataartem.org/dataartem/digital/allprojects
 ---
 

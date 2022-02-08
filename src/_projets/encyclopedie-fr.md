@@ -9,6 +9,7 @@ tags:
     - web
     - édition numérique
 since: 2021-11
+team: [lenamk, emchateau]
 link: https://github.com/ouvroir/encyclopedie
 ---
 
