@@ -47,7 +47,7 @@ a:visited {
   color:#292E38 ; /* revoir */
 }
 
-a:hover a:focus {
+a:hover, a:focus {
   color:#292E38 ; /* revoir */
 }
 
@@ -55,7 +55,7 @@ a:active {
     color: #626873 ; /* revoir */
 }
 
-.dark a:link {
+.dark a:link, .chip a:link {
     font-weight: 500;
     color: white;
 }
@@ -64,10 +64,9 @@ a:active {
   color:#626873 ; /* revoir */
 }
 
-.dark a:hover a:focus {
+.dark a:hover, .dark a:focus {
   color:#626873 ; /* revoir */
 }
-
 
 #nav-logo {
     content: url(/style/img/ouvroir-logo-site.svg);
@@ -77,7 +76,17 @@ a:active {
 
 .change-my-color {fill: #292E38;}
 
-.chip{
+.chip {
+    font-size: 0.60rem;
     background-color: #ff5757;
-    color:white
+    color:white;
+    opacity: 0.80;
+}
+
+.chip a:visited {
+    color: #FFEBEB;
+}
+
+.chip a:hover, .chip a:focus {
+    color: #FFADAD;
 }
