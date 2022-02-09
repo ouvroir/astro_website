@@ -28,12 +28,12 @@ import ProjectPreview from '/src/components/ProjectPreview.astro';
 
 const {selection, tag} = Astro.props
 const currentPath = Astro.request.canonicalURL.pathname;
-let retour = currentPath.replace('tags/','').replace(`${tag}/`, '')
+let retour = currentPath.replace('tags/','').replace(`${slugify(tag)}/`, '')
 
 
 let title = `Projets`
 let description = `Tri des projets avec le tag`
-let permalink=`tata`
+let permalink=`https://ouvroir.umontreal.ca/fr/projets/tags/${slugify(tag)}`
 
 ---  
 
@@ -43,15 +43,26 @@ let permalink=`tata`
     <div class="columns">
       <div class="col-12">
         <h1>{title}</h1>
-        <p>{description} <span class="chip">{tag.replaceAll("- ", " ")}</span><span class="chip"><a href={retour}><i class="fa fa-close"></i></a></span></p>
+        <p>{description} 
+          <a href={retour}>
+            <span class="chip">
+              {tag}
+              <span class="btn btn-clear" aria-label="Close" role="button"></span>
+            </span>
+            </a>
+        </p>
       </div>
       <div class="col-9">
         {selection.map(s => <ProjectPreview post={s}></ProjectPreview>)}
       </div>
       <div class="col-3" id="tagColumn">
             <h2>Tags</h2>
-            <div class="chip"><a href={retour}>{tag.replaceAll("-", " ")}</a></div>
-            <span class="chip"><a href={retour}><i class="fa fa-close"></i></a></span>
+            <a href={retour}>
+              <div class="chip">
+                {tag}
+                <span class="btn btn-clear" aria-label="Close" role="button"></span>
+              </div>
+            </a>
           </div>
     </div>
   </div>
