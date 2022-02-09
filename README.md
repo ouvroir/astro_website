@@ -14,14 +14,14 @@ Cloner le répertoire :
 git clone --recursive https://github.com/ouvroir/ouvroir.github.io.git
 ```
 
-Mettre à jour le répertoire et ses sous-modules [à revoir]
+Mettre à jour le répertoire et ses sous-modules 
 ```bash
 git pull --recurse-submodules
 ```
 
-Mettre à jour les sous-modules [à revoir]
+Mettre à jour le HEAD du sous-module
 ```bash
-git submodule update --remote --merge
+git submodule update --rebase --remote
 ```
 
 Ajout d’un sous-module :
