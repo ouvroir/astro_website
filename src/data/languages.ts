@@ -21,10 +21,29 @@ export function getLanguageFromURL(pathname: string) {
 }
 
 
+// remove diacritics : 
+// see https://codepen.io/marcelo-ribeiro/pen/PomqOvE
+
+const accentsMap = new Map([
+  ["-", "\\s|_"],
+  ["a", "á|à|ã|â|ä"],
+  ["e", "é|è|ê|ë"],
+  ["i", "í|ì|î|ï"],
+  ["o", "ó|ò|ô|õ|ö"],
+  ["u", "ú|ù|û|ü"],
+  ["c", "ç"],
+  ["n", "ñ"]
+]); 
+ 
+const reducer = (acc, [key]) =>
+  acc.replace(new RegExp(accentsMap.get(key), "gi"), key);
+
+//type issue to check
+export const slugify = (text) =>
+  [...accentsMap].reduce(reducer, text.toLowerCase());
+
+
 /*Inspired by: https://github.com/DefinedNet/nebula-docs/blob/main/src/languages.ts*/
-
-
-
 export const mapGenericToText = {
     "MENU_SERVICES":{
         fr: "Services",
@@ -130,12 +149,12 @@ export const mapGenericToSlug = {
         en: 'partenariat'
     },
     "JAVASCRIPT":{
-        fr: 'JavaScript',
-        en: 'JavaScript'
+        fr: 'javascript',
+        en: 'javascript'
     },
     "CIECO":{
-        fr: 'CIÉCO',
-        en: 'CIÉCO'
+        fr: 'cieco',
+        en: 'cieco'
     },
     "DOCUMENTATION":{
         fr: 'documentation',
@@ -150,19 +169,19 @@ export const mapGenericToSlug = {
         en: 'web'
     },
     "MODELISATION3D":{
-        fr: 'modélisation-3D',
+        fr: 'modelisation-3d',
         en: '3D-modeling'
     },
     "EDITION_NUMERIQUE":{
-        fr: 'édition-numérique',
+        fr: 'edition-numerique',
         en: 'digital-edition'
     },
     "VISUALISATION3D":{
-        fr: 'visualisation-3D',
+        fr: 'visualisation-3d',
         en: '3D-visualisation'
     },
     "MODELE_DE_DONNEES":{
-        fr: 'modèle-de-données',
+        fr: 'modele-de-donnees',
         en: 'data-model'
     }
 
