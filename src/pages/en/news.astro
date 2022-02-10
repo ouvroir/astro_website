@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '/src/layouts/BaseLayout.astro'
 import BlogPostPreview from '/src/components/BlogPostPreview.astro'
+import {slugify} from '/src/data/languages.ts'
 
 let title = "News"
 let slug = "news"
@@ -41,11 +42,11 @@ allTags = allTags.sort();
       <div class="col-9">
           {allPosts.map(p => <BlogPostPreview post={p}/>)}
       </div>
-      <div class="col-3" id="tagColumn">
+      <div class="col-3 tagColumn">
             <h2>Tags</h2>
             {allTags.map(t => {
                 return <div class="chip">
-                  <a href={`${currentPath}tags/${t}/`}>{t}</a>
+                  <a href={`${currentPath}tags/${slugify(t)}/`}>{t}</a>
                 </div>
               }
             )} 
@@ -62,9 +63,3 @@ allTags = allTags.sort();
 
 -->
 
-<style>
-#tagColumn {
-  background-color: lightgray;
-  padding-left: 1rem;
-}
-</style>

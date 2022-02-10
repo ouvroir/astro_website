@@ -174,7 +174,7 @@ export const mapGenericToSlug = {
     },
     "MODELISATION3D":{
         fr: 'modelisation-3d',
-        en: '3D-modeling'
+        en: '3d-modeling'
     },
     "EDITION_NUMERIQUE":{
         fr: 'edition-numerique',
@@ -182,7 +182,7 @@ export const mapGenericToSlug = {
     },
     "VISUALISATION3D":{
         fr: 'visualisation-3d',
-        en: '3D-visualisation'
+        en: '3d-visualisation'
     },
     "MODELE_DE_DONNEES":{
         fr: 'modele-de-donnees',

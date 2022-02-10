@@ -52,7 +52,7 @@ let permalink=`https://ouvoir.umontreal.ca/fr/actualtes/tags/${tag}`
       <div class="col-9">
         {selection.map(s => <BlogPostPreview post={s}></BlogPostPreview>)}
       </div>
-      <div class="col-3" id="tagColumn">
+      <div class="col-3 tagColumn">
         <h2>Tags</h2>
         <a href={retour}>
           <div class="chip">
@@ -60,15 +60,9 @@ let permalink=`https://ouvoir.umontreal.ca/fr/actualtes/tags/${tag}`
             <span class="btn btn-clear" aria-label="Close" role="button"></span>
           </div>
         </a>
-        </div>
+      </div>
     </div>
   </div>
 </BaseLayout>
 
 
-<style>
-#tagColumn {
-  background-color: lightgray;
-  padding-left: 1rem;
-}
-</style>

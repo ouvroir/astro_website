@@ -90,3 +90,8 @@ a:active {
 .chip a:hover, .chip a:focus {
     color: #FFADAD;
 }
+
+.tagColumn {
+    background-color: lightgray;
+    padding-left: 1rem;
+  }

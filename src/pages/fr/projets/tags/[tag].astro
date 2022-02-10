@@ -15,8 +15,6 @@ export async function getStaticPaths() {
     //for each tag, return a page with URL formed by tag (replacing spaces by "-")
     return Array.from(tagSet).map((tag: string) => {
         var selection = blog.filter(post => post.tags.includes(tag));
-
-        tag = tag.replaceAll(" ", "-")
         return {
             params: { tag: slugify(tag) },
             props: {selection, tag} };
@@ -49,29 +47,23 @@ let permalink=`https://ouvroir.umontreal.ca/fr/projets/tags/${slugify(tag)}`
               {tag}
               <span class="btn btn-clear" aria-label="Close" role="button"></span>
             </span>
-            </a>
+          </a>
         </p>
       </div>
       <div class="col-9">
         {selection.map(s => <ProjectPreview post={s}></ProjectPreview>)}
       </div>
-      <div class="col-3" id="tagColumn">
-            <h2>Tags</h2>
-            <a href={retour}>
-              <div class="chip">
-                {tag}
-                <span class="btn btn-clear" aria-label="Close" role="button"></span>
-              </div>
-            </a>
+      <div class="col-3 tagColumn">
+        <h2>Tags</h2>
+        <a href={retour}>
+          <div class="chip">
+            {tag}
+            <span class="btn btn-clear" aria-label="Close" role="button"></span>
           </div>
+        </a>
+      </div>
     </div>
   </div>
 </BaseLayout>
 
 
-<style>
-#tagColumn {
-  background-color: lightgray;
-  padding-left: 1rem;
-}
-</style>

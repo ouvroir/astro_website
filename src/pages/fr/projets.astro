@@ -37,7 +37,7 @@ allTags = allTags.sort();
         <div class="col-9">
             {projects.map(p => <ProjectPreview post={p}/>)}
         </div>
-        <div class="col-3" id="tagColumn">
+        <div class="col-3 tagColumn">
           <h2>Tags</h2>
           {allTags.map((t:string) => {
                 return <div class="chip">
@@ -59,9 +59,3 @@ allTags = allTags.sort();
   -->  
 </BaseLayout>
 
-<style>
-#tagColumn {
-  background-color: lightgray;
-  padding-left: 1rem;
-}
-</style>
