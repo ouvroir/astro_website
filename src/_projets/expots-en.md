@@ -7,7 +7,6 @@ layout: '/src/layouts/ProjectLayout.astro'
 tags: 
     - CIÉCO
     - documentation
-    - data model
     - 3D visualisation 
 since: 2021-11
 team: [lenamk, emchateau]

@@ -1,10 +1,10 @@
 ---
 export async function getStaticPaths() {
-  let persons = Astro.fetchContent('/src/_equipe/*-fr.md');
+  let persons = Astro.fetchContent('/src/_equipe/*-en.md');
 
   return persons.map((person) => {
         return {
-            params: { slug: person.slug },
+            params: { slug: person.slug},
             props: {person} };
     });
 }

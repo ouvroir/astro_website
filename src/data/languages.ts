@@ -63,7 +63,7 @@ export const mapGenericToText = {
     },
     "TAGLINE":{
         fr: "Un espace ouvert et inclusif",
-        en: "An inclusive and open-sources"
+        en: "An inclusive and open-source space"
     },
     "SITE_WEB":{
         fr: "site web",
@@ -91,10 +91,6 @@ export const mapGenericToSlug = {
     "SERVICES":{
         fr: 'services',
         en: 'services',
-    },
-    "INFO":{
-        fr: 'info',
-        en: 'info',
     },
     "ARTICLE_1":{
         fr: 'premier-billet',
@@ -184,17 +180,9 @@ export const mapGenericToSlug = {
         fr: 'visualisation-3d',
         en: '3d-visualisation'
     },
-    "MODELE_DE_DONNEES":{
-        fr: 'modele-de-donnees',
-        en: 'data-model'
-    },
-    "EQUIPE":{
-        fr: 'equipe',
-        en: 'team'
-    },
     "LENA":{
-        fr: 'lena-krause',
-        en: 'lena-krause'
+        fr: 'lenamk',
+        en: 'lenamk'
     }
 
 }
