@@ -1,8 +1,8 @@
 ---
-title: 'Digital Models Reconstruction project'
+title: Digital Models Reconstruction project
 slug: digital-models-reconstruction-project
 lang: en
-description: "Projet de reconstitution de modèles numériques est une base de données relationnelle externe, qui relie des modèles de reconstitution en 3D"
+description: The Digital Models Reconstruction project is an external relational  database, which links 3D reconstruction model
 layout: '/src/layouts/ProjectLayout.astro'
 tags: 
     - web
@@ -13,11 +13,6 @@ team: [ktanton]
 link: https://www.dataartem.org/dataartem/digital/allprojects
 ---
 
-
 <!-- ajouter bonnes dates, author/project lead? -->
 
-# Digital Models Reconstruction project 
-
-Le *Digital Models Reconstruction project*, ou projet de reconstitution de modèles numériques, est une base de données relationnelle externe, qui relie des modèles de reconstitution en 3D. Il s'agit essentiellement d'un moyen pour annoter (ou noter en bas de page) un modèle en 3D afin que le projet de modèle puisse être réutilisé par d'autres chercheurs après sa création initiale.
-
-Pour en savoir plus: [Digital Reconstruction Models](https://www.dataartem.org/dataartem/digital/allprojects)
+The Digital Models Reconstruction project is an external relational  database, which links 3D reconstruction models. It is essentially a way  to annotate (or footnote) a 3D model so that the model project may be  re-used by other researchers after its initial creation.

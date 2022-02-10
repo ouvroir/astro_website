@@ -1,17 +1,15 @@
 ---
-title: Billet cieco
+title: Billet CIÉCO
 slug: billet-cieco
 lang: fr
 description: Test de contenu, tag partenariat
-author: Ouvroir
+author: [ouvroir]
 publishDate: 2021-11-22
 tags: 
     - blog
     - partenariat
 layout: '/src/layouts/BlogLayout.astro'
 ---
-
-# Premier billet
 
 Ceci est un test, contenu avec un tag partenariat 
 

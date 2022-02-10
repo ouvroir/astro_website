@@ -1,17 +1,15 @@
 ---
-title: CIECO Blogpost
+title: CIÉCO Blogpost
 slug: cieco-blogpost
 lang: en
 description: Testing content with partenariat tag
-author: Ouvroir
+author: [ouvroir]
 publishDate: 2021-11-22
 tags: 
     - blog
     - partenariat
 layout: '/src/layouts/BlogLayout.astro'
 ---
-
-# CIECO Blogpost
 
 This is a test, we need to make tags billingal :o  
 

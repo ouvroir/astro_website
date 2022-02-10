@@ -1,8 +1,8 @@
 ---
-title: 'Expots'
+title: Expots
 slug: expots
 lang: en
-description: "Outil pour la documentation des accrochages de collection et de visualisation 3D"
+description: Tool for documentation des accrochages de collection et de visualisation 3D
 layout: '/src/layouts/ProjectLayout.astro'
 tags: 
     - CIÉCO
@@ -12,8 +12,6 @@ since: 2021-11
 team: [lenamk, emchateau]
 link: https://github.com/ouvroir/expots
 ---
-
-## Tool for documentation des accrochages de collection et de visualisation 3D
 
 La recherche historique portée par le premier axe du partenariat CIÉCO implique la mobilisation et l’exploitation de nombreuses sources archivistiques afin de documenter l’histoire des accrochages de collections dans les musées d’art et pouvoir procéder à leur reconstitution. Un outil permet d’accompagner l’ensemble des opérations de recherche, depuis la collecte de l’information historique, à la formulation des hypothèses et à l’enregistrement des résultats.
 
@@ -32,7 +30,3 @@ Cet outil réalisé par un prestataire de service externe propose une interface 
 Grâce au modèle documentaire mobilisé, cette information peut être qualifiée par niveau de preuve et sourcée, mais aussi partagée sous forme de données ouvertes et liées. L’outil permet de générer des visualisations tridimensionnelles à partir des informations spatiales enregistrées. Plusieurs moteurs de rendu sont implémentés pour produire des hypothèses de restitution sous la forme de table lumineuse ou d’espaces parcourables en 3D dans un navigateur web. Les développements logiciels sont libres et ouverts. Les données de l’application doivent pouvoir être sérialisées en JSON-LD, en respectant le modèle de données exprimé en OWL à des fins d’interopérabilité. Les développements permettent de générer des visualisations 3D à la volée basées sur le standard WebGL.
 
 Pour parvenir à la conception de cet outil de recherche, on prévoit deux étapes de conception (réalisation d’un pilote en année 2, suivie d’une mise en pratique et d’une évaluation puis une deuxième itération en année 3) qui seront prolongées par une étape de dissémination associée à des recherche de financement subséquents en fonction de l’intérêt des partenaires muséaux.
-
----
-
-Pour en savoir plus: [repo Github](https://github.com/ouvroir/expots)

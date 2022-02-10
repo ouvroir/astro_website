@@ -68,6 +68,14 @@ export const mapGenericToText = {
     "SITE_WEB":{
         fr: "site web",
         en: "website"
+    },
+    "PUBLIE_LE":{
+        fr: "publié le",
+        en: "published on"
+    },
+    "PAR":{
+        fr: "par",
+        en: "by"
     }
     
 }    

@@ -10,12 +10,12 @@ export interface Props{
 
 var currentPath = Astro.request.canonicalURL.pathname;
 const lang = currentPath && getLanguageFromURL(currentPath);
-console.log(currentPath)
-const tagIndex = currentPath.indexOf('tags')
 
+//remove tag from path for links to projects
+const tagIndex = currentPath.indexOf('tags')
 if (tagIndex != -1)
     currentPath = currentPath.slice(0, tagIndex)
-console.log(currentPath)
+
 const { post } = Astro.props;
 let tags = post.tags
 ---

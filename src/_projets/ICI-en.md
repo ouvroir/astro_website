@@ -1,8 +1,8 @@
 ---
-title: 'Inscribed Capitals Index'
+title: Inscribed Capitals Index
 slug: inscribed-capitals-index
 lang: en
-description: "Exemples de chapiteaux avec des inscriptions lapidaires (ca.1080-1160) disponibles pour la recherche scientifique dans un format électronique consultable"
+description: The Inscribed Capitals Index (ICI) presents instances of capitals with lapidary inscriptions (ca.1080-1160) available for scholarly research in a searchable electronic format. 
 layout: '/src/layouts/ProjectLayout.astro'
 tags: 
     - web
@@ -13,10 +13,6 @@ link: https://www.dataartem.org/dataartem/ici/alldata
 ---
 
 
-<!-- ajouter bonnes dates, author/project lead? -->
+<!-- ajouter bonnes dates-->
 
-## Inscribed Capital Index
-
-Le Inscribed Capitals Index (ICI) présente des exemples de chapiteaux avec des inscriptions lapidaires (ca.1080-1160) disponibles pour la recherche scientifique dans un format électronique consultable. La fiche individuelle de chaque chapiteau comprend une description du chapiteau, son emplacement indiqué sur un plan (lorsque cela est possible), ainsi que la transcription et la traduction de l'inscription. Les données sont présentées sous forme de tableaux, permettant aux utilisateurs de trier et de filtrer selon les catégories. L'ICI n'est pas un catalogue statique. Au contraire, la fonctionnalité du site permet des mises à jour et des extensions. Pour l'instant, l'ICI se concentre sur les capitales inscrites situées en France, mais il est prévu d'inclure à terme l'Espagne, l'Angleterre et l'Italie.
-
-Pour en savoir plus: [ICI](https://www.dataartem.org/dataartem/ici/alldata)
+The Inscribed Capitals Index (ICI) presents instances of capitals with  lapidary inscriptions (ca.1080-1160) available for scholarly research in a searchable electronic format. The individual record for each capital  includes a description of the capital, its location indicated on a floor plan (when possible), and transcription and translation of the  inscription. Data is presented in a tabular layout, allowing users to  sort and filter according to categories. The ICI is not a static  catalog. Instead the site's functionality allows for updates and  expansion. At present, the ICI concentrates on inscribed capitals  located in France with plans to eventually include Spain, England, and  Italy.
