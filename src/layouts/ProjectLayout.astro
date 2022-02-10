@@ -3,9 +3,15 @@ import MetaData from '../components/MetaData.astro'
 import Header from '../components/Header.astro'
 import Project from '../components/Project.astro'
 import Footer from '../components/Footer.astro'
+import {
+    mapGenericToText,
+    getLanguageFromURL
+} from '/src/data/languages.ts';
 
+var currentPath = Astro.request.canonicalURL.pathname;
+const lang = currentPath && getLanguageFromURL(currentPath);
 const {content} = Astro.props;
-const {title, description, since, tags, permalink, link, slug, lang} = content;
+const {title, description, since, tags, permalink, link, slug} = content;
 
 ---
 <html lang={lang} prefix="og: https://ogp.me/ns# article: https://ogp.me/ns/article#">

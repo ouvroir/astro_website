@@ -3,13 +3,17 @@ import MetaData from '../components/MetaData.astro'
 import Header from '../components/Header.astro'
 import BlogPost from '../components/BlogPost.astro'
 import Footer from '../components/Footer.astro'
+import {
+    mapGenericToText,
+    getLanguageFromURL
+} from '/src/data/languages.ts';
 
+var currentPath = Astro.request.canonicalURL.pathname;
+const lang = currentPath && getLanguageFromURL(currentPath);
 const {content} = Astro.props;
 const {title, description, author, publishDate, tags, permalink, slug} = content;
 ---
-
-
-<html lang="fr" prefix="og: https://ogp.me/ns# article: https://ogp.me/ns/article#">
+<html lang={lang} prefix="og: https://ogp.me/ns# article: https://ogp.me/ns/article#">
   <head>
     <MetaData title={title} description={description} permalink={permalink}/>
     <!-- change for Blog metadata component, type: blog-->
