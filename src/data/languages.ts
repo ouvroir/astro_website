@@ -191,8 +191,15 @@ export const mapGenericToSlug = {
     "LENA":{
         fr: 'lenamk',
         en: 'lenamk'
+    },
+    "EMMANUEL":{
+        fr: 'emchateau',
+        en: 'emchateau'
+    },
+    "KRISTINE":{
+        fr: 'ktanton',
+        en: 'ktanton'
     }
-
 }
 
 export const mapSlugToGeneric = Object.keys(mapGenericToSlug).reduce((acc, k) => {
