@@ -28,9 +28,7 @@ jobs:
       
       # Update references
       - name: Git Submodule Update
-        run: |
-          git submodule update --init --recursive  
-          git pull --recurse-submodules 
+        run: git submodule update --init --recursive  
 
       # Install dependencies with npm
       - name: Install dependencies
