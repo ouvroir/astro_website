@@ -8,17 +8,21 @@ let slug = "news"
 let description = "Blog, announcements, events and newsletter"
 let permalink = "https://ouvroir.umontreal.ca/en/news/"
 const currentPath = Astro.request.canonicalURL.pathname;
+
 interface MarkdownFrontmatter {
-  publishDate: Date;
+  date: Date;
   tags: Array<string>
 }
 // Get all blog posts
-let allPosts = Astro.fetchContent<MarkdownFrontmatter>('/src/_blog/*-en.md');
-allPosts = allPosts.sort((a, b) => (b.publishDate).valueOf() - (a.publishDate).valueOf());
+let blogPosts = Astro.fetchContent<MarkdownFrontmatter>('/src/_blog/*-en.md');
+let crPosts = Astro.fetchContent<MarkdownFrontmatter>('/src/_labouvroir/cr/*.md');
+let allPosts = blogPosts.concat(crPosts)
 
+allPosts = allPosts.sort((a, b) => (b.date).valueOf() - (a.date).valueOf());
 let tagSet = new Set();
 let allTags = [];
 allPosts.forEach(p =>{
+  console.log(p.date)
   p.tags.forEach(t => {
     tagSet.add(t)
   });
@@ -29,7 +33,7 @@ for (let t of tagSet){
 }
 allTags = allTags.sort();
 
-
+console.log(allTags)
 ---
 
 <BaseLayout title={title} description={description} permalink={permalink} slug={slug}>

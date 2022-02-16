@@ -2,12 +2,12 @@
 title: CIÉCO Blogpost
 slug: cieco-blogpost
 lang: en
-description: Testing content with partenariat tag
+description: Testing content
 author: ouvroir
 date: 2021-11-22
 tags: 
     - blog
-    - partenariat
+    - CIÉCO
 layout: '/src/layouts/BlogLayout.astro'
 ---
 

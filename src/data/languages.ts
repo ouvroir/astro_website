@@ -188,8 +188,28 @@ export const mapGenericToSlug = {
         fr: 'visualisation-3d',
         en: '3d-visualisation'
     },
+    "FCI":{
+        fr:'fci',
+        en:'fci'
+    },
+    "CR":{
+        fr:'cr',
+        en:'cr'
+    },
+    "HIST_ART_NUMERIQUE":{
+        fr:"histoire-de-l'art-numerique",
+        en:"digital-art-history"
+    },
+    "INTERNATIONAL":{
+        fr:'international',
+        en:'internationl'
+    },
+    "SERVEUR":{
+        fr:'serveur',
+        en:'serveur'
+    },
     "LENA":{
-        fr: 'lenamk',
+        fr: 'lenamk',   
         en: 'lenamk'
     },
     "EMMANUEL":{
@@ -199,6 +219,10 @@ export const mapGenericToSlug = {
     "KRISTINE":{
         fr: 'ktanton',
         en: 'ktanton'
+    },
+    "WILLIAM":{
+        fr: 'williamdiakite',
+        en: 'williamdiakite'
     }
 }
 

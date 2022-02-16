@@ -8,9 +8,6 @@ date: 2021-11-21
 tags: 
     - lab
     - event
-date: 2021-11-29
-place: zoom
-layout: '/src/layouts/BlogLayout.astro'
 ---
 
 Ceci est un test pour un événement: démo du site le 29 novembre à la réunion du labo

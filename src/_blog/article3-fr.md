@@ -2,12 +2,12 @@
 title: Billet CIÉCO
 slug: billet-cieco
 lang: fr
-description: Test de contenu, tag partenariat
+description: Test de contenu
 author: ouvroir
 date: 2021-11-22
 tags: 
     - blog
-    - partenariat
+    - CIÉCO
 layout: '/src/layouts/BlogLayout.astro'
 ---
 

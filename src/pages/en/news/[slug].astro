@@ -1,8 +1,16 @@
 ---
 export async function getStaticPaths() {
   let blog = Astro.fetchContent('/src/_blog/*-en.md');
+  let cr = Astro.fetchContent('/src/_labouvroir/cr/*.md')
 
-  return blog.map((post) => {
+  let all = blog.concat(cr)
+
+  return all.map((post) => {
+      //s'il n'y a pas de slug, c'est un cr
+      //créer un slug à partir de la date en enlevant l'heure
+        if (!post.slug)
+            post.slug = `cr${post.date.replace('T00:00:00.000Z', '')}`
+            
         return {
             params: { slug: post.slug },
             props: {post} };

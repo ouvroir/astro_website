@@ -20,7 +20,6 @@ let allPosts = blogPosts.concat(crPosts)
 
 allPosts = allPosts.sort((a, b) => (b.date).valueOf() - (a.date).valueOf());
 
-
 let tagSet = new Set();
 let allTags = [];
 allPosts.forEach(p =>{
