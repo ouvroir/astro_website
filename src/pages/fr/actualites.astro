@@ -10,14 +10,16 @@ let permalink = "https://ouvroir.umontreal.ca/fr/actualites/"
 const currentPath = Astro.request.canonicalURL.pathname;
 
 interface MarkdownFrontmatter {
-  publishDate: Date;
+  date: Date;
   tags: Array<string>
 }
 // Get all blog posts
-let allPosts = Astro.fetchContent<MarkdownFrontmatter>('/src/_blog/*-fr.md');
+let blogPosts = Astro.fetchContent<MarkdownFrontmatter>('/src/_blog/*-fr.md');
+let crPosts = Astro.fetchContent<MarkdownFrontmatter>('/src/_labouvroir/cr/*.md');
+let allPosts = blogPosts.concat(crPosts)
 
+allPosts = allPosts.sort((a, b) => (b.date).valueOf() - (a.date).valueOf());
 
-allPosts = allPosts.sort((a, b) => (b.publishDate).valueOf() - (a.publishDate).valueOf());
 
 let tagSet = new Set();
 let allTags = [];
@@ -42,7 +44,7 @@ allTags = allTags.sort();
         <p>{description}</p>
       </div>
       <div class="col-9">
-        {allPosts.map(p => <BlogPostPreview post={p}/>)}
+        {allPosts.map(p => <BlogPostPreview post={p}/>)} <!-- map does not keep the order-->
       </div>
       <div class="col-3 tagColumn">
             <h2>Tags</h2>

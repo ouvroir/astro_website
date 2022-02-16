@@ -3,8 +3,8 @@ title: First blogpost
 slug: first-blogpost
 lang: en
 description: Test
-author: [ouvroir]
-publishDate: 2021-11-20
+author: ouvroir
+date: 2021-11-20
 tags: 
     - blog
     - lab

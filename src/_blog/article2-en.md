@@ -4,7 +4,7 @@ slug: site-demo
 lang: en
 description: Testing event content
 author: lenamk
-publishDate: 2021-11-21
+date: 2021-11-21
 tags: 
     - lab
     - event

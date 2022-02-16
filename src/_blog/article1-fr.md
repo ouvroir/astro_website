@@ -3,8 +3,8 @@ title: Premier billet
 slug: premier-billet
 lang: fr
 description: Test de contenu d'une actualité
-author: [ouvroir]
-publishDate: 2021-11-20
+author: ouvroir
+date: 2021-11-20
 tags: 
     - blog
     - lab

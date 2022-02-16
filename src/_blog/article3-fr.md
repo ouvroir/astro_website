@@ -3,8 +3,8 @@ title: Billet CIÉCO
 slug: billet-cieco
 lang: fr
 description: Test de contenu, tag partenariat
-author: [ouvroir]
-publishDate: 2021-11-22
+author: ouvroir
+date: 2021-11-22
 tags: 
     - blog
     - partenariat
