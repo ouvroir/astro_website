@@ -10,7 +10,9 @@ export async function getStaticPaths() {
       //créer un slug à partir de la date en enlevant l'heure
         if (!post.slug)
             post.slug = `cr${post.date.replace('T00:00:00.000Z', '')}`
-            
+
+
+        console.log(post.slug)    
         return {
             params: { slug: post.slug },
             props: {post} };

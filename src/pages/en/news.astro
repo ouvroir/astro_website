@@ -22,7 +22,6 @@ allPosts = allPosts.sort((a, b) => (b.date).valueOf() - (a.date).valueOf());
 let tagSet = new Set();
 let allTags = [];
 allPosts.forEach(p =>{
-  console.log(p.date)
   p.tags.forEach(t => {
     tagSet.add(t)
   });
@@ -33,7 +32,6 @@ for (let t of tagSet){
 }
 allTags = allTags.sort();
 
-console.log(allTags)
 ---
 
 <BaseLayout title={title} description={description} permalink={permalink} slug={slug}>
