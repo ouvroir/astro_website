@@ -16,7 +16,7 @@ const lang = currentPath && getLanguageFromURL(currentPath);
 
 const link = `${mapGenericToSlug["PROJETS"][lang]}/${post.slug}/`
 ---
-<div class="card col-4">
+<div class="card column auto">
     <div class="card-image">
         <a href={link}><img class="img-responsive" src="/style/img/pattern.svg"></a>
     </div>
@@ -34,7 +34,7 @@ const link = `${mapGenericToSlug["PROJETS"][lang]}/${post.slug}/`
 <style>
 
 
-.card {
+/* .card {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr auto;
@@ -54,6 +54,6 @@ const link = `${mapGenericToSlug["PROJETS"][lang]}/${post.slug}/`
 }
 .card-footer{
     grid-area: footer;
-}
+} */
 </style>
 

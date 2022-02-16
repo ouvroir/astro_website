@@ -15,22 +15,18 @@ const lang = currentPath && getLanguageFromURL(currentPath);
     <MetaData title={title} description={description} permalink={permalink}/>
   </head>
   <body>
-    <div class="container grid-xl">
-      <div class="columns">
-        <div class="col-1"><!--nav gauche--></div>
-        <div class="col-10">
-          <div id="app" class="container grid-xl">
-            <Header slug={slug}/>
-            <main>
+    <div id="app" class="container">
+      <Header slug={slug}/>
+      <main>
+        <div class="container">
+          <div class="columns">
+            <div class="column col-10 col-mx-auto"> <!-- not fully responsive, need to deal with mobile view-->
               <slot />
-
-            </main>  
-
-            <Footer />
+            </div>
           </div>
         </div>
-        <div class="col-1"><!--nav droite--></div>
-      </div>
+      </main>
+      <Footer />
     </div>
   </body>
 </html>
