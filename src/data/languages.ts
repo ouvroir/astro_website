@@ -76,8 +76,7 @@ export const mapGenericToText = {
     "PAR":{
         fr: "par",
         en: "by"
-    }
-    
+    }    
 }    
 
 //slugs
@@ -232,3 +231,122 @@ export const mapSlugToGeneric = Object.keys(mapGenericToSlug).reduce((acc, k) =>
     })
     return acc
 }, {})
+
+
+export function formatDate (date, lang){
+    var bonneDate;
+    var annee = date.split("-")[0]
+    var mois = date.split("-")[1]
+    var jour = date.split("-")[2]
+    var moisTxt;
+
+    //enlève le 0 devant les jours de 1 à 9
+    if (jour.charAt(0) == "0")
+    jour = jour.slice(1)
+
+    if (mois.charAt(0) == "0")
+    mois = mois.slice(1)
+
+    if (lang == "en"){
+        switch (parseInt(mois)){
+            case 1: 
+                moisTxt = "January";
+                break;
+            case 2: 
+                moisTxt = "February";
+                break;
+            case 3: moisTxt = "March";
+                break;
+            case 4: 
+                moisTxt = "April";
+                break;
+            case 5: 
+                moisTxt = "May";
+                break;
+            case 6: 
+                moisTxt = "June";
+                break;
+            case 7: 
+                moisTxt = "July";
+                break;
+            case 8: 
+                moisTxt = "August";
+                break;
+            case 9: 
+                moisTxt = "September";
+                break;
+            case 10: 
+                moisTxt = "October";
+                break;
+            case 11: 
+                moisTxt = "November";
+                break;
+            case 12: 
+                moisTxt = "December";
+                break;   
+            default: console.log(mois, 'error')         
+        }
+
+        switch (parseInt(jour.slice(-1))){
+            case 1: 
+                bonneDate = moisTxt.concat(` ${jour}st, ${annee}`);
+                break;   
+            case 2: 
+                bonneDate = moisTxt.concat(` ${jour}nd, ${annee}`);
+                break;   
+            case 3: 
+                bonneDate = moisTxt.concat(` ${jour}rd, ${annee}`);
+                break;
+            default: 
+                bonneDate = moisTxt.concat(` ${jour}th, ${annee}`);
+        }
+    }
+    else if (lang == "fr"){
+        switch (parseInt(mois)){
+            case 1: 
+                moisTxt = "janvier";
+                break;
+            case 2: 
+                moisTxt = "février";
+                break;
+            case 3: 
+                moisTxt = "mars";
+                break;
+            case 4: 
+                moisTxt = "avril";
+                break;
+            case 5: 
+                moisTxt = "mai";
+                break;
+            case 6: 
+                moisTxt = "juin";
+                break;
+            case 7: 
+                moisTxt = "juillet";
+                break;
+            case 8: 
+                moisTxt = "août";
+                break;
+            case 9: 
+                moisTxt = "septembre";
+                break;
+            case 10: 
+                moisTxt = "octobre";
+                break;
+            case 11: 
+                moisTxt = "novembre";
+                break;
+            case 12: 
+                moisTxt = "décembre";
+                break;            
+            default: console.log(mois, 'error')
+        }
+        switch (parseInt(jour)){
+            case 1: 
+                bonneDate = jour.concat(`er ${moisTxt} ${annee}`);
+                break;
+            default: bonneDate = jour.concat(` ${moisTxt} ${annee}`);
+        }
+    }
+    return bonneDate;
+}
