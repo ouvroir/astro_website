@@ -22,13 +22,23 @@ else
     
 
 var newSlug = currentPath.split('/').map(p => {
-    if (p == 'fr' || p =='en')
-        return otherLang
-    else {
-        var gen = mapSlugToGeneric[p];
-        var langSlug = mapGenericToSlug[gen][otherLang]
-        return langSlug
-    }
+  if (p == 'fr' || p =='en'){
+    return otherLang;
+  }
+  else if (mapSlugToGeneric[p]){
+    var gen = mapSlugToGeneric[p];
+    var langSlug = mapGenericToSlug[gen][otherLang]
+    return langSlug
+  }
+  else if (p.startsWith('cr20')){
+    // pour les cr, qui ne sont pas billingues: même contenu dans les deux langues
+    return p;
+  }
+  else {
+    //return nothing to go "back up" one
+    //won't work for tag search
+    return "";
+  }
 }).join('/');
 
 
