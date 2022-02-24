@@ -10,7 +10,7 @@ export async function getStaticPaths() {
         if (!post.slug)
             post.slug = `cr${post.date.replace('T00:00:00.000Z', '')}`
       //enlever le Z pour ne pas être en UTC 
-        console.log(post.slug)    
+
         return {
             params: { slug: post.slug },
             props: {post} };
@@ -23,5 +23,5 @@ const {post} = Astro.props;
 
 ---
 <BlogLayout content={post} slug={post.slug}>
-  {post.astro.html}
+  <Fragment set:html={post.astro.html}/>
 </BlogLayout>

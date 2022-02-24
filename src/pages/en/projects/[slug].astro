@@ -16,5 +16,5 @@ import ProjectLayout from '/src/layouts/ProjectLayout.astro';
 const {projet} = Astro.props;
 ---
 <ProjectLayout content={projet} slug={projet.slug} url={projet.link}>
-  {projet.astro.html}
+  <Fragment set:html={projet.astro.html}/>
 </ProjectLayout>

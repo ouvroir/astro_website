@@ -15,5 +15,5 @@ const {projet} = Astro.props;
 
 ---
 <ProjectLayout content={projet} slug={projet.slug}>
-  {projet.astro.html}
+  <Fragment set:html={projet.astro.html}/>
 </ProjectLayout>
