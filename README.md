@@ -31,6 +31,12 @@ git submodule add https://github.com/path/submodule.git src/_name
 git submodule update --init --recursive
 ```
 
+## Mise à jour du sous-module _labouvroir
+Dans le cas d'une mise à jour de _labouvroir, 
+vérifier les éléments suivants: 
+- chaque contenu de _labouvroir/cr devient une entrée de blog, le slug sera "cr" suivi de la date (attention, s'il y a deux CR la même date, il faut changer le code)
+- s'il y a des nouveaux tags, il faut les ajouter dans src/data/languages.ts → mapGenericToSlug 
+
 ## Déployer en local
 
 Ce site utilise le générateur de site statique [Astro](http://astro.build)

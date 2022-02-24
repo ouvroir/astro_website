@@ -34,9 +34,10 @@ const lang = currentPath && getLanguageFromURL(currentPath);
 
     <h2>Équipe</h2>
     <ul>
-        <li>Emmanuel Château-Dutier (directeur scientifique)</li>
-        <li>Kristine Tanton (directrice scientifique)</li>
+        <li><a href={`/${lang}/${mapGenericToSlug["LAB"][lang]}/emchateau`}>Emmanuel Château-Dutier</a> (directeur scientifique)</li>
+        <li><a href={`/${lang}/${mapGenericToSlug["LAB"][lang]}/ktanton`}>Kristine Tanton</a> (directrice scientifique)</li>
         <li><a href={`/${lang}/${mapGenericToSlug["LAB"][lang]}/lenamk`}>Lena Krause</a> (responsable du laboratoire)</li>
+        <li><a href={`/${lang}/${mapGenericToSlug["LAB"][lang]}/williamdiakite`}>William Diakité</a></li>
     </ul>
     <!--    
         <Person> et <PersonPreview>, avec une page par personne? ou juste des entrées directement ici? 
