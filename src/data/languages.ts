@@ -32,7 +32,8 @@ const accentsMap = new Map([
   ["o", "ó|ò|ô|õ|ö"],
   ["u", "ú|ù|û|ü"],
   ["c", "ç"],
-  ["n", "ñ"]
+  ["n", "ñ"],
+  ["", "\'"] //retire l'apostrophe, ex: histoire de l'art
 ]); 
  
 const reducer = (acc, [key]) =>
