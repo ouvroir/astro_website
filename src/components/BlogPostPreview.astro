@@ -22,7 +22,7 @@ if (tagIndex != -1)
 const { post } = Astro.props;
 let tags = post.tags;
 
-var date = formatDate(post.date.replace('T00:00:00.000Z', ''), lang)
+var date = formatDate(post.date, lang)
 ---
 <article class="section">
     <header>
