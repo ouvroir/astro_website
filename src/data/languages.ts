@@ -235,6 +235,9 @@ export const mapSlugToGeneric = Object.keys(mapGenericToSlug).reduce((acc, k) =>
 
 export function formatDate (date, lang){
     var bonneDate;
+    //enlève l'heure et time zone
+    date = date.replace('T00:00:00.000Z', '')
+
     var annee = date.split("-")[0]
     var mois = date.split("-")[1]
     var jour = date.split("-")[2]

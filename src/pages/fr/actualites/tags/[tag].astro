@@ -2,10 +2,11 @@
 import {slugify} from '/src/data/languages.ts'
 export async function getStaticPaths() {
     let blog = Astro.fetchContent('/src/_blog/*-fr.md');
-        
+    let cr = Astro.fetchContent('/src/_labouvroir/cr/*.md')
+    let all = blog.concat(cr)
     //get a set of tags
     let tagSet = new Set();
-    blog.forEach(p =>{
+    all.forEach(p =>{
         p.tags.forEach(t => {
             tagSet.add(t)
         });
@@ -13,7 +14,7 @@ export async function getStaticPaths() {
 
     //for each tag, return a page with URL formed by tag
     return Array.from(tagSet).map((tag) => {
-        var selection = blog.filter(post => post.tags.includes(tag));
+        var selection = all.filter(post => post.tags.includes(tag));
         return {
             params: { tag: slugify(tag) },
             props: {selection, tag} };

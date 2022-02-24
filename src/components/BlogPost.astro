@@ -1,20 +1,14 @@
 ---
 import {
     mapGenericToText,
-    getLanguageFromURL
+    getLanguageFromURL,
+    formatDate
 } from '/src/data/languages.ts';
 
-export interface Props {
-  title: string;
-  description: string,
-  author: string;
-  publishDate: Date; /*why a string*/
-  tags: Array<string>
-}
 var currentPath = Astro.request.canonicalURL.pathname;
 const lang = currentPath && getLanguageFromURL(currentPath);
-const { title, author, description, publishDate, tags } = Astro.props;
-let date = new Date(publishDate)
+const { title, author, description, date, tags } = Astro.props;
+let fullDate = formatDate(date, lang)
 ---
 <div class="container">
     <article class="content">
@@ -23,7 +17,7 @@ let date = new Date(publishDate)
                 <p>Actualités de l'Ouvroir</p>
                 <h1>{title}</h1>
                 <p>{description}</p>
-                <p>{mapGenericToText["PUBLIE_LE"][lang]} {date.toString()} {mapGenericToText["PAR"][lang]} {author}</p>
+                <p>{mapGenericToText["PUBLIE_LE"][lang]} {fullDate} {mapGenericToText["PAR"][lang]} {author}</p>
                 <p>{tags.map(t => <span class="chip">{t}</span>)}</p>
             </div>
         </header>

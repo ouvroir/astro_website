@@ -11,7 +11,7 @@ import {
 var currentPath = Astro.request.canonicalURL.pathname;
 const lang = currentPath && getLanguageFromURL(currentPath);
 const {content} = Astro.props;
-const {title, description, author, publishDate, tags, permalink, slug} = content;
+const {title, description, author, date, tags, permalink, slug} = content;
 ---
 <html lang={lang} prefix="og: https://ogp.me/ns# article: https://ogp.me/ns/article#">
   <head>
@@ -27,7 +27,7 @@ const {title, description, author, publishDate, tags, permalink, slug} = content
 
                 <Header slug={slug}/>
 
-                <BlogPost title={title} author={author} publishDate={publishDate} description={description} tags={tags}>
+                <BlogPost title={title} author={author} date={date} description={description} tags={tags}>
                     <slot />
                 </BlogPost>
                 
