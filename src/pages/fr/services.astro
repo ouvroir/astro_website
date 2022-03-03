@@ -7,8 +7,9 @@ let slug = "services"
 let description = "Services offerts, points de rencontre, équipement commun et code de conduite"
 let permalink = "https://ouvroir.umontreal.ca/fr/services/"
 
-var lab = Astro.fetchContent('/src/_labouvroir/equipe/*-fr.md');
+let equipement = Astro.fetchContent('/src/_labouvroir/lab/equipement-fr.md');
 
+console.log(equipement)
 ---
 
 <BaseLayout title={title} description={description} permalink={permalink} slug={slug}>
@@ -24,17 +25,20 @@ var lab = Astro.fetchContent('/src/_labouvroir/equipe/*-fr.md');
 -->     
   <section class="section">      
     <Markdown>
-      ## Points de rencontre
+      ### Points de rencontre
 
-      En attendant l’accès à nos locaux, vous pouvez prendre rendez-vous par [courriel](mailto:lena.krause@umontreal.ca) ou rejoindre l’équipe de l’Ouvroir en ligne sur [Element](https://matrix.to/#/!AaxspHhzNUgFJpDKTr:matrix.org?via=matrix.org). Cette plateforme de discussion peut être utilisée directement dans le navigateur ou en installant l’application.
+      En attendant l’accès à nos locaux, vous pouvez prendre rendez-vous par [courriel](mailto:lena.krause@umontreal.ca) ou rejoindre le canal de discussion de l’équipe de l’Ouvroir en ligne sur [Element](https://matrix.to/#/!AaxspHhzNUgFJpDKTr:matrix.org?via=matrix.org). Cette plateforme de discussion peut être utilisée directement dans le navigateur ou en installant l’application.
 
-
-      --- 
-      ## Services offerts
-
-      Say cheese cheesy grin everyone loves. Cheese and wine halloumi rubber cheese cheddar boursin smelly cheese cut the cheese croque monsieur. Cheese triangles say cheese cheeseburger swiss babybel cheesy feet jarlsberg cheesecake. Mascarpone monterey jack camembert de normandie stinking bishop when the cheese comes out everybody's happy croque monsieur cheesy grin cheese on toast. Cheese strings mascarpone cheesecake.
-
+      ### Calendrier
+      Vous pouvez suivre et rejoindre nos événements publics en vous abonnant au <a href="
+https://outlook.office365.com/owa/calendar/00612925e3e44352a2fecda3cc840ee0@umontreal.ca/c2e6e5f6a7264c3b99fb9f6ef3f69b617923860242817213963/calendar.ics">calendrier numérique de l’Ouvroir</a>.
+    
     </Markdown>
+<!--
+    <Fragment set:html={equipement.astro.html}>
+    </Fragment>
+-->
+
   </section>
 
 
