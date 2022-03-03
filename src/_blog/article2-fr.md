@@ -1,5 +1,5 @@
 ---
-title:Atelier #1
+title: "Atelier #1"
 slug: atelier-1
 lang: fr
 description: Premier atelier sur le markdown et le versionnement avec git

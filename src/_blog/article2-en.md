@@ -1,5 +1,5 @@
 ---
-title: Workshop #1
+title: "Workshop #1"
 slug: workshop-1
 lang: en
 description: First Wokshop on markdown and git versionning

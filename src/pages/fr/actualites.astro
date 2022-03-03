@@ -12,16 +12,20 @@ const currentPath = Astro.request.canonicalURL.pathname;
 // Get all blog posts
 let blogPosts = Astro.fetchContent('/src/_blog/*-fr.md');
 let crPosts = Astro.fetchContent('/src/_labouvroir/cr/*.md');
-
 //ajout du slug pour les cr
 crPosts.forEach(p => {
-  p.date = p.date.replace('T00:00:00.000Z', '')
   p.slug = `cr${p.date}`
 })
 
 
 //Rassemble tous les contenus
 let allPosts = blogPosts.concat(crPosts)
+
+allPosts.forEach(p => {
+  p.date = p.date.replace('T00:00:00.000Z', '')
+  console.log(p.date)
+})
+
 //tri par date (ne semble pas s'appliquer)
 allPosts = allPosts.sort((a, b) => (b.date).valueOf() - (a.date).valueOf());
 
