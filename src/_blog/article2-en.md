@@ -4,7 +4,7 @@ slug: workshop-1
 lang: en
 description: First Wokshop on markdown and git versionning
 author: lenamk
-date: 2022-02
+date: 2022-02-15
 tags: 
     - lab
     - workshop

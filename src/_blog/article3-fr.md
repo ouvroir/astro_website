@@ -4,7 +4,7 @@ slug: nettoyage-transformation-tableau-word-en-donnees
 lang: fr
 description: Documentation de la transformation de 2500 entrées d'un tableau Word en un tableur avec une information 
 author: lenamk
-date: 2022-02
+date: 2022-02-25
 tags: 
     - blog
     - nettoyage de données
