@@ -101,16 +101,16 @@ export const mapGenericToSlug = {
         en: 'services',
     },
     "ARTICLE_1":{
-        fr: 'premier-billet',
-        en: 'first-blogpost'
+        fr: 'annonce-partenariat-creation-ouvroir',
+        en: 'announcement-partnership-creation-ouvroir'
     },
     "ARTICLE_2":{
-        fr: 'demo-site',
-        en: 'site-demo'
+        fr: 'atelier-1',
+        en: 'workshop-1'
     },
     "ARTICLE_3":{
-        fr: 'billet-cieco',
-        en: 'cieco-blogpost'
+        fr: 'nettoyage-transformation-tableau-word-en-donnees',
+        en: 'cleaning-and-transforming-word-table-into-data'
     },
     "COMMON":{
         fr: 'common',
@@ -196,6 +196,10 @@ export const mapGenericToSlug = {
         fr:'cr',
         en:'cr'
     },
+    "ATELIER":{
+        fr:"atelier",
+        en:"workshop"
+    },
     "HIST_ART_NUMERIQUE":{
         fr:"histoire-de-l'art-numerique",
         en:"digital-art-history"
@@ -207,6 +211,14 @@ export const mapGenericToSlug = {
     "SERVEUR":{
         fr:'serveur',
         en:'serveur'
+    },
+    "NETTOYAGE_DONNEES":{
+        fr:"nettoyage-donnees",
+        en:"data-cleaning"
+    },
+    "FORMATS":{
+        fr:"formats",
+        en:"formats"
     },
     "LENA":{
         fr: 'lenamk',   
