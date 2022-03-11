@@ -16,7 +16,7 @@ const lang = currentPath && getLanguageFromURL(currentPath);
   </head>
   <body>
     <div id="app" class="container">
-      <Header slug={slug}/>
+      <Header slug={slug} client:visible />
       <main>
         <div class="container">
           <div class="columns">

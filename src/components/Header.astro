@@ -6,6 +6,7 @@ import {
     mapSlugToGeneric,
     mapGenericToText
 } from '/src/data/languages.ts';
+import LanguageSelect from '/src/components/LanguageSelect.svelte';
 
 const currentPath = Astro.request.canonicalURL.pathname;
 const lang = currentPath && getLanguageFromURL(currentPath);
@@ -81,5 +82,6 @@ var newSlug = currentPath.split('/').map(p => {
   <section class="navbar-section">
     <a class="nav-item" href={`/${lang}/${mapGenericToSlug["LAB"][lang]}/`}><i class="fa fa-info-circle"></i></a>
     <a class="nav-item langChange" href={newSlug}>{otherLang.toUpperCase()}</a>
+    <LanguageSelect currentPath={currentPath} />
   </section>
 </header>
