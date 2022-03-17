@@ -47,11 +47,14 @@ allTags = allTags.sort();
         <h1>{title}</h1>
       </div>
       <div class="col-9">
-      <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
         <p>{description}</p>
       </div>
       <div class="col-3">
         <p>Retrouvez et rejoignez nos événements sur <a href="https://mobilizon.fr/@ouvroir_lab">Mobilizon</a>.</p>
+        <p>S'abonner au <a href="https://outlook.office365.com/owa/calendar/00612925e3e44352a2fecda3cc840ee0@umontreal.ca/c2e6e5f6a7264c3b99fb9f6ef3f69b617923860242817213963/calendar.ics">calendrier numérique de l’Ouvroir</a>.</p>
       </div>
       <div class="col-9">
         {allPosts.map(p => <BlogPostPreview post={p}/>)} <!-- map does not keep the order-->

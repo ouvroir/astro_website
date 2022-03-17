@@ -7,7 +7,6 @@ let slug = "services"
 let description = "Facilities, meetups, tools and code of conduct"
 let permalink = "https://ouvroir.umontreal.ca/en/services/"
 
-var lab = Astro.fetchContent('/src/_labouvroir/equipe/*-en.md');
 ---
 
 <BaseLayout title={title} description={description} permalink={permalink} slug={slug}>
@@ -29,16 +28,14 @@ var lab = Astro.fetchContent('/src/_labouvroir/equipe/*-en.md');
       While we wait for access to our physical lab, you can schedule an appointment per [email](mailto:ouvroir@umontreal.ca) or reach the Ouvroir team online using [Element](https://matrix.to/#/!AaxspHhzNUgFJpDKTr:matrix.org?via=matrix.org). This chat can be used directly in the browser or by installing the app.
 
 
-      ### Calendar
-      You can follow and join our public events by subscribing to our <a href="
-https://outlook.office365.com/owa/calendar/00612925e3e44352a2fecda3cc840ee0@umontreal.ca/c2e6e5f6a7264c3b99fb9f6ef3f69b617923860242817213963/calendar.ics">digital calendar</a>. 
-    
+      ### Mailing list
+      
+      Join our mailing list (in French) [here](https://listes.umontreal.ca/wws/subscribe/ouvroir).
 
 
     </Markdown>
   </section>
 
-  {lab.forEach(c =>`<section>${c.content.html}</section>`)}
 
 <!--
 

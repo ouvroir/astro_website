@@ -39,16 +39,29 @@ const lang = currentPath && getLanguageFromURL(currentPath);
         <li><a href={`/${lang}/${mapGenericToSlug["LAB"][lang]}/lenamk`}>Lena Krause</a> (responsable du laboratoire)</li>
         <li><a href={`/${lang}/${mapGenericToSlug["LAB"][lang]}/williamdiakite`}>William Diakité</a></li>
     </ul>
-    <!--    
-        <Person> et <PersonPreview>, avec une page par personne? ou juste des entrées directement ici? 
-        Sinon possibilité de faire une section <Markdown> et d'écrire tout en markdown
-    -->
+
     <h2>Localisation</h2>
-    <p>Université de Montréal</p>
+    <p>Université de Montréal: C-8130 et C-8132, Pavillon Lionel-Groulx.</p>
 
     <h2>Financement</h2>
+    <Markdown>
+    L’Ouvroir bénéficie du soutien de l’[Université de Montréal](https://www.umontreal.ca/), du [Fonds Canadien pour l’Innovation](https://www.innovation.ca/) et de la [province du Québec](https://www.economie.gouv.qc.ca/bibliotheques/programmes/aide-financiere/programme-de-soutien-aux-organismes-de-recherche-et-dinnovation-pso/cofinancement-du-gouvernement-du-quebec-aux-programmes-de-la-fondation-canadienne-pour-linnovation-fci/fonds-dinnovation/).   
+    </Markdown>
 
-
+    <div class="container">
+        <div class="columns">
+        <div class="column col-md-4 logo">
+            <img src='/style/img/UdeM/Logo_UdeM-RVB.png' width="100%">
+        </div>
+        <div class="column col-md-4 logo">
+            <img src='/style/img/CFI/fr/CFI_RGB-FR.png' width="100%">
+        </div>
+        <div class="column col-md-4 logo">
+            <img src='/style/img/qc/svg/QUEBEC_couleur.svg' width="100%">
+        </div>
+        </div>
+    </div>   
+        
 </BaseLayout>
 
 <style>

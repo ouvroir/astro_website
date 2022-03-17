@@ -9,7 +9,6 @@ let permalink = "https://ouvroir.umontreal.ca/fr/services/"
 
 let equipement = Astro.fetchContent('/src/_labouvroir/lab/equipement-fr.md');
 
-console.log(equipement)
 ---
 
 <BaseLayout title={title} description={description} permalink={permalink} slug={slug}>
@@ -27,12 +26,11 @@ console.log(equipement)
     <Markdown>
       ### Points de rencontre
 
-      En attendant l’accès à nos locaux, vous pouvez prendre rendez-vous par [courriel](mailto:lena.krause@umontreal.ca) ou rejoindre le canal de discussion de l’équipe de l’Ouvroir en ligne sur [Element](https://matrix.to/#/!AaxspHhzNUgFJpDKTr:matrix.org?via=matrix.org). Cette plateforme de discussion peut être utilisée directement dans le navigateur ou en installant l’application.
+      En attendant l’accès à nos locaux, vous pouvez prendre rendez-vous par [courriel](mailto:ouvroir@umontreal.ca) ou rejoindre le canal de discussion de l’équipe de l’Ouvroir en ligne sur [Element](https://matrix.to/#/!AaxspHhzNUgFJpDKTr:matrix.org?via=matrix.org). Cette plateforme de discussion peut être utilisée directement dans le navigateur ou en installant l’application.
 
-      ### Calendrier
-      Vous pouvez suivre et rejoindre nos événements publics en vous abonnant au <a href="
-https://outlook.office365.com/owa/calendar/00612925e3e44352a2fecda3cc840ee0@umontreal.ca/c2e6e5f6a7264c3b99fb9f6ef3f69b617923860242817213963/calendar.ics">calendrier numérique de l’Ouvroir</a>.
-    
+      ### Liste de diffusion
+
+      Vous pouvez vous abonner à la liste de diffusion de l'Ouvroir [ici](https://listes.umontreal.ca/wws/subscribe/ouvroir).
     </Markdown>
 <!--
     <Fragment set:html={equipement.astro.html}>
