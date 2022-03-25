@@ -1,16 +1,15 @@
 ---
 title: Digital Models Reconstruction project
-slug: digital-models-reconstruction-project
-lang: en
 description: The Digital Models Reconstruction project is an external relational  database, which links 3D reconstruction model
-layout: '/src/layouts/ProjectLayout.astro'
-tags: 
-    - web
-    - documentation
-    - 3D modeling
-since: 2019
-team: [ktanton]
+tags: [web, documentation, 3D modeling]
 link: https://www.dataartem.org/dataartem/digital/allprojects
+lead: Kristine Tanton
+team: [ktanton]
+since: 2019
+draft: false
+lang: en
+slug: digital-models-reconstruction-project
+
 ---
 
 <!-- ajouter bonnes dates, author/project lead? -->

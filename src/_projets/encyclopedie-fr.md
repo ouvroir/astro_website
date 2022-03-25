@@ -1,16 +1,15 @@
 ---
 title: Encyclopédie
-slug: encyclopedie
-lang: fr
 description: Modèle éditorial de l’Encylopédie numérique des nouveaux usages des collections d’art
-layout: '/src/layouts/ProjectLayout.astro'
-tags: 
-    - CIÉCO
-    - web
-    - édition numérique
-since: 2021-11
-team: [lenamk, emchateau]
+tags: [CIÉCO, web, édition numérique]
 link: https://github.com/ouvroir/encyclopedie
+lead: Ouvroir
+team: [emchateau, lenamk]
+since: 2021-11
+draft: false
+lang: fr
+slug: encyclopedie
+
 ---
 
 Modèle éditorial de l’Encylopédie numérique des nouveaux usages des collections d’art

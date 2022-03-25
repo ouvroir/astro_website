@@ -1,16 +1,15 @@
 ---
 title: Encyclopedia
-slug: encyclopedia
-lang: en
 description: Editorial model for the digital encyclopedia of the new uses of art collections
-layout: '/src/layouts/ProjectLayout.astro'
-tags: 
-    - CIÉCO
-    - web
-    - digital edition
-since: 2021-11
-team: [lenamk, emchateau]
+tags: [CIÉCO, web, digital edition]
 link: https://github.com/ouvroir/encyclopedie
+lead: Ouvroir
+team: [emchateau, lenamk]
+since: 2021-11
+draft: false
+lang: en
+slug: encyclopedie
+
 ---
 
 Modèle éditorial de l’Encylopédie numérique des nouveaux usages des collections d’art

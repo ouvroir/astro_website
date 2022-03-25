@@ -1,16 +1,15 @@
 ---
 title: Expots
-slug: expots
-lang: fr
-description: Outil pour la documentation des accrochages de collection et de visualisation 3D
-layout: '/src/layouts/ProjectLayout.astro'
-tags: 
-    - CIÉCO
-    - documentation
-    - visualisation 3D
-since: 2021-11
-team: [lenamk, emchateau]
+description: Outil pour la documentation des accrochages de collection et de visualisation 3D.
+tags: [CIÉCO, documentation, visualisation 3D]
 link: https://github.com/ouvroir/expots
+lead: Ouvroir
+team: [emchateau, lenamk]
+since: 2021-11
+draft: false
+lang: fr
+slug: expots
+
 ---
 
 La recherche historique portée par le premier axe du partenariat CIÉCO implique la mobilisation et l’exploitation de nombreuses sources archivistiques afin de documenter l’histoire des accrochages de collections dans les musées d’art et pouvoir procéder à leur reconstitution. Un outil permet d’accompagner l’ensemble des opérations de recherche, depuis la collecte de l’information historique, à la formulation des hypothèses et à l’enregistrement des résultats.

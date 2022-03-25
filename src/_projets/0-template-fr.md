@@ -36,7 +36,7 @@ slug: #string for URL no spaces (use -), nor special characters
 title: 
 description: 
 tags: []
-link:
+link: 
 lead: 
 team: []
 since: 

@@ -1,16 +1,15 @@
 ---
 title: Reframe
-slug: reframe
-lang: fr
 description: Librairie JavaScript pour la présentation des contenus visuels
-layout: '/src/layouts/ProjectLayout.astro'
-tags: 
-    - CIÉCO
-    - JavaScript
-    - web
-since: 2021-11
-team: [lenamk, emchateau]
+tags: [CIÉCO, JavaScript, web]
 link: https://github.com/ouvroir/reframe
+lead: Ouvroir
+team: [emchateau, lenamk]
+since: 2021-11
+draft: false
+lang: fr
+slug: reframe
+
 ---
 
 Le partenariat explore notamment les possibilités muséographiques offertes par la publication sur le web pour documenter des accrochages de collections, la biographie de certains objets (axe 1) et la documentation d’œuvres performatives qui exploitent leurs archives (axe 3). Quant à l’Encyclopédie numérique elle fera largement appel à une riche illustration que nous souhaitons déployer de manière interactive. Faute de bibliothèque de code informatique générique libre et open source destinée à la présentation de contenus patrimoniaux, la création d’expositions en ligne fait le plus souvent l’objet de développements spécifiques et ponctuels. Partant du travail de la recension et de la typologie des pratiques sur les nouveaux usages des collections réalisés par la cellule numérique (axe 4), nous nous proposons de développer un outil destiné à pouvoir déployer facilement des écritures numériques à partir d’une documentation muséale et visuelle. Celui-ci sera mobilisé pour les expérimentations de publications de contenus spécifiques prévues dans l’axe 1,l’axe 2 et 3 ainsi que pour l’illustration de l’Encyclopédie multimédia.
