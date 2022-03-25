@@ -176,17 +176,16 @@ const {title, description, author, publishDate, tags, permalink, slug}
 **Project yaml front matter**:
 
 ```yaml
-title: 
-date: (yyyy-[mm]-[dd])
-description:
+title: #string
+description: #apparaît dans les previews 
+tags: [tag1, tag2]
+link: #url du site/github/contenu web du projet
+lead: #nom complet, apparait en primeur / inverstigateur principal 
+team: #mettre les usernames des gens qui ont une page perso dans équipe, permet de lier le projet à leur page 
+since: yyyy-[mm]-[dd] #date de publication si projet publié, sinon date de début du travail
+draft: #true = pas en ligne. false = va être visible sur le site.
 lang: (en / fr)
-slug: 
-permalink:
-tags: 
-    - tag 1
-    - tag 2
-category:
-status: 
+slug: #identifiant dans l'URL (utiliser - pour remplacer les espaces), peut être différent fr en si pertinent
 ```
 
 
