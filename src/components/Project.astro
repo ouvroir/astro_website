@@ -1,22 +1,33 @@
 ---
+import {
+    mapGenericToText,
+    getLanguageFromURL
+} from '/src/data/languages.ts';
+
 export interface Props {
   title: string,
+  lead: string,
   description: string,
   since: Date,
   tags: Array<string>,
   link: string
 }
 
-const { title, description, since, tags, link } = Astro.props;
+
+const currentPath = Astro.request.canonicalURL.pathname;
+const lang = currentPath && getLanguageFromURL(currentPath);
+
+
+const { title, description, since, tags, link, lead } = Astro.props;
 ---
 <div class="container">
     <article class="content">
         <header class="hero bg-gray">
             <div class="hero-body">
                 <h1>{title}</h1>
-                <p>{description}, {since}</p>
+                <p>{mapGenericToText["INVESTIGATEUR"][lang]}: {lead}, {since}</p>
                 <p>{tags.map(t => <span class="chip">{t}</span>)}</p>
-                <a href={link} target="_blank">Consulter le projet</a>
+                <a href={link} target="_blank">{mapGenericToText["SITE_WEB"][lang]}</a>
             </div>
         </header>
         <main>

@@ -9,6 +9,7 @@ let description = "Présentation de projets et de collaborations du laboratoire"
 let permalink = "https://ouvroir.umontreal.ca/fr/projets/"
 const currentPath = Astro.request.canonicalURL.pathname;
 
+
 let projects = Astro.fetchContent('/src/_projets/*-fr.md').filter(d => d.draft == false);
 let tagSet = new Set();
 let allTags = [];

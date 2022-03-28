@@ -62,6 +62,10 @@ export const mapGenericToText = {
         fr: "Continuer la lecture",
         en: "Read more"
     },
+    "LIRE_PROJET":{
+        fr: "En savoir plus",
+        en: "Find out more"
+    },
     "TAGLINE":{
         fr: "Un espace ouvert et inclusif",
         en: "An inclusive and open-source space"
@@ -77,7 +81,11 @@ export const mapGenericToText = {
     "PAR":{
         fr: "par",
         en: "by"
-    }    
+    },
+    "INVESTIGATEUR":{
+        fr: "Direction scientifique",
+        en: "Lead investigateur"
+    }  
 }    
 
 //slugs

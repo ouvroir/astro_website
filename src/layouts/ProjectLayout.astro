@@ -11,12 +11,12 @@ import {
 var currentPath = Astro.request.canonicalURL.pathname;
 const lang = currentPath && getLanguageFromURL(currentPath);
 const {content} = Astro.props;
-const {title, description, since, tags, permalink, link, slug} = content;
+const {title, description, since, tags, link, slug, lead} = content;
 
 ---
 <html lang={lang} prefix="og: https://ogp.me/ns# article: https://ogp.me/ns/article#">
   <head>
-    <MetaData title={title} description={description} permalink={permalink}/>
+    <MetaData title={title} description={description}/>
     <!-- change for Blog metadata component, type: blog-->
   </head>
   <body>
@@ -28,7 +28,7 @@ const {title, description, since, tags, permalink, link, slug} = content;
 
                   <Header slug={slug}/>
 
-                  <Project title={title} since={since} description={description} tags={tags} link={link}>
+                  <Project title={title} since={since} description={description} tags={tags} link={link} lead={lead}>
                       <slot />
                   </Project>
 
