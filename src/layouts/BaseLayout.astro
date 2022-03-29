@@ -15,46 +15,12 @@ const lang = currentPath && getLanguageFromURL(currentPath);
     <MetaData title={title} description={description} permalink={permalink}/>
   </head>
   <body>
-    <div id="app" class="container">
+    <div id="app">
       <Header slug={slug}/>
       <main>
-        <div class="container">
-          <div class="columns">
-            <div class="column col-10 col-mx-auto"> <!-- not fully responsive, need to deal with mobile view-->
-              <slot />
-            </div>
-          </div>
-        </div>
+        <slot />
       </main>
       <Footer />
     </div>
   </body>
 </html>
-
-<style>
-#app {
-  height: 100vh;
-  
-  /* grid container settings */
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto 1fr auto;
-  grid-template-areas: 
-    'header'
-    'main'
-    'footer';
-}
-
-#app > header {
-  grid-area: header;
-}
-
-#app > main {
-  grid-area: main;
-  padding: 15px 5px 10px 5px;
-}
-
-#app > footer {
-  grid-area: footer;
-}
-</style>

@@ -16,44 +16,16 @@ const lang = currentPath && getLanguageFromURL(currentPath);
 
 const link = `${mapGenericToSlug["PROJETS"][lang]}/${post.slug}/`
 ---
-<div class="card column auto">
-    <div class="card-image">
-        <a href={link}><img class="img-responsive" src="/style/img/pattern.svg"></a>
-    </div>
-    <div class="card-header">
-        <div class="card-title h5"><a href={link}>{post.title}</a></div>
-        <div class="card-subtitle">{post.description}</div>
-    </div>
-    <div class="card-footer">
-        <div>{tags.map(t => <span class="chip">{t}</span>)}</div>
-        <a href={link}>Lire la suite</a>
+<div class="column col-4 col-md-6 col-xs-12">
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title h5"><a href={link}>{post.title}</a></div>
+        </div>
+        <div class="card-body">{post.description}</div>
+        <div class="card-footer">
+            <div>{tags.map(t => <span class="chip">{t}</span>)}</div>
+            <a href={link}>Lire la suite</a>
+        </div>
     </div>
 
 </div>
-
-<style>
-
-
-/* .card {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr auto;
-    grid-row-gap: 15px;
-    grid-template-areas: 
-        'header'
-        'main'
-        'footer';
-}
-
-.card-image{
-    grid-area: header;
-}
-
-.card-header{
-    grid-area: main;
-}
-.card-footer{
-    grid-area: footer;
-} */
-</style>
-
