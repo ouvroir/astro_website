@@ -1,7 +1,26 @@
+/* css Ouvroir
+ * author: Lena Krause
+ * author: Emmanuel Chateau-Dutier
+ */
 *, *::before, *::after {
   box-sizing: border-box;
 }
 
+/* 
+ * Structure de la page
+ */
+#app {
+  height: 100vh;
+  
+  /* grid container settings */
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+}
+
+/*
+ * Typographie
+ */
 :root {
     font-family: 'Open Sans', 'Calibri', 'Trebuchet MS', sans-serif;
     font-size: calc(1rem + 0.7vw);
