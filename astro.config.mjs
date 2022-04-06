@@ -1,9 +1,11 @@
-export default /** @type {import('astro').AstroUserConfig} */ (
-    {
-        buildOptions: {
-            site: 'https://ouvroir.github.io',
-            sitemap: true
-        }
+// astro.config.mjs
+import { defineConfig } from 'astro/config'
+
+export default defineConfig({
+
+        site: 'https://ouvroir.umontreal.ca'
+        //sitemap: true
+    
 
     }
 )
