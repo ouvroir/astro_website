@@ -9,8 +9,8 @@ export interface Props{
     post: any;
 }
 
-var currentPath = new URL(Astro.request.url)
-console.log(currentPath)
+
+let currentPath = Astro.canonicalURL;
 const lang = currentPath && getLanguageFromURL(currentPath);
 
 //make tag component to deal with all cases in one spot? 
@@ -21,15 +21,15 @@ if (tagIndex != -1)
 //other option: let path = currentPath.includes("/tags/") ? currentPath.replace("/tags","").concat(post.slug) : currentPath.concat(post.slug)
 
 const { post } = Astro.props;
-let tags = post.tags;
+let tags = post.frontmatter.tags;
 
-var date = formatDate(post.date, lang)
+var date = formatDate(post.frontmatter.date, lang)
 ---
 <article class="column col-12 section">
     <header class="columns col-12">
         <div class="column col-8 col-xs-12">
-            <h3><a href={currentPath+post.slug+"/"}>
-                {post.title}</a>
+            <h3><a href={currentPath+post.frontmatter.slug+"/"}>
+                {post.frontmatter.title}</a>
             </h3>
         </div>
         <div class="columns col-4 col-xs-12">
@@ -56,7 +56,7 @@ article > p {
 }
 article > header > div > p {
     padding-top: 0.3rem;
-    margin-bottom: none;}
+    margin-bottom: none;
 }
 
 article {

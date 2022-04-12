@@ -8,20 +8,24 @@ export interface Props{
     post: any;
 }
 
+
 const { post } = Astro.props;
-let tags = post.tags
+let tags = post.frontmatter.tags
 
 const currentPath = Astro.canonicalURL.pathname;
 const lang = currentPath && getLanguageFromURL(currentPath);
 
-const link = `${mapGenericToSlug["PROJETS"][lang]}/${post.slug}/`
+const link = `${mapGenericToSlug["PROJETS"][lang]}/${post.frontmatter.slug}/`
+
+console.log(post.frontmatter)
 ---
+
 <div class="column col-4 col-md-6 col-xs-12">
     <div class="card">
         <div class="card-header">
-            <div class="card-title h5"><a href={link}>{post.title}</a></div>
+            <div class="card-title h5"><a href={link}>{post.frontmatter.title}</a></div>
         </div>
-        <div class="card-body">{post.description}</div>
+        <div class="card-body">{post.frontmatter.description}</div>
         <div class="card-footer">
             <div>{tags.map(t => <span class="chip">{t}</span>)}</div>
             <a href={link}>Lire la suite</a>
