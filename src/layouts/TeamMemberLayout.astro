@@ -6,7 +6,8 @@ import Footer from '/src/components/Footer.astro'
 import { getLanguageFromURL } from '/src/data/languages.ts'
 
 const {content} = Astro.props;
-const {firstname, lastname, username, description, tags, link, mail, permalink, slug } = content;
+
+const {firstname, lastname, username, description, tags, link, mail, permalink, slug } = content.frontmatter;
 
 const currentPath = Astro.canonicalURL.pathname;
 const lang = currentPath && getLanguageFromURL(currentPath);

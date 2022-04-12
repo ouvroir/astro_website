@@ -17,13 +17,9 @@ const lang = currentPath && getLanguageFromURL(currentPath);
 
 const { firstname, lastname, username, description, tags, link, mail, permalink, slug} = Astro.props;
 
-interface MarkdownFrontmatter {
-    lang: string,
-    team: Array<string>;
-}
-var projects = Astro.fetchContent<MarkdownFrontmatter>('/src/_projets/*.md')
+var projects = await Astro.glob('/src/_projets/*.md')
 
-var relevantProjects = projects.filter(p => p.lang == lang).filter(p => p.team.includes(username))
+var relevantProjects = projects.filter(p => p.frontmatter.lang == lang).filter(p => p.frontmatter.team.includes(username))
 ---
 <div class="container">
     <article class="content">
@@ -31,7 +27,7 @@ var relevantProjects = projects.filter(p => p.lang == lang).filter(p => p.team.i
             <div class="hero-body">
                 <div class="columns">
                     <div class="col-3">
-                        <img src="/public/style/img/ouvroir-roue.svg">
+                        <img src="/style/img/ouvroir-roue.svg">
                     </div>
                     <div class="col-9">
                         <h2>{firstname} {lastname}</h2>
