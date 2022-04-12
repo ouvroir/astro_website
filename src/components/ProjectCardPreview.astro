@@ -11,7 +11,7 @@ export interface Props{
 const { post } = Astro.props;
 let tags = post.tags
 
-const currentPath = Astro.request.canonicalURL.pathname;
+const currentPath = Astro.canonicalURL.pathname;
 const lang = currentPath && getLanguageFromURL(currentPath);
 
 const link = `${mapGenericToSlug["PROJETS"][lang]}/${post.slug}/`

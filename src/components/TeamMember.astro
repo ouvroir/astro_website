@@ -12,7 +12,7 @@ export interface Props {
   permalink: string,
   slug: string
 }
-const currentPath = Astro.request.canonicalURL.pathname;
+const currentPath = Astro.canonicalURL.pathname;
 const lang = currentPath && getLanguageFromURL(currentPath);
 
 const { firstname, lastname, username, description, tags, link, mail, permalink, slug} = Astro.props;

@@ -24,7 +24,7 @@ import BaseLayout from '/src/layouts/BaseLayout.astro';
 import ProjectPreview from '/src/components/ProjectPreview.astro';
 
 const {selection, tag} = Astro.props
-const currentPath = Astro.request.canonicalURL.pathname;
+const currentPath = Astro.canonicalURL.pathname;
 let retour = currentPath.replace('tags/','').replace(`${slugify(tag)}/`, '')
 
 

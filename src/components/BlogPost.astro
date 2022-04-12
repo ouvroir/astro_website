@@ -5,7 +5,7 @@ import {
     formatDate
 } from '/src/data/languages.ts';
 
-var currentPath = Astro.request.canonicalURL.pathname;
+var currentPath = Astro.canonicalURL.pathname;
 const lang = currentPath && getLanguageFromURL(currentPath);
 const { title, author, description, date, tags } = Astro.props;
 let fullDate = formatDate(date, lang)

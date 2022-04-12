@@ -15,7 +15,7 @@ let permalink = "https://ouvroir.umontreal.ca/fr/info/"
 
 //var presentation = await fetch('https://raw.githubusercontent.com/ouvroir/labouvroir/main/README.md').then(res => res.text());
 
-const currentPath = Astro.request.canonicalURL.pathname;
+const currentPath = Astro.canonicalURL.pathname;
 const lang = currentPath && getLanguageFromURL(currentPath);
 
 ---

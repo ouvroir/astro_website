@@ -7,7 +7,7 @@ let title = "News"
 let slug = "news"
 let description = "Blog and announcements" /*events and newsletter*/
 let permalink = "https://ouvroir.umontreal.ca/en/news/"
-const currentPath = Astro.request.canonicalURL.pathname;
+const currentPath = Astro.canonicalURL.pathname;
 
 
 // Get all blog posts

@@ -8,7 +8,7 @@ import {
     getLanguageFromURL
 } from '/src/data/languages.ts';
 
-var currentPath = Astro.request.canonicalURL.pathname;
+var currentPath = Astro.canonicalURL.pathname;
 const lang = currentPath && getLanguageFromURL(currentPath);
 const {content} = Astro.props;
 const {title, description, since, tags, link, slug, lead} = content;

@@ -8,7 +8,7 @@ export interface Props{
     post: any;
 }
 
-var currentPath = Astro.request.canonicalURL.pathname;
+var currentPath = Astro.canonicalURL.pathname;
 const lang = currentPath && getLanguageFromURL(currentPath);
 
 //remove tag from path for links to projects

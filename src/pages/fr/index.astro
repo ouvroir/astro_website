@@ -8,7 +8,8 @@ import {
     mapGenericToText
 } from '/src/data/languages.ts';
 
-const currentPath = Astro.request.canonicalURL.pathname;
+const currentPath = Astro.canonicalURL.pathname;
+console.log(currentPath)
 const lang = currentPath && getLanguageFromURL(currentPath);
 
 let title = "Ouvroir"
@@ -16,20 +17,12 @@ let slug = ""
 let description = "Laboratoire d’histoire de l’art et de muséologie numériques"
 let permalink = "https://ouvroir.umontreal.ca/"
 
-let projects = Astro.fetchContent('/src/_projets/*-fr.md').filter(d => d.draft == false);
-let posts = Astro.fetchContent('/src/_blog/*-fr.md');
+let projects = await Astro.glob('/src/_projets/*-fr.md').filter(d => d.draft == false);
+let posts = await Astro.glob('/src/_blog/*-fr.md');
 
 ---
 
 <BaseLayout title={title} description={description} permalink={permalink} slug={slug}>
-
-  <!-- <div class="hero bg-gray">
-    <div class="hero-body">
-      <h1>{title}</h1>
-      <p>{description}</p>
-      <p><i>{mapGenericToText["TAGLINE"][lang]}</i></p>
-    </div>
-  </div> -->
 
 
   <section class="columns">
@@ -41,11 +34,11 @@ let posts = Astro.fetchContent('/src/_blog/*-fr.md');
       </Markdown>
     </div>
   </section>
-
+<!-- 
   <section class="columns">
     <h2 class="column col-12">Actualités</h2>
       {posts.map(p => <BlogPostPreview post={p}/>)}
-  </section>
+  </section> -->
 
   <section class="columns">
     <h2 class="column col-12">Projets</h2>

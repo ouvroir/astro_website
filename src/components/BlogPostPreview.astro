@@ -9,7 +9,8 @@ export interface Props{
     post: any;
 }
 
-var currentPath = Astro.request.canonicalURL.pathname;
+var currentPath = new URL(Astro.request.url)
+console.log(currentPath)
 const lang = currentPath && getLanguageFromURL(currentPath);
 
 //make tag component to deal with all cases in one spot? 

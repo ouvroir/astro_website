@@ -7,8 +7,7 @@ let slug = "services"
 let description = "Services offerts, points de rencontre, équipement commun et code de conduite"
 let permalink = "https://ouvroir.umontreal.ca/fr/services/"
 
-let equipement = Astro.fetchContent('/src/_labouvroir/lab/equipement-fr.md');
-
+let equipement = await Astro.glob('/src/_labouvroir/lab/equipement-fr.md');
 ---
 
 <BaseLayout title={title} description={description} permalink={permalink} slug={slug}>
@@ -32,15 +31,17 @@ let equipement = Astro.fetchContent('/src/_labouvroir/lab/equipement-fr.md');
 
       Vous pouvez vous abonner à la liste de diffusion de l'Ouvroir [ici](https://listes.umontreal.ca/wws/subscribe/ouvroir).
     </Markdown>
-<!--
-    <Fragment set:html={equipement.astro.html}>
-    </Fragment>
--->
+
+ 
+
 
   </section>
+  {equipement.map(p => console.log(p))}
 
-
-
+  <!--
+  <Markdown content={equipement.astro.source}>
+  </Markdown>
+-->
 <!--
   ├─ Services
     ├─ Services offerts

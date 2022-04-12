@@ -8,7 +8,7 @@ import {
     mapGenericToText
 } from '/src/data/languages.ts';
 
-const currentPath = Astro.request.canonicalURL.pathname;
+const currentPath = Astro.canonicalURL.pathname;
 const lang = currentPath && getLanguageFromURL(currentPath);
 
 let title = "Ouvroir"
