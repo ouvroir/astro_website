@@ -11,8 +11,8 @@ const currentPath = Astro.canonicalURL.pathname;
 
 
 // Get all blog posts
-let blogPosts = Astro.fetchContent('/src/_blog/*-en.md');
-let crPosts = Astro.fetchContent('/src/_labouvroir/cr/*.md');
+let blogPosts = await Astro.glob('/src/_blog/*-en.md');
+let crPosts = await Astro.glob('/src/_labouvroir/cr/*.md');
 let allPosts = blogPosts.concat(crPosts)
 
 allPosts = allPosts.sort((a, b) => (b.date).valueOf() - (a.date).valueOf());

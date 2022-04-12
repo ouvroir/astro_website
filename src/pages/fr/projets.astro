@@ -10,7 +10,7 @@ let permalink = "https://ouvroir.umontreal.ca/fr/projets/"
 const currentPath = Astro.canonicalURL.pathname;
 
 
-let projects = Astro.fetchContent('/src/_projets/*-fr.md').filter(d => d.draft == false);
+let projects = await Astro.glob('/src/_projets/*-fr.md').filter(d => d.draft == false);
 let tagSet = new Set();
 let allTags = [];
 projects.forEach(p =>{

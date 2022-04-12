@@ -17,9 +17,9 @@ let slug = ""
 let description = "Laboratoire d’histoire de l’art et de muséologie numériques"
 let permalink = "https://ouvroir.umontreal.ca/"
 
-let projects = await Astro.glob('/src/_projets/*-fr.md').filter(d => d.draft == false);
-let posts = await Astro.glob('/src/_blog/*-fr.md');
+let projects = await Astro.glob('/src/_projets/*-fr.md');
 
+projects = projects.filter(d => d.frontmatter.draft == false); 
 ---
 
 <BaseLayout title={title} description={description} permalink={permalink} slug={slug}>
@@ -46,21 +46,21 @@ let posts = await Astro.glob('/src/_blog/*-fr.md');
   </section>
   
   <section class="columns">
-  <h2 class="column col-12">Crédits</h2>
-  <Markdown>
-    L’Ouvroir bénéficie du soutien de l’[Université de Montréal](https://www.umontreal.ca/), du [Fonds Canadien pour l’Innovation](https://www.innovation.ca/) et de la [province du Québec](https://www.economie.gouv.qc.ca/bibliotheques/programmes/aide-financiere/programme-de-soutien-aux-organismes-de-recherche-et-dinnovation-pso/cofinancement-du-gouvernement-du-quebec-aux-programmes-de-la-fondation-canadienne-pour-linnovation-fci/fonds-dinnovation/).   
-  </Markdown>
+    <h2 class="column col-12">Crédits</h2>
+    <Markdown>
+      L’Ouvroir bénéficie du soutien de l’[Université de Montréal](https://www.umontreal.ca/), du [Fonds Canadien pour l’Innovation](https://www.innovation.ca/) et de la [province du Québec](https://www.economie.gouv.qc.ca/bibliotheques/programmes/aide-financiere/programme-de-soutien-aux-organismes-de-recherche-et-dinnovation-pso/cofinancement-du-gouvernement-du-quebec-aux-programmes-de-la-fondation-canadienne-pour-linnovation-fci/fonds-dinnovation/).   
+    </Markdown>
   </section>
   
-  <div class="columns">
-    <div class="column col-md-4 logo">
-      <img src='/style/img/UdeM/Logo_UdeM-RVB.png' width="100%">
+  <div class="columns">  <!-- to make responsive with grid-xs to have logo beneath in xs view? -->
+    <div class="column col-2 col-sm-3 col-mx-auto logo">
+      <img src='/style/img/UdeM/Logo_UdeM-RVB.png' width="100%"/>
     </div>
-    <div class="column col-md-4 logo">
-      <img src='/style/img/CFI/fr/CFI_RGB-FR.png' width="100%">
+    <div class="column col-2 col-sm-3 col-mx-auto logo">
+      <img src='/style/img/CFI/fr/CFI_RGB-FR.png' width="100%"/>
     </div>
-    <div class="column col-md-4 logo">
-      <img src='/style/img/qc/svg/QUEBEC_couleur.svg' width="100%">
+    <div class="column col-2 col-sm-37 col-mx-auto logo">
+      <img src='/style/img/qc/svg/QUEBEC_couleur.svg' width="100%"/>
     </div>
   </div>   
 
