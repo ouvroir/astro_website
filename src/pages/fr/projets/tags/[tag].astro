@@ -4,7 +4,7 @@ import {slugify} from '/src/data/languages.ts'
 export async function getStaticPaths() {
     let blog = await Astro.glob('/src/_projets/*-fr.md')
     blog = blog.filter(d => d.frontmatter.draft == false);
-    console.log(blog.length)
+
     //get a set of tags
     let tagSet = new Set();
     blog.forEach(p =>{
@@ -24,7 +24,6 @@ export async function getStaticPaths() {
 import BaseLayout from '/src/layouts/BaseLayout.astro';
 import ProjectPreview from '/src/components/ProjectPreview.astro';
 
-console.log('hello')
 const {selection, tag} = Astro.props
 const currentPath = Astro.canonicalURL.pathname;
 let retour = currentPath.replace('tags/','').replace(`${slugify(tag)}/`, '')

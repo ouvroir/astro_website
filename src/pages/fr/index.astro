@@ -9,7 +9,6 @@ import {
 } from '/src/data/languages.ts';
 
 const currentPath = Astro.canonicalURL.pathname;
-console.log(currentPath)
 const lang = currentPath && getLanguageFromURL(currentPath);
 
 let title = "Ouvroir"
