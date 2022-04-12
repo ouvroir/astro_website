@@ -7,14 +7,14 @@ export async function getStaticPaths() {
     //get a set of tags
     let tagSet = new Set();
     all.forEach(p =>{
-        p.tags.forEach(t => {
+        p.frontmatter.tags.forEach(t => {
             tagSet.add(t)
         });
     });
 
     //for each tag, return a page with URL formed by tag
     return Array.from(tagSet).map((tag) => {
-        var selection = all.filter(post => post.tags.includes(tag));
+        var selection = all.filter(post => post.frontmatter.tags.includes(tag));
         return {
             params: { tag: slugify(tag) },
             props: {selection, tag} };

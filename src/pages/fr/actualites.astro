@@ -15,20 +15,20 @@ let crPosts = await Astro.glob('/src/_labouvroir/cr/*.md');
 
 //ajout du slug pour les cr
 crPosts.forEach(p => {
-  p.date = p.date.replace('T00:00:00.000Z', '')
-  p.slug = `cr${p.date}`
+  p.frontmatter.date = p.frontmatter.date.replace('T00:00:00.000Z', '')
+  p.frontmatter.slug = `cr${p.frontmatter.date}`
 })
 
 
 //Rassemble tous les contenus
 let allPosts = blogPosts.concat(crPosts)
 //tri par date (ne semble pas s'appliquer)
-allPosts = allPosts.sort((a, b) => (b.date).valueOf() - (a.date).valueOf());
+allPosts = allPosts.sort((a, b) => (b.frontmatter.date).valueOf() - (a.frontmatter.date).valueOf());
 
 let tagSet = new Set();
 let allTags = [];
 allPosts.forEach(p =>{
-  p.tags.forEach(t => {
+  p.frontmatter.tags.forEach(t => {
     tagSet.add(t)
   });
 });

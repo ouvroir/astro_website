@@ -15,6 +15,6 @@ import ProjectLayout from '/src/layouts/ProjectLayout.astro';
 const {projet} = Astro.props;
 
 ---
-<ProjectLayout content={projet} slug={projet.slug}>
+<ProjectLayout content={projet} slug={projet.frontmatter.slug}>
   <Fragment set:html={projet.astro.html}/>
 </ProjectLayout>

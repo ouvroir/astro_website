@@ -7,12 +7,12 @@ export async function getStaticPaths() {
   return all.map((post) => {
       //s'il n'y a pas de slug, c'est un cr
       //créer un slug à partir de la date en enlevant l'heure
-        if (!post.slug)
-            post.slug = `cr${post.date.replace('T00:00:00.000Z', '')}`
+        if (!post.frontmatter.slug)
+            post.frontmatter.slug = `cr${post.frontmatter.date.replace('T00:00:00.000Z', '')}`
       //enlever le Z pour ne pas être en UTC 
 
         return {
-            params: { slug: post.slug },
+            params: { slug: post.frontmatter.slug },
             props: {post} };
     });
 }
@@ -22,6 +22,6 @@ import BlogLayout from '/src/layouts/BlogLayout.astro';
 const {post} = Astro.props;
 
 ---
-<BlogLayout content={post} slug={post.slug}>
+<BlogLayout content={post} slug={post.frontmatter.slug}>
   <Fragment set:html={post.astro.html}/>
 </BlogLayout>

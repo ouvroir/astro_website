@@ -10,7 +10,7 @@ export interface Props{
 }
 
 
-let currentPath = Astro.canonicalURL;
+let currentPath = Astro.canonicalURL.pathname;
 const lang = currentPath && getLanguageFromURL(currentPath);
 
 //make tag component to deal with all cases in one spot? 

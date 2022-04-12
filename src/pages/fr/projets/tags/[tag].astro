@@ -2,28 +2,29 @@
 import {slugify} from '/src/data/languages.ts'
 
 export async function getStaticPaths() {
-    let blog = await Astro.glob('/src/_projets/*-fr.md').filter(d => d.draft == false);
-        
+    let blog = await Astro.glob('/src/_projets/*-fr.md')
+    blog = blog.filter(d => d.frontmatter.draft == false);
+    console.log(blog.length)
     //get a set of tags
     let tagSet = new Set();
     blog.forEach(p =>{
-        p.tags.forEach(t => {
+        p.frontmatter.tags.forEach(t => {
             tagSet.add(t)
         });
     });
 
     //for each tag, return a page with URL formed by tag (replacing spaces by "-")
     return Array.from(tagSet).map((tag: string) => {
-        var selection = blog.filter(post => post.tags.includes(tag));
+        var selection = blog.filter(post => post.frontmatter.tags.includes(tag));
         return {
             params: { tag: slugify(tag) },
             props: {selection, tag} };
     });
 }
-
 import BaseLayout from '/src/layouts/BaseLayout.astro';
 import ProjectPreview from '/src/components/ProjectPreview.astro';
 
+console.log('hello')
 const {selection, tag} = Astro.props
 const currentPath = Astro.canonicalURL.pathname;
 let retour = currentPath.replace('tags/','').replace(`${slugify(tag)}/`, '')
