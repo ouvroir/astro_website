@@ -9,7 +9,8 @@ let description = "Introducing lab projects and collaborations"
 let permalink = "https://ouvroir.umontreal.ca/en/projects/"
 const currentPath = Astro.canonicalURL.pathname;
 
-let projects = await Astro.glob('/src/_projets/*-en.md').filter(d => d.draft == false);
+let projects = await Astro.glob('/src/_projets/*-en.md')
+projects = projects.filter(d => d.draft == false);
 let tagSet = new Set();
 let allTags = [];
 projects.forEach(p =>{

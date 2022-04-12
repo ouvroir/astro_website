@@ -16,7 +16,8 @@ let slug = ""
 let description = "Ouvroir, Digital Art History and Museology lab"
 let permalink = "https://ouvroir.umontreal.ca/en/"
 
-let projects = await Astro.glob('/src/_projets/*-en.md').filter(d => d.draft == false);
+let projects = await Astro.glob('/src/_projets/*-en.md')
+projects = projects.filter(d => d.draft == false);
 let posts = await Astro.glob('/src/_blog/*-en.md');
 ---
 

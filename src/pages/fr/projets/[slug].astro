@@ -1,6 +1,7 @@
 ---
 export async function getStaticPaths() {
-  let projects = await Astro.glob('/src/_projets/*-fr.md').filter(d => d.draft == false);
+  let projects = await Astro.glob('/src/_projets/*-fr.md')
+  projects = projects.filter(d => d.draft == false);
 
   return projects.map((projet) => {
         return {
