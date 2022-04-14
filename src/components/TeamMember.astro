@@ -17,7 +17,7 @@ const lang = currentPath && getLanguageFromURL(currentPath);
 
 const { firstname, lastname, username, description, tags, link, mail, permalink, slug} = Astro.props;
 
-var projects = await Astro.glob('/src/_projets/*.md')
+var projects = await Astro.glob('/src/_labouvroir/projets/*.md')
 
 var relevantProjects = projects.filter(p => p.frontmatter.lang == lang).filter(p => p.frontmatter.team.includes(username))
 ---

@@ -2,7 +2,7 @@
 import {slugify} from '/src/data/languages.ts'
 
 export async function getStaticPaths() {
-    let blog = await Astro.glob('/src/_projets/*-fr.md')
+    let blog = await Astro.glob('/src/_labouvroir/projets/*-fr.md')
     blog = blog.filter(d => d.frontmatter.draft == false);
 
     //get a set of tags
