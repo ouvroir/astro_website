@@ -9,6 +9,7 @@ var currentPath = Astro.canonicalURL.pathname;
 const lang = currentPath && getLanguageFromURL(currentPath);
 const { title, author, description, date, tags } = Astro.props;
 let fullDate = formatDate(date, lang)
+console.log('BlogPost', title)
 ---
 <div class="container">
     <article class="content">

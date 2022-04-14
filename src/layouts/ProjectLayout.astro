@@ -11,7 +11,7 @@ import {
 var currentPath = Astro.canonicalURL.pathname;
 const lang = currentPath && getLanguageFromURL(currentPath);
 const {content} = Astro.props;
-const {title, description, since, tags, link, slug, lead} = content;
+const {title, description, since, tags, link, slug, lead} = content.frontmatter;
 
 ---
 <html lang={lang} prefix="og: https://ogp.me/ns# article: https://ogp.me/ns/article#">

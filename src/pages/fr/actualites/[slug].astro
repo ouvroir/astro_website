@@ -20,8 +20,7 @@ export async function getStaticPaths() {
 import BlogLayout from '/src/layouts/BlogLayout.astro';
 
 const {post} = Astro.props;
-
 ---
 <BlogLayout content={post} slug={post.frontmatter.slug}>
-  <Fragment set:html={post.astro.html}/>
+  <post.Content />
 </BlogLayout>

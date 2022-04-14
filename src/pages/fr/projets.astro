@@ -13,7 +13,6 @@ const currentPath = Astro.canonicalURL.pathname;
 let projects = await Astro.glob('/src/_projets/*-fr.md')
 projects = projects.filter(d => d.frontmatter.draft == false);
 
-console.log(projects.length)
 
 let tagSet = new Set();
 let allTags = [];

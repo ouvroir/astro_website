@@ -1,11 +1,11 @@
 ---
 export async function getStaticPaths() {
   let projects = await Astro.glob('/src/_projets/*-fr.md')
-  projects = projects.filter(d => d.draft == false);
+  projects = projects.filter(d => d.frontmatter.draft == false);
 
   return projects.map((projet) => {
         return {
-            params: { slug: projet.slug },
+            params: { slug: projet.frontmatter.slug },
             props: {projet} };
     });
 }
@@ -16,5 +16,5 @@ const {projet} = Astro.props;
 
 ---
 <ProjectLayout content={projet} slug={projet.frontmatter.slug}>
-  <Fragment set:html={projet.astro.html}/>
+  <projet.Content />
 </ProjectLayout>
