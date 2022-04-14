@@ -2,7 +2,7 @@
 title: Common
 description: CIÉCO Partenership Documentary Database
 tags: [CIÉCO, documentation, sharing]
-link:https://github.com/ouvroir/common
+link: https://github.com/ouvroir/common
 lead: Ouvroir
 team: [emchateau, lenamk]
 since: 2021-11
