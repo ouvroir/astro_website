@@ -1,13 +1,26 @@
 ---
 import BaseLayout from '/src/layouts/BaseLayout.astro'
 import BlogPostPreview from '/src/components/BlogPostPreview.astro'
-import {slugify} from '/src/data/languages.ts'
+import {
+  slugify,
+  mapGenericToText,
+  getLanguageFromURL} 
+from '/src/data/languages.ts'
 
-let title = "Actualités"
-let slug = "actualites"
-let description = "Blogue et annonces du lab" /*événements et lettre d'information*/
-let permalink = "https://ouvroir.umontreal.ca/fr/actualites/"
+
 const currentPath = Astro.canonicalURL.pathname;
+const lang = currentPath && getLanguageFromURL(currentPath);
+
+
+
+let title = mapGenericToText["MENU_BLOG"][lang]
+let description = mapGenericToText["ACTUALITES_DESC"][lang]
+let slug = "actualites"
+
+let permalink = "https://ouvroir.umontreal.ca/fr/actualites/"
+
+
+
 
 // Get all blog posts
 let blogPosts = await Astro.glob('/src/_labouvroir/blog/*-fr.md');
@@ -53,8 +66,7 @@ allTags = allTags.sort();
         <p>{description}</p>
       </div>
       <div class="col-3">
-        <p>Retrouvez et rejoignez nos événements sur <a href="https://mobilizon.fr/@ouvroir_lab">Mobilizon</a>.</p>
-        <p>S'abonner au <a href="https://outlook.office365.com/owa/calendar/00612925e3e44352a2fecda3cc840ee0@umontreal.ca/c2e6e5f6a7264c3b99fb9f6ef3f69b617923860242817213963/calendar.ics">calendrier numérique de l’Ouvroir</a>.</p>
+        <!--lab > evenements -->
       </div>
       <div class="col-9">
         {allPosts.map(p => <BlogPostPreview post={p}/>)} <!-- map does not keep the order-->
