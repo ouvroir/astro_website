@@ -21,24 +21,17 @@ console.log('blogLayout', title)
     <!-- change for Blog metadata component, type: blog-->
   </head>
   <body>
-    <div class="container grid-xl">
-          <div class="columns">
-            <div class="col-1"><!--nav gauche--></div>
-            <div class="col-10">
-              <div id="app" class="container grid-xl">
+     <div id="app">
 
-                <Header slug={slug}/>
+        <Header slug={slug}/>
+        <main class="container grid-xl">
+          <BlogPost title={title} author={author} date={date} description={description} tags={tags}>
+            <slot />
+          </BlogPost>
+        </main>
 
-                <BlogPost title={title} author={author} date={date} description={description} tags={tags}>
-                    <slot />
-                </BlogPost>
-                
-                <Footer />
-              </div>
-            </div>
-            <div class="col-1"><!--nav droite--></div>
-          </div>
-        </div>
+        <Footer />
+    </div>
 
   </body>
 </html>

@@ -20,23 +20,17 @@ const {title, description, since, tags, link, slug, lead} = content.frontmatter;
     <!-- change for Blog metadata component, type: blog-->
   </head>
   <body>
-    <div class="container grid-xl">
-            <div class="columns">
-              <div class="col-1"><!--nav gauche--></div>
-              <div class="col-10">
-                <div id="app" class="container grid-xl">
+    <div id="app">
+      <Header slug={slug}/>
 
-                  <Header slug={slug}/>
-
-                  <Project title={title} since={since} description={description} tags={tags} link={link} lead={lead}>
-                      <slot />
-                  </Project>
-
-                  <Footer />
-                </div>
-            </div>
-            <div class="col-1"><!--nav droite--></div>
-          </div>
-        </div>
+      <main class="container grid-xl">
+        <Project title={title} since={since} description={description} tags={tags} link={link} lead={lead}>
+            <slot />
+        </Project>
+      </main>
+      
+      <Footer />
+       
+    </div>
   </body>
 </html>

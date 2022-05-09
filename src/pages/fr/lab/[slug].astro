@@ -15,5 +15,5 @@ import TeamMemberLayout from '/src/layouts/TeamMemberLayout.astro';
 const {person} = Astro.props;
 ---
 <TeamMemberLayout content={person}>
-  <Fragment set:html={person.astro}/>
+  <person.Content />
 </TeamMemberLayout> 
