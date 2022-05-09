@@ -7,15 +7,16 @@ import {
 const currentPath = Astro.canonicalURL.pathname;
 const lang = currentPath && getLanguageFromURL(currentPath);
 ---
-<footer>
+<footer class="container grid-xl" class="toast">
+    
+    <div id="tagline">
+        <p><i>Ouvroir</i>. {mapGenericToText["TAGLINE"][lang]} | 2022</p>
+    </div>
     <div id="ext-links">
         <a rel="noopener noreferrer nofollow" target="_blank" href="https://github.com/ouvroir">Github</a>
-        <a rel="noopener noreferrer nofollow" target="_blank" href="https://hypothes.is/groups/pM5dq7b4/ouvroir"><i class="ai ai-hypothesis-square ai-2x"></i></a>
-        <a rel="noopener noreferrer nofollow" target="_blank" href="https://www.zotero.org/groups/2480242/ouvroir"><i class="ai ai-zotero-square ai-2x"></i></a>
+        <a rel="noopener noreferrer nofollow" target="_blank" href="https://hypothes.is/groups/pM5dq7b4/ouvroir">Hypothesis</a>
         <a rel="noopener noreferrer nofollow" target="_blank" href="https://twitter.com/labouvroir">Twitter</a>
-    </div>
-    <div>
-        <p><i>Ouvroir</i>.  {mapGenericToText["TAGLINE"][lang]} | 2022</p>
+        <a rel="noopener noreferrer nofollow" target="_blank" href="https://www.zotero.org/groups/2480242/ouvroir">Zotero</a>
     </div>
 </footer>
 
@@ -30,10 +31,15 @@ const lang = currentPath && getLanguageFromURL(currentPath);
 
 <style>
 footer {
+    margin-top: 1rem;
     text-align: center;
-    padding-top: 2rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+    border-top: 1px solid #292E38;
 }
-
+#tagline{
+    font-size: large;
+}
 #ext-links{
     width: 80%;
     margin-left: auto;
@@ -41,5 +47,6 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    font-size: medium;
 }
 </style>

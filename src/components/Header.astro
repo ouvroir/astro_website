@@ -46,6 +46,10 @@ var newSlug = currentPath.split('/').map(p => {
 
 <style>
 
+.navbar{
+  padding-top: 0.5rem;
+}
+
 .navbar a {
   font-weight: 800;
 }
@@ -72,7 +76,7 @@ var newSlug = currentPath.split('/').map(p => {
 }
 </style>
 
-<header class="navbar">
+<header class="container grid-xl navbar">
   <section class="navbar-section">
     <a href={`/${lang}/`} class="navbar-brand mr-2"><span id="nav-logo">Ouvroir</span></a>
     <a class="nav-item" href={`/${lang}/${mapGenericToSlug["SERVICES"][lang]}/`}>{mapGenericToText["MENU_SERVICES"][lang]}</a>
