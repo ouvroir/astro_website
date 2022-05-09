@@ -221,6 +221,10 @@ export const mapGenericToSlug = {
         fr: 'reframe',
         en: 'reframe'
     },
+    "SITEWEB":{
+        fr: 'siteweb',
+        en: 'website'
+    },
     "TAGS":{
         fr: 'tags',
         en: 'tags'
@@ -308,7 +312,7 @@ export const mapGenericToSlug = {
     "WILLIAM":{
         fr: 'williamdiakite',
         en: 'williamdiakite'
-    }
+    },
 }
 
 export const mapSlugToGeneric = Object.keys(mapGenericToSlug).reduce((acc, k) => {
