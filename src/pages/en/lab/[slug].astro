@@ -1,0 +1,19 @@
+---
+export async function getStaticPaths() {
+  let persons = await Astro.glob('/src/_labouvroir/equipe/*-en.md');
+
+
+  return persons.map((person) => {
+        return {
+            params: { slug: person.frontmatter.slug},
+            props: {person} };
+    });
+}
+
+import TeamMemberLayout from '/src/layouts/TeamMemberLayout.astro';
+
+const {person} = Astro.props;
+---
+<TeamMemberLayout content={person}>
+  <person.Content />
+</TeamMemberLayout> 

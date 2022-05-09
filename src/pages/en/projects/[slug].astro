@@ -1,0 +1,20 @@
+---
+export async function getStaticPaths() {
+  let projects = await Astro.glob('/src/_labouvroir/projets/*-en.md')
+  projects = projects.filter(d => d.frontmatter.draft == false);
+
+  return projects.map((projet) => {
+        return {
+            params: { slug: projet.frontmatter.slug },
+            props: {projet} };
+    });
+}
+
+import ProjectLayout from '/src/layouts/ProjectLayout.astro';
+
+const {projet} = Astro.props;
+
+---
+<ProjectLayout content={projet} slug={projet.frontmatter.slug}>
+  <projet.Content />
+</ProjectLayout>

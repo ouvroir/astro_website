@@ -1,0 +1,91 @@
+---
+import BaseLayout from '/src/layouts/BaseLayout.astro'
+import BlogPostPreview from '/src/components/BlogPostPreview.astro'
+import {
+  slugify,
+  mapGenericToText,
+  getLanguageFromURL} 
+from '/src/data/languages.ts'
+
+const currentPath = Astro.canonicalURL.pathname;
+const lang = currentPath && getLanguageFromURL(currentPath);
+
+let title = mapGenericToText["MENU_BLOG"][lang]
+let description = mapGenericToText["ACTUALITES_DESC"][lang]
+let slug = "actualites"
+
+let permalink = "https://ouvroir.umontreal.ca/fr/actualites/"
+
+
+// Get all blog posts
+
+/*
+let blogPosts = await Astro.glob('/src/_labouvroir/blog/*-en.md');
+let crPosts = await Astro.glob('/src/_labouvroir/cr/*.md');
+
+//ajout du slug pour les cr
+crPosts.forEach(p => {
+  p.frontmatter.date = p.frontmatter.date.replace('T00:00:00.000Z', '')
+  p.frontmatter.slug = `cr${p.frontmatter.date}`
+})
+
+
+//Rassemble tous les contenus
+let allPosts = blogPosts.concat(crPosts)
+//tri par date (ne semble pas s'appliquer)
+allPosts = allPosts.sort((a, b) => (b.frontmatter.date).valueOf() - (a.frontmatter.date).valueOf());
+
+let tagSet = new Set();
+let allTags = [];
+allPosts.forEach(p =>{
+  p.frontmatter.tags.forEach(t => {
+    tagSet.add(t)
+  });
+});
+
+for (let t of tagSet){
+  allTags.push(t)
+}
+allTags = allTags.sort();
+*/
+---
+
+<BaseLayout title={title} description={description} permalink={permalink} slug={slug}>
+  <div class="container grid-xl">
+    <div class="columns">
+      <div class="col-12">
+        <h1>{title}</h1>
+      </div>
+      <div class="col-9">
+        <p></p>
+        <p></p>
+        <p></p>
+        <p>{description}</p>
+      </div>
+      <div class="col-3">
+        <!--lab > evenements -->
+      </div>
+      <div class="col-9">
+        <!-- {allPosts.map(p => <BlogPostPreview post={p}/>)} map does not keep the order-->
+      </div>
+      <div class="col-3 tagColumn">
+            <h2>{mapGenericToText["TAGS"][lang]}</h2>
+        <!--{allTags.map(t => {
+                return <div class="chip">
+                  <a href={`${currentPath}tags/${slugify(t)}/`}>{t}</a>
+                </div>
+              }
+            )} -->
+          </div>
+    </div>
+  </div>
+</BaseLayout>
+<!-- 
+  à par catégorie selon tag
+  ├─ Actualités
+      ├─ Billets blogue
+      ├─ Annonces / événements
+      └─ Lettre d’information (v2)
+
+-->
+

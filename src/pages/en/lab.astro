@@ -1,0 +1,55 @@
+---
+import BaseLayout from '/src/layouts/BaseLayout.astro';
+import {Content as Presentation} from '/src/_labouvroir/lab/presentation-en.md'
+import {Content as Financement} from  '/src/_labouvroir/lab/financement-en.md'
+import Logo from '/src/components/LogoFinancement.astro'
+import {
+    getLanguageFromURL,
+    mapGenericToSlug,
+    mapGenericToText
+} from '/src/data/languages.ts';
+
+
+const currentPath = Astro.canonicalURL.pathname;
+const lang = currentPath && getLanguageFromURL(currentPath);
+
+let title = mapGenericToText["INFO"][lang]
+let slug = "info"
+let description = mapGenericToText["A_PROPOS"][lang]
+let permalink = "https://ouvroir.umontreal.ca/fr/info/"
+
+---
+
+<BaseLayout title={title} description={description} permalink={permalink} slug={slug}>
+    <h1>{title}</h1>
+    <p>{description}</p>
+
+    <div class="section">
+        <h2>{mapGenericToText["PRESENTATION_LAB"][lang]}</h2>
+        <Presentation/>
+    </div>
+
+
+    <h2>{mapGenericToText["EQUIPE"][lang]}</h2>
+    <ul>
+        <li><a href={`/${lang}/${mapGenericToSlug["LAB"][lang]}/emchateau`}>Emmanuel Château-Dutier</a> {mapGenericToText["DIR_SC"][lang]}</li>
+        <li><a href={`/${lang}/${mapGenericToSlug["LAB"][lang]}/ktanton`}>Kristine Tanton</a> {mapGenericToText["DIR_SC"][lang]}</li>
+        <li><a href={`/${lang}/${mapGenericToSlug["LAB"][lang]}/lenamk`}>Lena Krause</a> {mapGenericToText["RESP"][lang]}</li>
+        <li><a href={`/${lang}/${mapGenericToSlug["LAB"][lang]}/williamdiakite`}>William Diakité</a></li>
+    </ul>
+
+    <h2>{mapGenericToText["LOCALISATION"][lang]}</h2>
+    <p>Université de Montréal: C-8130 et C-8132, Pavillon Lionel-Groulx.</p>
+
+    <h2>{mapGenericToText["FINANCEMENTS"][lang]}</h2>
+    
+    <Financement/>
+    <Logo/>
+        
+</BaseLayout>
+
+<style>
+section{
+    border-bottom: ;
+}
+</style>

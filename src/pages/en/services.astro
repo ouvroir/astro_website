@@ -1,0 +1,40 @@
+---
+import BaseLayout from '/src/layouts/BaseLayout.astro';
+import {Content as Equipement} from  '/src/_labouvroir/lab/equipement-en.md'
+import {Content as Evenements} from  '/src/_labouvroir/lab/evenements-en.md'
+import {Content as Rencontre} from  '/src/_labouvroir/lab/rencontre-en.md'
+import {
+    getLanguageFromURL,
+    mapGenericToText
+} from '/src/data/languages.ts';
+
+const currentPath = Astro.canonicalURL.pathname;
+const lang = currentPath && getLanguageFromURL(currentPath);
+
+let title = mapGenericToText["MENU_SERVICES"][lang];
+let slug = "services"
+let description = mapGenericToText["SERVICES_DESC"][lang]
+let permalink = "https://ouvroir.umontreal.ca/fr/services/"
+
+let equipement = await Astro.glob('/src/_labouvroir/lab/equipement-en.md');
+---
+
+<BaseLayout title={title} description={description} permalink={permalink} slug={slug}>
+  
+  
+  <h1>{title}</h1>
+
+  <section class="section" >      
+    <Equipement/>
+  </section>
+  
+<!--
+  ├─ Services
+    ├─ Services offerts
+    ├─ Points de rencontre
+    ├─ Équipements
+    └─ Code de conduite
+-->
+
+
+</BaseLayout>
