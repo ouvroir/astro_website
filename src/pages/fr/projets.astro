@@ -2,12 +2,19 @@
 import BaseLayout from '/src/layouts/BaseLayout.astro';
 import ProjectPreview from '/src/components/ProjectPreview.astro'
 import {slugify} from '/src/data/languages.ts'
+import {
+    getLanguageFromURL,
+    mapGenericToText
+} from '/src/data/languages.ts';
 
-let title = "Projets"
-let slug ="projets"
-let description = "Présentation de projets et de collaborations du laboratoire"
-let permalink = "https://ouvroir.umontreal.ca/fr/projets/"
+
 const currentPath = Astro.canonicalURL.pathname;
+const lang = currentPath && getLanguageFromURL(currentPath);
+
+let title = mapGenericToText["MENU_PROJETS"][lang]
+let slug ="projets"
+let description = mapGenericToText["PROJETS_DESC"][lang]
+let permalink = "https://ouvroir.umontreal.ca/fr/projets/"
 
 
 let projects = await Astro.glob('/src/_labouvroir/projets/*-fr.md')

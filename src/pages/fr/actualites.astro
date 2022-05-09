@@ -7,11 +7,8 @@ import {
   getLanguageFromURL} 
 from '/src/data/languages.ts'
 
-
 const currentPath = Astro.canonicalURL.pathname;
 const lang = currentPath && getLanguageFromURL(currentPath);
-
-
 
 let title = mapGenericToText["MENU_BLOG"][lang]
 let description = mapGenericToText["ACTUALITES_DESC"][lang]
@@ -20,9 +17,9 @@ let slug = "actualites"
 let permalink = "https://ouvroir.umontreal.ca/fr/actualites/"
 
 
-
-
 // Get all blog posts
+
+/*
 let blogPosts = await Astro.glob('/src/_labouvroir/blog/*-fr.md');
 let crPosts = await Astro.glob('/src/_labouvroir/cr/*.md');
 
@@ -50,7 +47,7 @@ for (let t of tagSet){
   allTags.push(t)
 }
 allTags = allTags.sort();
-
+*/
 ---
 
 <BaseLayout title={title} description={description} permalink={permalink} slug={slug}>
@@ -69,16 +66,16 @@ allTags = allTags.sort();
         <!--lab > evenements -->
       </div>
       <div class="col-9">
-        {allPosts.map(p => <BlogPostPreview post={p}/>)} <!-- map does not keep the order-->
+        <!-- {allPosts.map(p => <BlogPostPreview post={p}/>)} map does not keep the order-->
       </div>
       <div class="col-3 tagColumn">
-            <h2>Tags</h2>
-            {allTags.map(t => {
+            <h2>{mapGenericToText["TAGS"][lang]}</h2>
+        <!--{allTags.map(t => {
                 return <div class="chip">
                   <a href={`${currentPath}tags/${slugify(t)}/`}>{t}</a>
                 </div>
               }
-            )} 
+            )} -->
           </div>
     </div>
   </div>

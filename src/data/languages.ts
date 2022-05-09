@@ -58,9 +58,41 @@ export const mapGenericToText = {
         fr: "Actualités",
         en: "News"
     },
+    "TAGS":{
+        fr: "Tags",
+        en: "Tags"
+    },
     "LIRE_SUITE":{
         fr: "Continuer la lecture",
         en: "Read more"
+    },
+    "PRESENTATION":{
+        fr: "Présentation",
+        en: "Presentation"
+    },
+    "PRESENTATION_LAB":{
+        fr: "Présentation du laboratoire",
+        en: "Lab Presentation"
+    },
+    "SERVICES_DESC":{
+        fr: "Services offerts, points de rencontre, équipement commun et code de conduite",
+        en: "Facilities, meetups, tools and code of conduct"
+    },
+    "PROJETS_DESC":{
+        fr: "Présentation de projets et de collaborations du laboratoire",
+        en: "Introducing lab projects and collaborations"
+    },
+    "ACTUALITES_DESC":{
+        fr: "Blogue et annonces du lab",
+        en: "Presentation"
+    },
+    "CREDITS":{ 
+        fr: "Crédits",
+        en: "Credits"
+    },
+    "FINANCEMENTS":{ 
+        fr: "Financements",
+        en: "Funding"
     },
     "LIRE_PROJET":{
         fr: "En savoir plus",
@@ -85,7 +117,48 @@ export const mapGenericToText = {
     "INVESTIGATEUR":{
         fr: "Direction scientifique",
         en: "Lead investigateur"
-    }  
+    },
+    "DIR_SC":{
+        fr: "Direction scientifique",
+        en: "Scientific direction"
+    },
+    "RESP":{
+        fr: "Responsable du laboratoire",
+        en: "Lab manager"
+    },
+    "INGE":{
+        fr: "Ingénieur, développeur web",
+        en: "Engineer, web developer"
+    },
+    "INFO":{
+        fr: "Informations",
+        en: "Information"
+    },
+    "A_PROPOS":{
+        fr: "À propos de l'Ouvroir",
+        en: "About l'Ouvroir"
+    },
+    "EQUIPE":{
+        fr: 'Équipe',   
+        en: 'Team'
+    },
+    "LOCALISATION":{
+        fr: 'Localisation',
+        en: 'Localization'
+    }, 
+    "RENCONTRE":{
+        fr: "Points de rencontre",
+        en: "Meeeting points"
+    },
+    "EQUIPEMENT":{
+        fr: "Équipement et locaux",
+        en: "Tools and facilities"
+    },
+    "CODE":{
+        fr: "Code de conduite",
+        en: "Code of conduct"
+    }
+    
 }    
 
 //slugs
@@ -107,6 +180,10 @@ export const mapGenericToSlug = {
     "SERVICES":{
         fr: 'services',
         en: 'services',
+    },
+    "INFO":{
+        fr: 'lab',
+        en: 'lab',
     },
     "ARTICLE_1":{
         fr: 'premier-billet',

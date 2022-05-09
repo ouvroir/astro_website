@@ -1,8 +1,11 @@
 ---
 import BaseLayout from '/src/layouts/BaseLayout.astro';
-import {Markdown} from 'astro/components';
+//comment rendre l'importation billingue? 
+import {Content as Presentation} from '/src/_labouvroir/lab/presentation-fr.md'
+import {Content as Financement} from  '/src/_labouvroir/lab/financement-fr.md'
 import BlogPostPreview from '/src/components/BlogPostPreview.astro';
 import ProjectCardPreview from '/src/components/ProjectCardPreview.astro';
+import Logo from '/src/components/LogoFinancement.astro'
 import {
     getLanguageFromURL,
     mapGenericToText
@@ -26,16 +29,18 @@ projects = projects.filter(d => d.frontmatter.draft == false);
 
   <section class="columns">
     <div class="column toast">
-      <button class="btn btn-clear float-right"></button>
+      <button class="btn btn-clear float-right"/>
       <h2>{mapGenericToText["PRESENTATION"][lang]}</h2>
-<!-- présentation-->
+      
+      <Presentation/>
     </div>
   </section>
-<!-- 
-  <section class="columns">
-    <h2 class="column col-12">Actualités</h2>
-      {posts.map(p => <BlogPostPreview post={p}/>)}
-  </section> -->
+  
+  <!-- 
+    <section class="columns">
+      <h2 class="column col-12">Actualités</h2>
+        {posts.map(p => <BlogPostPreview post={p}/>)}
+    </section> -->
 
   <section class="columns">
     <h2 class="column col-12">{mapGenericToText["MENU_PROJETS"][lang]}</h2>
@@ -44,19 +49,11 @@ projects = projects.filter(d => d.frontmatter.draft == false);
   
   <section class="columns">
     <h2 class="column col-12">{mapGenericToText["CREDITS"][lang]}</h2><!-- je ne pense pas que ce soit le bon terme-->
-<!--financement-->
+    <div class="column col-12">   
+      <Financement/>
+    </div>  
   </section>
-  
-  <div class="columns">  <!-- to make responsive with grid-xs to have logo beneath in xs view? -->
-    <div class="column col-2 col-sm-3 col-mx-auto logo">
-      <img src='/style/img/UdeM/Logo_UdeM-RVB.png' width="100%"/>
-    </div>
-    <div class="column col-2 col-sm-3 col-mx-auto logo">
-      <img src='/style/img/CFI/fr/CFI_RGB-FR.png' width="100%"/>
-    </div>
-    <div class="column col-2 col-sm-37 col-mx-auto logo">
-      <img src='/style/img/qc/svg/QUEBEC_couleur.svg' width="100%"/>
-    </div>
-  </div>   
+
+  <Logo/>
 
 </BaseLayout>
