@@ -1,8 +1,19 @@
 <!DOCTYPE html>
-<!--
-    redirects to fr home page
-    upgrade: customise to redirect using browser lang
---><head>
-  <meta http-equiv="refresh" content="0; url=&#34;/fr/&#34;">
 
-</head>
+<script>let langues = ["fr","en"];
+
+
+  let userLang = (window.navigator.language).slice(0, 2);
+
+  /*
+    if it exists, redirects to browser lang 
+    else, fr
+  */
+ 
+  if (langues.includes(userLang))
+    window.location.pathname = '/' + userLang + '/';
+  else {
+    window.location.pathname = '/fr/';
+  }
+
+</script>
