@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '/src/layouts/BaseLayout.astro';
 //comment rendre l'importation billingue? 
-import {Content as Presentation} from '/src/_labouvroir/lab/presentation-fr.md'
+import PopPresentation from '/src/components/PopPresentation.astro'
 import {Content as Financement} from  '/src/_labouvroir/lab/financement-fr.md'
 import BlogPostPreview from '/src/components/BlogPostPreview.astro';
 import ProjectCardPreview from '/src/components/ProjectCardPreview.astro';
@@ -26,16 +26,7 @@ projects = projects.filter(d => d.frontmatter.draft == false);
 
 <BaseLayout title={title} description={description} permalink={permalink} slug={slug}>
 
-
-  <section class="columns">
-    <div class="column toast">
-      <button class="btn btn-clear float-right"/>
-      <h2>{mapGenericToText["PRESENTATION"][lang]}</h2>
-      
-      <Presentation/>
-    </div>
-  </section>
-  
+  <PopPresentation client:load/>  
   <!-- 
     <section class="columns">
       <h2 class="column col-12">Actualités</h2>

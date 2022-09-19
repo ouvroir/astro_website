@@ -1,0 +1,27 @@
+---
+import {Content as Presentation} from '/src/_labouvroir/lab/presentation-fr.md'
+import {
+    getLanguageFromURL,
+    mapGenericToText
+} from '/src/data/languages.ts';
+
+const currentPath = Astro.canonicalURL.pathname;
+const lang = currentPath && getLanguageFromURL(currentPath);
+
+---    
+<script client:load>
+    //script to close the box
+    var close = document.getElementById("close-btn")
+    close.onclick = function() {
+        console.log("click")
+    };
+</script>
+
+
+<div class="column toast dark">    
+
+    <button class="btn btn-clear float-right" id="close-btn"/>
+    <h2>{mapGenericToText["PRESENTATION"][lang]}</h2>
+      
+    <Presentation/>
+</div>
