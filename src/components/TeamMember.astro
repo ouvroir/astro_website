@@ -18,7 +18,7 @@ export interface Props {
 const currentPath = Astro.canonicalURL.pathname;
 const lang = currentPath && getLanguageFromURL(currentPath);
 
-const { firstname, lastname, username, description, tags, link, mail, permalink, slug} = Astro.props;
+const { firstname, lastname, username, description, tags, link, mail, permalink, slug, status, pronouns} = Astro.props;
 
 var projects = await Astro.glob('/src/_labouvroir/projets/*.md')
 
@@ -34,6 +34,7 @@ var relevantProjects = projects.filter(p => p.frontmatter.lang == lang).filter(p
                     </div>
                     <div class="col-9">
                         <h2>{firstname} {lastname}</h2>
+                        <p><!--{mapGenericToText[status][lang][pronouns]}--></p>
                         <p>{description} <br>
                         </p>
                     </div>
