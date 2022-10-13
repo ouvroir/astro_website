@@ -114,22 +114,6 @@ export const mapGenericToText = {
         fr: "par",
         en: "by"
     },
-    "INVESTIGATEUR":{
-        fr: "Direction scientifique",
-        en: "Lead investigateur"
-    },
-    "DIR_SC":{
-        fr: "Direction scientifique",
-        en: "Scientific direction"
-    },
-    "RESP":{
-        fr: "Responsable du laboratoire",
-        en: "Lab manager"
-    },
-    "INGE":{
-        fr: "Ingénieur, développeur web",
-        en: "Engineer, web developer"
-    },
     "INFO":{
         fr: "Informations",
         en: "Information"
@@ -137,10 +121,6 @@ export const mapGenericToText = {
     "A_PROPOS":{
         fr: "À propos de l'Ouvroir",
         en: "About l'Ouvroir"
-    },
-    "EQUIPE":{
-        fr: 'Équipe',   
-        en: 'Team'
     },
     "LOCALISATION":{
         fr: 'Localisation',
@@ -157,6 +137,63 @@ export const mapGenericToText = {
     "CODE":{
         fr: "Code de conduite",
         en: "Code of conduct"
+    },
+    "EQUIPE":{
+        fr: 'Équipe',   
+        en: 'Team'
+    },
+    "STAFF":{
+        fr: "Personnel",
+        en: "Staff"
+    },
+    "MEMBER":{
+        fr: "Membres",
+        en: "Members"
+    },
+    "INVESTIGATEUR":{
+        fr: "Direction scientifique",
+        en: "Lead investigateur"
+    },
+    /*rôles, requiert le pronom*/
+    "DIR_SC":{
+        fr: {
+            m: "Directeur scientifique",
+            f: "Directrice scientifique"
+        },
+        en: {
+            m: "Scientific director",
+            f: "Scientific director"
+        }
+    },
+    "RESP":{
+        fr: {
+            m: "Responsable du laboratoire",
+            f: "Responsable du laboratoire"
+        },
+        en: {
+            m: "Lab manager",
+            f: "Lab manager"
+        }
+    },
+    "INGE":{
+        fr: {
+            m: "Ingénieur, développeur web",
+            f: "Ingénieure, développeuse web"
+        },
+        en: {
+            m: "Engineer, web developer",
+            f: "Engineer, web developer"
+        }
+    },
+    "STUDENT":{
+        fr:{
+            m: "Étudiant chercheur",
+            f: "Étudiante chercheuse"
+        },
+        en:{
+            m: "Graduate student member",
+            f: "Graduate student member"
+        }
     }
     
 }    

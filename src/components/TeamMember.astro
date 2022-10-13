@@ -10,7 +10,10 @@ export interface Props {
   link: string,
   mail: string,
   permalink: string,
-  slug: string
+  slug: string,
+  projects: Array<string>,
+  status: string,
+  pronouns: string
 }
 const currentPath = Astro.canonicalURL.pathname;
 const lang = currentPath && getLanguageFromURL(currentPath);
