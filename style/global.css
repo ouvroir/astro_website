@@ -74,16 +74,16 @@ a:active {
     color: #626873 ; /* revoir */
 }
 
-.dark a:link, .chip a:link {
+.toast a:link, .chip a:link {
     font-weight: 500;
     color: white;
 }
 
-.dark a:visited {
+.toast a:visited {
   color:#626873 ; /* revoir */
 }
 
-.dark a:hover, .dark a:focus {
+.toast a:hover, .toast a:focus {
   color:#626873 ; /* revoir */
 }
 
