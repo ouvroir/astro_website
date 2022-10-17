@@ -1,8 +1,11 @@
 ---
 export async function getStaticPaths() {
   let blog = [] //await Astro.glob('/src/_labouvroir/blog/*-en.md');
-  let cr = await Astro.glob('/src/_labouvroir/cr/*.md')
 
+  blog = blog.filter(d => d.frontmatter.draft == false);
+  let cr = await Astro.glob('/src/_labouvroir/cr/*.md')
+  cr = cr.filter(d => d.frontmatter.draft == false);
+  
   let all = blog.concat(cr)
   return all.map((post) => {
       //s'il n'y a pas de slug, c'est un cr

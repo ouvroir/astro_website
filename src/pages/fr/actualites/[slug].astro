@@ -2,6 +2,7 @@
 export async function getStaticPaths() {
   let blog = [] // await Astro.glob('/src/_labouvroir/blog/*-fr.md');
   let cr = await Astro.glob('/src/_labouvroir/cr/*.md')
+  cr = cr.filter(d => d.frontmatter.draft == false);
 
   let all = blog.concat(cr)
   return all.map((post) => {

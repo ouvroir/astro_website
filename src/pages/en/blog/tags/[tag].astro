@@ -2,7 +2,11 @@
 import {slugify} from '/src/data/languages.ts'
 export async function getStaticPaths() {
     let blog = [] //await Astro.glob('/src/_labouvroir/blog/*-en.md');
+
+
     let cr = await Astro.glob('/src/_labouvroir/cr/*.md')
+    cr = cr.filter(d => d.frontmatter.draft == false);
+    
     let all = blog.concat(cr)
     //get a set of tags
     let tagSet = new Set();
@@ -11,7 +15,7 @@ export async function getStaticPaths() {
             tagSet.add(t)
         });
     });
-
+    console.log(tagSet)
     //for each tag, return a page with URL formed by tag
     return Array.from(tagSet).map((tag) => {
         var selection = all.filter(post => post.frontmatter.tags.includes(tag));
