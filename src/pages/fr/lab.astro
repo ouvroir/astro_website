@@ -23,8 +23,8 @@ let members = await Astro.glob(`/src/_labouvroir/equipe/*-fr.md`);
 let studentMembers = members.filter(d => d.frontmatter.status == "student")
 let staffMembers = members.filter(d => d.frontmatter.status !== "student")
 
-studentMembers.forEach(m => console.log("student ", m.frontmatter.firstname))
-staffMembers.forEach(m => console.log("staff ", m.frontmatter.firstname))
+//studentMembers.forEach(m => console.log("student ", m.frontmatter.firstname))
+//staffMembers.forEach(m => console.log("staff ", m.frontmatter.firstname))
 ---
 
 <BaseLayout title={title} description={description} permalink={permalink} slug={slug}>

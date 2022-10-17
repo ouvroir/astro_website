@@ -11,14 +11,17 @@ export interface Props {
   mail: string,
   permalink: string,
   slug: string,
-  projects: Array<string>,
   status: string,
-  pronouns: string
+  pronouns: string,
+  projects: Array<string>
 }
+
 const currentPath = Astro.canonicalURL.pathname;
 const lang = currentPath && getLanguageFromURL(currentPath);
 
-const { firstname, lastname, username, description, tags, link, mail, permalink, slug, status, pronouns} = Astro.props;
+// props are not complete.. missing new ones
+const { firstname, lastname, username, description, tags, status, link, mail, permalink, slug, pronouns} = Astro.props;
+//tags don't lead anywhere, not in mapGenericToSlug
 
 var projects = await Astro.glob('/src/_labouvroir/projets/*.md')
 

@@ -152,7 +152,7 @@ export const mapGenericToText = {
     },
     "INVESTIGATEUR":{
         fr: "Direction scientifique",
-        en: "Lead investigateur"
+        en: "Lead investigator"
     },
     /*rôles, requiert le pronom*/
     "DIR_SC":{
@@ -350,6 +350,19 @@ export const mapGenericToSlug = {
         fr: 'williamdiakite',
         en: 'williamdiakite'
     },
+     "JESSICA":{
+        fr: 'gdJESS',
+        en: 'gdJESS'
+    },
+    "LEA":{
+        fr: 'LeaMaronet',
+        en: 'LeaMaronet'
+    },
+    "TALITHA":{
+        fr: 'talithamotter',
+        en: 'talithamotter'
+    }
+
 }
 
 export const mapSlugToGeneric = Object.keys(mapGenericToSlug).reduce((acc, k) => {

@@ -23,8 +23,8 @@ let members = await Astro.glob(`/src/_labouvroir/equipe/*-en.md`);
 let studentMembers = members.filter(d => d.frontmatter.status == "student")
 let staffMembers = members.filter(d => d.frontmatter.status !== "student")
 
-studentMembers.forEach(m => console.log("student ", m.frontmatter.firstname))
-staffMembers.forEach(m => console.log("staff ", m.frontmatter.firstname))
+//studentMembers.forEach(m => console.log("student ", m.frontmatter.firstname))
+//staffMembers.forEach(m => console.log("staff ", m.frontmatter.firstname))
 ---
 
 <BaseLayout title={title} description={description} permalink={permalink} slug={slug}>
@@ -42,12 +42,12 @@ staffMembers.forEach(m => console.log("staff ", m.frontmatter.firstname))
     <ul>
         {staffMembers.map(m => {
             let st = m.frontmatter.status.toUpperCase()
-            let p = m.frontmatter.pronouns
+            let pronouns = m.frontmatter.pronouns
             let slug = m.frontmatter.slug
             let name = m.frontmatter.firstname
             let lastname = m.frontmatter.lastname
             
-            return <li><a href={`/${lang}/${mapGenericToSlug["LAB"][lang]}/${slug}`}>{name} {lastname}</a>, {mapGenericToText[st][lang][p]}</li>
+            return <li><a href={`/${lang}/${mapGenericToSlug["LAB"][lang]}/${slug}`}>{name} {lastname}</a>, {mapGenericToText[st][lang][pronouns]}</li>
         })}
     </ul>
 
