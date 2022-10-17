@@ -18,6 +18,13 @@ let slug = "info"
 let description = mapGenericToText["A_PROPOS"][lang]
 let permalink = "https://ouvroir.umontreal.ca/fr/info/"
 
+//récupère la liste des membres et filtre pour conserver les étudiant·e·s
+let members = await Astro.glob(`/src/_labouvroir/equipe/*-fr.md`);
+let studentMembers = members.filter(d => d.frontmatter.status == "student")
+let staffMembers = members.filter(d => d.frontmatter.status !== "student")
+
+//studentMembers.forEach(m => console.log("student ", m.frontmatter.firstname))
+//staffMembers.forEach(m => console.log("staff ", m.frontmatter.firstname))
 ---
 
 <BaseLayout title={title} description={description} permalink={permalink} slug={slug}>
@@ -31,11 +38,30 @@ let permalink = "https://ouvroir.umontreal.ca/fr/info/"
 
 
     <h2>{mapGenericToText["EQUIPE"][lang]}</h2>
+    <h3>{mapGenericToText["STAFF"][lang]}</h3>
     <ul>
-        <li><a href={`/${lang}/${mapGenericToSlug["LAB"][lang]}/emchateau`}>Emmanuel Château-Dutier</a> {mapGenericToText["DIR_SC"][lang]}</li>
-        <li><a href={`/${lang}/${mapGenericToSlug["LAB"][lang]}/ktanton`}>Kristine Tanton</a> {mapGenericToText["DIR_SC"][lang]}</li>
-        <li><a href={`/${lang}/${mapGenericToSlug["LAB"][lang]}/lenamk`}>Lena Krause</a> {mapGenericToText["RESP"][lang]}</li>
-        <li><a href={`/${lang}/${mapGenericToSlug["LAB"][lang]}/williamdiakite`}>William Diakité</a> {mapGenericToText["INGE"][lang]}</li>
+        {staffMembers.map(m => {
+            let st = m.frontmatter.status.toUpperCase()
+            let p = m.frontmatter.pronouns
+            let slug = m.frontmatter.slug
+            let name = m.frontmatter.firstname
+            let lastname = m.frontmatter.lastname
+            
+            return <li><a href={`/${lang}/${mapGenericToSlug["LAB"][lang]}/${slug}`}>{name} {lastname}</a>, {mapGenericToText[st][lang][p]}</li>
+        })}
+    </ul>
+
+    <h3>{mapGenericToText["MEMBER"][lang]}</h3>
+    <ul>
+        {studentMembers.map(m => {
+            let st = m.frontmatter.status.toUpperCase()
+            let p = m.frontmatter.pronouns
+            let slug = m.frontmatter.slug
+            let name = m.frontmatter.firstname
+            let lastname = m.frontmatter.lastname
+            
+            return <li><a href={`/${lang}/${mapGenericToSlug["LAB"][lang]}/${slug}`}>{name} {lastname}</a>, {mapGenericToText[st][lang][p]}</li>
+        })}
     </ul>
 
     <h2>{mapGenericToText["LOCALISATION"][lang]}</h2>

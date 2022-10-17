@@ -13,6 +13,7 @@ export async function getStaticPaths() {
 import TeamMemberLayout from '/src/layouts/TeamMemberLayout.astro';
 
 const {person} = Astro.props;
+
 ---
 <TeamMemberLayout content={person}>
   <person.Content />
