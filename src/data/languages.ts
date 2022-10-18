@@ -187,8 +187,8 @@ export const mapGenericToText = {
     },
     "STUDENT":{
         fr:{
-            m: "Étudiant chercheur",
-            f: "Étudiante chercheuse"
+            m: "Étudiant-chercheur",
+            f: "Étudiante-chercheuse"
         },
         en:{
             m: "Graduate student member",
