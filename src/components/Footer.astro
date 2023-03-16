@@ -1,23 +1,47 @@
 ---
-import {
-    getLanguageFromURL,
-    mapGenericToText
-} from '/src/data/languages.ts';
+import { getLanguageFromURL, mapGenericToText } from '/src/data/languages.ts'
 
-const currentPath = Astro.canonicalURL.pathname;
-const lang = currentPath && getLanguageFromURL(currentPath);
+const currentPath = Astro.canonicalURL.pathname
+const lang = currentPath && getLanguageFromURL(currentPath)
 ---
+
 <footer class="container grid-xl" class="toast">
-    
-    <div id="tagline">
-        <p><i>Ouvroir</i>. {mapGenericToText["TAGLINE"][lang]} | 2022</p>
+  <div id="support-cieco">
+    <!-- <img id="logo-cieco" src="/style/img/cieco-grey.svg" /> -->
+    <div>
+      {mapGenericToText['CIECO'][lang]}
     </div>
-    <div id="ext-links">
-        <a rel="noopener noreferrer nofollow" target="_blank" href="https://github.com/ouvroir">Github</a>
-        <a rel="noopener noreferrer nofollow" target="_blank" href="https://hypothes.is/groups/pM5dq7b4/ouvroir">Hypothesis</a>
-        <a rel="noopener noreferrer nofollow" target="_blank" href="https://twitter.com/labouvroir">Twitter</a>
-        <a rel="noopener noreferrer nofollow" target="_blank" href="https://www.zotero.org/groups/2480242/ouvroir">Zotero</a>
-    </div>
+
+    <a href="http://www.cieco.co/">
+      <img src="/style/img/cieco-grey.svg" />
+    </a>
+  </div>
+
+  <div id="tagline">
+    <p><i>Ouvroir</i>. {mapGenericToText['TAGLINE'][lang]} | 2022</p>
+  </div>
+  <div id="ext-links">
+    <a
+      rel="noopener noreferrer nofollow"
+      target="_blank"
+      href="https://github.com/ouvroir">Github</a
+    >
+    <a
+      rel="noopener noreferrer nofollow"
+      target="_blank"
+      href="https://hypothes.is/groups/pM5dq7b4/ouvroir">Hypothesis</a
+    >
+    <a
+      rel="noopener noreferrer nofollow"
+      target="_blank"
+      href="https://twitter.com/labouvroir">Twitter</a
+    >
+    <a
+      rel="noopener noreferrer nofollow"
+      target="_blank"
+      href="https://www.zotero.org/groups/2480242/ouvroir">Zotero</a
+    >
+  </div>
 </footer>
 
 <!--
@@ -27,20 +51,18 @@ const lang = currentPath && getLanguageFromURL(currentPath);
     └─ RSS
 -->
 
-
-
 <style>
-footer {
+  footer {
     margin-top: 1rem;
     text-align: center;
     padding-top: 1.5rem;
     padding-bottom: 1rem;
-    border-top: 1px solid #292E38;
-}
-#tagline{
+    border-top: 1px solid #292e38;
+  }
+  #tagline {
     font-size: large;
-}
-#ext-links{
+  }
+  #ext-links {
     width: 80%;
     margin-left: auto;
     margin-right: auto;
@@ -48,5 +70,22 @@ footer {
     align-items: center;
     justify-content: space-between;
     font-size: medium;
-}
+  }
+
+  #support-cieco {
+    width: 70%;
+    margin: auto;
+    font-size: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid hsl(0, 0%, 50%, 0.2);
+    padding-bottom: 1.5rem;
+  }
+
+  #support-cieco > a {
+    width: 12%;
+    margin: auto;
+  }
 </style>
